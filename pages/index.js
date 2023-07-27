@@ -1,0 +1,1062 @@
+import React from 'react'
+import Link from 'next/link'
+import Head from 'next/head'
+
+import Header from '../components/header'
+import Footer from '../components/footer'
+
+const Home = (props) => {
+  return (
+    <>
+      <div className="home-container">
+        <Head>
+          <title>Hocboisinhton.com</title>
+          <meta
+            name="description"
+            content="Chúng tôi tổ chức các loại hoạt động hồ bơi mới. Chúng tôi đào tạo bằng cách tham gia các khóa học bơi sinh tồn khác nhau và tìm hiểu về các xu hướng học bơi mới"
+          />
+          <meta property="og:title" content="Hocboisinhton.com" />
+          <meta
+            property="og:description"
+            content="Chúng tôi tổ chức các loại hoạt động hồ bơi mới. Chúng tôi đào tạo bằng cách tham gia các khóa học bơi sinh tồn khác nhau và tìm hiểu về các xu hướng học bơi mới"
+          />
+          <meta
+            property="og:image"
+            content="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/7b6c51ad-68d7-4856-98bd-00e4bbd8cbdc/47ea39bd-9a82-4eb5-9b76-d36f3ccb1887?org_if_sml=1&amp;q=80"
+          />
+        </Head>
+        <Header rootClassName="header-root-class-name"></Header>
+        <div className="home-container01">
+          <div className="home-container02">
+            <h1 className="home-text">uy tín</h1>
+            <h1 className="home-text01">
+              <span>để ba mẹ lựa chọn</span>
+              <br></br>
+            </h1>
+          </div>
+          <div className="home-container03">
+            <h1 className="home-text04">hiệu quả</h1>
+            <h1 className="home-text05">
+              <span>CHO TRẺ HỌC TẬP VÀ RÈN LUYỆN</span>
+              <br></br>
+            </h1>
+          </div>
+          <div className="home-container04">
+            <h1 className="home-text08">Năng</h1>
+            <h1 className="home-text09">Động</h1>
+            <h1 className="home-text10">hành trình</h1>
+          </div>
+          <div className="home-container05">
+            <h1 className="home-text11">Tuyển</h1>
+            <h1 className="home-text12">chọn</h1>
+            <h1 className="home-text13">CHƯƠNG TRÌNH</h1>
+            <h1 className="home-text14">chuẩn quốc tế</h1>
+          </div>
+        </div>
+        <div className="home-info">
+          <h1 className="home-title">CHÚNG TÔI LÀ AI?</h1>
+          <span className="home-text15">
+            <span>
+              Hocboisinhton.com do công ty TNHH Survival Group thành lập - địa
+              điểm chuyên dạy bơi cho trẻ em Việt. Công ty được thành lập vào
+              năm 2022 do 2 huấn luyện viên Đoàn Quốc Hùng và Tạ Quan Minh đồng
+              sáng lập với tên thương hiệu là Hocboisinhton.com.
+            </span>
+            <br></br>
+            <br></br>
+            <span>
+              Đây cũng là thông điệp mà chúng tôi muốn gửi gắm đến ba mẹ, những
+              người chăm sóc trẻ, bảo mẫu rằng cần trang bị cho các con kĩ năng
+              an toàn nước, kĩ năng bơi lội để đảm bảo trẻ luôn an toàn trong
+              môi trường nước.
+            </span>
+          </span>
+          <Link href="/gioi-thieu">
+            <a className="home-link">Tìm hiểu thêm</a>
+          </Link>
+        </div>
+        <div className="home-blogs">
+          <h1 className="home-title1">Kiến thức</h1>
+          <div id="newPosts" className="home-new-posts">
+            <div id="post1" className="home-item">
+              <div className="home-container06">
+                <span className="home-date">
+                  <span>Date</span>
+                  <br></br>
+                </span>
+                <Link href="**">
+                  <a className="home-link1">
+                    <span>
+                      <span>Tag</span>
+                      <br></br>
+                    </span>
+                  </a>
+                </Link>
+                <h1 className="home-title2">
+                  <span>Title</span>
+                  <br></br>
+                </h1>
+              </div>
+            </div>
+            <div id="post2" className="home-item1">
+              <div className="home-container07">
+                <span className="home-date1">
+                  <span>Date</span>
+                  <br></br>
+                </span>
+                <Link href="**">
+                  <a className="home-link2">
+                    <span>
+                      <span>Tag</span>
+                      <br></br>
+                    </span>
+                  </a>
+                </Link>
+                <h1 className="home-title3">
+                  <span>Title</span>
+                  <br></br>
+                </h1>
+              </div>
+            </div>
+            <div id="post3" className="home-item2">
+              <div className="home-container08">
+                <span className="home-date2">
+                  <span>Date</span>
+                  <br></br>
+                </span>
+                <Link href="**">
+                  <a className="home-link3">
+                    <span>
+                      <span>Tag</span>
+                      <br></br>
+                    </span>
+                  </a>
+                </Link>
+                <h1 className="home-title4">
+                  <span>Title</span>
+                  <br></br>
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="home-khoa-hoc">
+          <h1 className="home-title5">CÁC KHÓA HỌC</h1>
+          <div className="home-khoa-hoc-moi">
+            <div className="home-khoa-hoc1">
+              <div className="home-container09">
+                <h1 className="home-title6">Khóa Bơi 0-3 Tuổi</h1>
+                <span className="home-info1">
+                  Xây dựng cho trẻ các kỹ năng an toàn khi ở dưới nước và sự tự
+                  tin cho trẻ trong môi trường nước.
+                </span>
+                <div className="home-time">
+                  <div className="home-container10">
+                    <svg viewBox="0 0 1024 1024" className="home-icon">
+                      <path d="M981.333 512c0-129.579-52.565-246.997-137.472-331.861s-202.283-137.472-331.861-137.472-246.997 52.565-331.861 137.472-137.472 202.283-137.472 331.861 52.565 246.997 137.472 331.861 202.283 137.472 331.861 137.472 246.997-52.565 331.861-137.472 137.472-202.283 137.472-331.861zM896 512c0 106.069-42.923 201.984-112.469 271.531s-165.461 112.469-271.531 112.469-201.984-42.923-271.531-112.469-112.469-165.461-112.469-271.531 42.923-201.984 112.469-271.531 165.461-112.469 271.531-112.469 201.984 42.923 271.531 112.469 112.469 165.461 112.469 271.531zM469.333 256v256c0 16.597 9.472 31.019 23.595 38.144l170.667 85.333c21.077 10.539 46.72 2.005 57.259-19.072s2.005-46.72-19.072-57.259l-147.115-73.515v-229.632c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667z"></path>
+                    </svg>
+                    <span className="home-text41">
+                      <span>30-60 phút</span>
+                      <br></br>
+                    </span>
+                  </div>
+                  <div className="home-container11">
+                    <svg
+                      viewBox="0 0 950.8571428571428 1024"
+                      className="home-icon02"
+                    >
+                      <path d="M73.143 950.857h164.571v-164.571h-164.571v164.571zM274.286 950.857h182.857v-164.571h-182.857v164.571zM73.143 749.714h164.571v-182.857h-164.571v182.857zM274.286 749.714h182.857v-182.857h-182.857v182.857zM73.143 530.286h164.571v-164.571h-164.571v164.571zM493.714 950.857h182.857v-164.571h-182.857v164.571zM274.286 530.286h182.857v-164.571h-182.857v164.571zM713.143 950.857h164.571v-164.571h-164.571v164.571zM493.714 749.714h182.857v-182.857h-182.857v182.857zM292.571 256v-164.571c0-9.714-8.571-18.286-18.286-18.286h-36.571c-9.714 0-18.286 8.571-18.286 18.286v164.571c0 9.714 8.571 18.286 18.286 18.286h36.571c9.714 0 18.286-8.571 18.286-18.286zM713.143 749.714h164.571v-182.857h-164.571v182.857zM493.714 530.286h182.857v-164.571h-182.857v164.571zM713.143 530.286h164.571v-164.571h-164.571v164.571zM731.429 256v-164.571c0-9.714-8.571-18.286-18.286-18.286h-36.571c-9.714 0-18.286 8.571-18.286 18.286v164.571c0 9.714 8.571 18.286 18.286 18.286h36.571c9.714 0 18.286-8.571 18.286-18.286zM950.857 219.429v731.429c0 40-33.143 73.143-73.143 73.143h-804.571c-40 0-73.143-33.143-73.143-73.143v-731.429c0-40 33.143-73.143 73.143-73.143h73.143v-54.857c0-50.286 41.143-91.429 91.429-91.429h36.571c50.286 0 91.429 41.143 91.429 91.429v54.857h219.429v-54.857c0-50.286 41.143-91.429 91.429-91.429h36.571c50.286 0 91.429 41.143 91.429 91.429v54.857h73.143c40 0 73.143 33.143 73.143 73.143z"></path>
+                    </svg>
+                    <span className="home-text44">2-3 buổi/ tuần</span>
+                  </div>
+                </div>
+                <button type="button" className="home-tim-hieu-them1">
+                  <span className="home-text45">
+                    <span>Tìm hiểu thêm</span>
+                    <br></br>
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div className="home-khoa-hoc2">
+              <div className="home-container12">
+                <h1 className="home-title7">Khóa Bơi 3-5 Tuổi</h1>
+                <span className="home-info2">
+                  Xây dựng sự tự tin cho trẻ khi ở dưới nước và kỹ năng bơi Dog
+                  Paddle 10M sinh tồn.
+                </span>
+                <div className="home-time1">
+                  <div className="home-container13">
+                    <svg viewBox="0 0 1024 1024" className="home-icon04">
+                      <path d="M981.333 512c0-129.579-52.565-246.997-137.472-331.861s-202.283-137.472-331.861-137.472-246.997 52.565-331.861 137.472-137.472 202.283-137.472 331.861 52.565 246.997 137.472 331.861 202.283 137.472 331.861 137.472 246.997-52.565 331.861-137.472 137.472-202.283 137.472-331.861zM896 512c0 106.069-42.923 201.984-112.469 271.531s-165.461 112.469-271.531 112.469-201.984-42.923-271.531-112.469-112.469-165.461-112.469-271.531 42.923-201.984 112.469-271.531 165.461-112.469 271.531-112.469 201.984 42.923 271.531 112.469 112.469 165.461 112.469 271.531zM469.333 256v256c0 16.597 9.472 31.019 23.595 38.144l170.667 85.333c21.077 10.539 46.72 2.005 57.259-19.072s2.005-46.72-19.072-57.259l-147.115-73.515v-229.632c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667z"></path>
+                    </svg>
+                    <span className="home-text48">
+                      <span>30-60 phút</span>
+                      <br></br>
+                    </span>
+                  </div>
+                  <div className="home-container14">
+                    <svg
+                      viewBox="0 0 950.8571428571428 1024"
+                      className="home-icon06"
+                    >
+                      <path d="M73.143 950.857h164.571v-164.571h-164.571v164.571zM274.286 950.857h182.857v-164.571h-182.857v164.571zM73.143 749.714h164.571v-182.857h-164.571v182.857zM274.286 749.714h182.857v-182.857h-182.857v182.857zM73.143 530.286h164.571v-164.571h-164.571v164.571zM493.714 950.857h182.857v-164.571h-182.857v164.571zM274.286 530.286h182.857v-164.571h-182.857v164.571zM713.143 950.857h164.571v-164.571h-164.571v164.571zM493.714 749.714h182.857v-182.857h-182.857v182.857zM292.571 256v-164.571c0-9.714-8.571-18.286-18.286-18.286h-36.571c-9.714 0-18.286 8.571-18.286 18.286v164.571c0 9.714 8.571 18.286 18.286 18.286h36.571c9.714 0 18.286-8.571 18.286-18.286zM713.143 749.714h164.571v-182.857h-164.571v182.857zM493.714 530.286h182.857v-164.571h-182.857v164.571zM713.143 530.286h164.571v-164.571h-164.571v164.571zM731.429 256v-164.571c0-9.714-8.571-18.286-18.286-18.286h-36.571c-9.714 0-18.286 8.571-18.286 18.286v164.571c0 9.714 8.571 18.286 18.286 18.286h36.571c9.714 0 18.286-8.571 18.286-18.286zM950.857 219.429v731.429c0 40-33.143 73.143-73.143 73.143h-804.571c-40 0-73.143-33.143-73.143-73.143v-731.429c0-40 33.143-73.143 73.143-73.143h73.143v-54.857c0-50.286 41.143-91.429 91.429-91.429h36.571c50.286 0 91.429 41.143 91.429 91.429v54.857h219.429v-54.857c0-50.286 41.143-91.429 91.429-91.429h36.571c50.286 0 91.429 41.143 91.429 91.429v54.857h73.143c40 0 73.143 33.143 73.143 73.143z"></path>
+                    </svg>
+                    <span className="home-text51">2-3 buổi/ tuần</span>
+                  </div>
+                </div>
+                <button type="button" className="home-tim-hieu-them2">
+                  <span className="home-text52">
+                    <span>Tìm hiểu thêm</span>
+                    <br></br>
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div className="home-khoa-hoc3">
+              <div className="home-container15">
+                <h1 className="home-title8">Khóa Bơi Trên 5 Tuổi</h1>
+                <span className="home-info3">
+                  Cung cấp kỹ năng an toàn cho trẻ và rèn luyện kỹ năng bơi 10M
+                  (kỹ năng bơi mà trẻ yêu thích).
+                </span>
+                <div className="home-time2">
+                  <div className="home-container16">
+                    <svg viewBox="0 0 1024 1024" className="home-icon08">
+                      <path d="M981.333 512c0-129.579-52.565-246.997-137.472-331.861s-202.283-137.472-331.861-137.472-246.997 52.565-331.861 137.472-137.472 202.283-137.472 331.861 52.565 246.997 137.472 331.861 202.283 137.472 331.861 137.472 246.997-52.565 331.861-137.472 137.472-202.283 137.472-331.861zM896 512c0 106.069-42.923 201.984-112.469 271.531s-165.461 112.469-271.531 112.469-201.984-42.923-271.531-112.469-112.469-165.461-112.469-271.531 42.923-201.984 112.469-271.531 165.461-112.469 271.531-112.469 201.984 42.923 271.531 112.469 112.469 165.461 112.469 271.531zM469.333 256v256c0 16.597 9.472 31.019 23.595 38.144l170.667 85.333c21.077 10.539 46.72 2.005 57.259-19.072s2.005-46.72-19.072-57.259l-147.115-73.515v-229.632c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667z"></path>
+                    </svg>
+                    <span className="home-text55">
+                      <span>30-60 phút</span>
+                      <br></br>
+                    </span>
+                  </div>
+                  <div className="home-container17">
+                    <svg
+                      viewBox="0 0 950.8571428571428 1024"
+                      className="home-icon10"
+                    >
+                      <path d="M73.143 950.857h164.571v-164.571h-164.571v164.571zM274.286 950.857h182.857v-164.571h-182.857v164.571zM73.143 749.714h164.571v-182.857h-164.571v182.857zM274.286 749.714h182.857v-182.857h-182.857v182.857zM73.143 530.286h164.571v-164.571h-164.571v164.571zM493.714 950.857h182.857v-164.571h-182.857v164.571zM274.286 530.286h182.857v-164.571h-182.857v164.571zM713.143 950.857h164.571v-164.571h-164.571v164.571zM493.714 749.714h182.857v-182.857h-182.857v182.857zM292.571 256v-164.571c0-9.714-8.571-18.286-18.286-18.286h-36.571c-9.714 0-18.286 8.571-18.286 18.286v164.571c0 9.714 8.571 18.286 18.286 18.286h36.571c9.714 0 18.286-8.571 18.286-18.286zM713.143 749.714h164.571v-182.857h-164.571v182.857zM493.714 530.286h182.857v-164.571h-182.857v164.571zM713.143 530.286h164.571v-164.571h-164.571v164.571zM731.429 256v-164.571c0-9.714-8.571-18.286-18.286-18.286h-36.571c-9.714 0-18.286 8.571-18.286 18.286v164.571c0 9.714 8.571 18.286 18.286 18.286h36.571c9.714 0 18.286-8.571 18.286-18.286zM950.857 219.429v731.429c0 40-33.143 73.143-73.143 73.143h-804.571c-40 0-73.143-33.143-73.143-73.143v-731.429c0-40 33.143-73.143 73.143-73.143h73.143v-54.857c0-50.286 41.143-91.429 91.429-91.429h36.571c50.286 0 91.429 41.143 91.429 91.429v54.857h219.429v-54.857c0-50.286 41.143-91.429 91.429-91.429h36.571c50.286 0 91.429 41.143 91.429 91.429v54.857h73.143c40 0 73.143 33.143 73.143 73.143z"></path>
+                    </svg>
+                    <span className="home-text58">2-3 buổi/ tuần</span>
+                  </div>
+                </div>
+                <button type="button" className="home-tim-hieu-them3">
+                  <span className="home-text59">
+                    <span>Tìm hiểu thêm</span>
+                    <br></br>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <Footer rootClassName="footer-root-class-name"></Footer>
+      </div>
+      <style jsx>
+        {`
+          .home-container {
+            width: 100%;
+            display: flex;
+            overflow: auto;
+            min-height: 100vh;
+            align-items: center;
+            flex-direction: column;
+            justify-content: flex-start;
+          }
+          .home-container01 {
+            flex: 0 0 auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+          }
+          .home-container02 {
+            width: 100%;
+            height: 45vw;
+            display: flex;
+            position: relative;
+            align-items: flex-start;
+            background-size: cover;
+            justify-content: center;
+            background-image: url('https://lh3.googleusercontent.com/pw/AIL4fc_nnYBJp8FfSLQ37tZtgzYT_QR6wcoi7pLbm-HrhP3Sg7sVDZuDWGqepUCXagN4dQZfoiPdMNW0AwCtAl3HbtC3Q19camwwre5FKjSXR4IsAb-WPRk=d');
+            background-position: center;
+          }
+          .home-text {
+            top: 0.5vw;
+            left: 20vw;
+            color: var(--dl-color-hbst-yellow);
+            position: absolute;
+            font-size: 8vw;
+            text-align: center;
+            text-transform: uppercase;
+          }
+          .home-text01 {
+            top: 9vw;
+            left: 22vw;
+            color: var(--dl-color-hbst-white);
+            position: absolute;
+            font-size: 2vw;
+            text-align: center;
+            text-transform: uppercase;
+          }
+          .home-container03 {
+            width: 100%;
+            height: 45vw;
+            display: flex;
+            position: relative;
+            align-items: flex-start;
+            background-size: cover;
+            justify-content: center;
+            background-image: url('https://lh3.googleusercontent.com/pw/AIL4fc_EpTG0tIamcNf8curUvBdN-IWPqCojmdaFn8Wm3Sp4BJls0_kJSq6j31P36lQ1gWnN0veBv-WTznXDPhFj8R7JHXq4XfA0M4MTiyW5Phldw4cHwaw=d');
+            background-position: center;
+          }
+          .home-text04 {
+            top: 28vw;
+            left: 45vw;
+            color: var(--dl-color-hbst-yellow);
+            position: absolute;
+            font-size: 8vw;
+            text-align: center;
+            text-transform: uppercase;
+          }
+          .home-text05 {
+            top: 38vw;
+            left: 47vw;
+            color: var(--dl-color-hbst-white);
+            position: absolute;
+            font-size: 2vw;
+            text-align: center;
+            text-transform: uppercase;
+          }
+          .home-container04 {
+            width: 100%;
+            height: 45vw;
+            display: flex;
+            position: relative;
+            align-items: flex-start;
+            background-size: cover;
+            justify-content: center;
+            background-image: url('https://lh3.googleusercontent.com/pw/AIL4fc_bwWzlD232T5uT5KJ4gMm-YRH_ETFCUAHVpgQVaTeZ2sLfUz43Z25iewZeoCz5AMjxVmJCGTRq_2EFu-r89-ja-u_GUMeB7STiR07RVSGfSjcNBs0=d');
+            background-position: center;
+          }
+          .home-text08 {
+            top: 5vw;
+            left: 8vw;
+            color: var(--dl-color-hbst-yellow);
+            position: absolute;
+            font-size: 8vw;
+            text-align: center;
+            text-transform: uppercase;
+          }
+          .home-text09 {
+            top: 5vw;
+            left: 56vw;
+            color: var(--dl-color-hbst-yellow);
+            position: absolute;
+            font-size: 8vw;
+            text-align: center;
+            text-transform: uppercase;
+          }
+          .home-text10 {
+            top: 2vw;
+            left: 20vw;
+            color: var(--dl-color-hbst-white);
+            position: absolute;
+            font-size: 2vw;
+            text-align: center;
+            text-transform: uppercase;
+          }
+          .home-container05 {
+            width: 100%;
+            height: 45vw;
+            display: flex;
+            position: relative;
+            align-items: flex-start;
+            background-size: cover;
+            justify-content: center;
+            background-image: url('https://lh3.googleusercontent.com/pw/AIL4fc-3XeYjqQbo_ktlfxZpxgh6l-oURIGFb_HTqn0RPGga6LlrTT58NdyWrpN6LRung7xyu5FrJD0iuTzbM7FVeqGJYDmlDV5F_fIaWmrPdz2GivamFDs=d');
+            background-position: center;
+          }
+          .home-text11 {
+            top: 5vw;
+            left: 8vw;
+            color: var(--dl-color-hbst-yellow);
+            position: absolute;
+            font-size: 8vw;
+            text-align: center;
+            text-transform: uppercase;
+          }
+          .home-text12 {
+            top: 5vw;
+            left: 66vw;
+            color: var(--dl-color-hbst-yellow);
+            position: absolute;
+            font-size: 8vw;
+            text-align: center;
+            text-transform: uppercase;
+          }
+          .home-text13 {
+            top: 2vw;
+            left: 10vw;
+            color: var(--dl-color-hbst-white);
+            position: absolute;
+            font-size: 2vw;
+            text-align: center;
+            text-transform: uppercase;
+          }
+          .home-text14 {
+            top: 14.5vw;
+            left: 72vw;
+            color: var(--dl-color-hbst-white);
+            position: absolute;
+            font-size: 2vw;
+            text-align: center;
+            text-transform: uppercase;
+          }
+          .home-info {
+            flex: 0 0 auto;
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            padding-top: 40px;
+            flex-direction: column;
+            padding-bottom: 40px;
+            justify-content: center;
+          }
+          .home-title {
+            color: var(--dl-color-hbst-blue);
+            font-size: 50px;
+            text-align: center;
+            text-transform: uppercase;
+          }
+          .home-text15 {
+            width: 90vw;
+            max-width: 650px;
+            margin-top: 30px;
+            text-align: center;
+            line-height: 1.3;
+          }
+          .home-link {
+            color: var(--dl-color-hbst-white);
+            cursor: pointer;
+            margin-top: 30px;
+            transition: 0.2s;
+            padding-top: 10px;
+            padding-left: 20px;
+            border-radius: 20px;
+            padding-right: 20px;
+            padding-bottom: 10px;
+            text-decoration: none;
+            background-color: var(--dl-color-hbst-blue);
+          }
+          .home-link:hover {
+            color: var(--dl-color-hbst-black);
+            background-color: var(--dl-color-hbst-yellow);
+          }
+          .home-blogs {
+            flex: 0 0 auto;
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            padding-top: 40px;
+            flex-direction: column;
+            padding-bottom: 40px;
+            justify-content: center;
+            background-color: var(--dl-color-hbst-blue);
+          }
+          .home-title1 {
+            color: var(--dl-color-hbst-yellow);
+            font-size: 50px;
+            text-align: center;
+            text-transform: uppercase;
+          }
+          .home-new-posts {
+            flex: 0 0 auto;
+            width: 100%;
+            display: flex;
+            margin-top: 30px;
+            align-items: center;
+            justify-content: center;
+          }
+          .home-item {
+            width: 292px;
+            height: 390px;
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            margin-right: 20px;
+            justify-content: flex-end;
+          }
+          .home-container06 {
+            flex: 0 0 auto;
+            width: 100%;
+            cursor: pointer;
+            height: 100%;
+            display: flex;
+            padding: 20px;
+            position: relative;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: flex-end;
+            background-color: rgba(0, 0, 0, 0.55);
+          }
+          .home-date {
+            top: 20px;
+            left: 20px;
+            color: var(--dl-color-hbst-white);
+            position: absolute;
+          }
+          .home-link1 {
+            color: var(--dl-color-hbst-black);
+            cursor: pointer;
+            font-style: normal;
+            text-align: center;
+            transition: 0.2s;
+            font-weight: 300;
+            padding-top: 5px;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            padding-right: 20px;
+            padding-bottom: 5px;
+            text-decoration: none;
+            background-color: var(--dl-color-hbst-white);
+          }
+          .home-link1:hover {
+            opacity: 0.5;
+          }
+          .home-title2 {
+            color: var(--dl-color-hbst-white);
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+          }
+          .home-item1 {
+            width: 292px;
+            height: 390px;
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            margin-right: 20px;
+            justify-content: flex-end;
+          }
+          .home-container07 {
+            flex: 0 0 auto;
+            width: 100%;
+            cursor: pointer;
+            height: 100%;
+            display: flex;
+            padding: 20px;
+            position: relative;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: flex-end;
+            background-color: rgba(0, 0, 0, 0.55);
+          }
+          .home-date1 {
+            top: 20px;
+            left: 20px;
+            color: var(--dl-color-hbst-white);
+            position: absolute;
+          }
+          .home-link2 {
+            color: var(--dl-color-hbst-black);
+            cursor: pointer;
+            font-style: normal;
+            text-align: center;
+            transition: 0.2s;
+            font-weight: 300;
+            padding-top: 5px;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            padding-right: 20px;
+            padding-bottom: 5px;
+            text-decoration: none;
+            background-color: var(--dl-color-hbst-white);
+          }
+          .home-link2:hover {
+            opacity: 0.5;
+          }
+          .home-title3 {
+            color: var(--dl-color-hbst-white);
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+          }
+          .home-item2 {
+            width: 292px;
+            height: 390px;
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            margin-right: 20px;
+            justify-content: flex-end;
+          }
+          .home-container08 {
+            flex: 0 0 auto;
+            width: 100%;
+            cursor: pointer;
+            height: 100%;
+            display: flex;
+            padding: 20px;
+            position: relative;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: flex-end;
+            background-color: rgba(0, 0, 0, 0.55);
+          }
+          .home-date2 {
+            top: 20px;
+            left: 20px;
+            color: var(--dl-color-hbst-white);
+            position: absolute;
+          }
+          .home-link3 {
+            color: var(--dl-color-hbst-black);
+            cursor: pointer;
+            font-style: normal;
+            text-align: center;
+            transition: 0.2s;
+            font-weight: 300;
+            padding-top: 5px;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            padding-right: 20px;
+            padding-bottom: 5px;
+            text-decoration: none;
+            background-color: var(--dl-color-hbst-white);
+          }
+          .home-link3:hover {
+            opacity: 0.5;
+          }
+          .home-title4 {
+            color: var(--dl-color-hbst-white);
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+          }
+          .home-khoa-hoc {
+            flex: 0 0 auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding-top: 40px;
+            flex-direction: column;
+            padding-bottom: 40px;
+            justify-content: center;
+          }
+          .home-title5 {
+            color: var(--dl-color-hbst-blue);
+            font-size: 50px;
+            text-align: center;
+            text-transform: uppercase;
+          }
+          .home-khoa-hoc-moi {
+            flex: 0 0 auto;
+            width: 100%;
+            display: flex;
+            margin-top: 20px;
+            align-items: center;
+            justify-content: center;
+          }
+          .home-khoa-hoc1 {
+            width: 306px;
+            height: 569px;
+            display: flex;
+            align-items: flex-end;
+            margin-left: 20px;
+            margin-right: 20px;
+            background-size: cover;
+            justify-content: center;
+            background-image: url('https://lh3.googleusercontent.com/pw/AIL4fc9lhjfX0Py0Wq4pOqCBWKRYl3NqEgVR5cGub0gvvCqjMwxPYTwmBXO0RuM0Y2AMHdUeK6GHbAiNQmHzix2w4lUiVACEW_AHERkIxFq29fscunS11bI=d');
+            background-position: center;
+          }
+          .home-container09 {
+            flex: 0 0 auto;
+            width: 100%;
+            height: 50%;
+            display: flex;
+            padding: 20px;
+            position: relative;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: flex-start;
+            background-color: var(--dl-color-hbst-blue);
+          }
+          .home-title6 {
+            color: var(--dl-color-hbst-white);
+            font-size: 30px;
+          }
+          .home-info1 {
+            color: var(--dl-color-hbst-white);
+            margin-top: 10px;
+            line-height: 1.3;
+            margin-bottom: 10px;
+          }
+          .home-time {
+            flex: 0 0 auto;
+            left: 0px;
+            right: 0px;
+            width: 85%;
+            bottom: 60px;
+            margin: auto;
+            display: flex;
+            position: absolute;
+            align-items: flex-start;
+            flex-direction: column;
+          }
+          .home-container10 {
+            flex: 0 0 auto;
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+          }
+          .home-icon {
+            fill: var(--dl-color-hbst-white);
+            width: 24px;
+            height: 24px;
+            margin-right: 5px;
+          }
+          .home-text41 {
+            color: var(--dl-color-hbst-white);
+          }
+          .home-container11 {
+            flex: 0 0 auto;
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+          }
+          .home-icon02 {
+            fill: var(--dl-color-hbst-white);
+            width: 24px;
+            height: 24px;
+            margin-right: 5px;
+          }
+          .home-text44 {
+            color: var(--dl-color-hbst-white);
+          }
+          .home-tim-hieu-them1 {
+            left: 0px;
+            right: 0px;
+            width: auto;
+            bottom: 15px;
+            margin: auto;
+            position: absolute;
+          }
+          .home-text45 {
+            color: var(--dl-color-hbst-blue);
+            cursor: pointer;
+            transition: 0.2s;
+            padding-top: 5px;
+            padding-left: 25px;
+            border-radius: 20px;
+            padding-right: 25px;
+            padding-bottom: 5px;
+            background-color: var(--dl-color-hbst-white);
+          }
+          .home-text45:hover {
+            color: var(--dl-color-hbst-black);
+            background-color: var(--dl-color-hbst-yellow);
+          }
+          .home-khoa-hoc2 {
+            width: 306px;
+            height: 569px;
+            display: flex;
+            align-items: flex-end;
+            margin-left: 20px;
+            margin-right: 20px;
+            background-size: cover;
+            justify-content: center;
+            background-image: url('https://lh3.googleusercontent.com/pw/AIL4fc9GIYSN3WEg4qXw6PpsOHjgy-Y32KwOswr24c4yPJr_vqwmCv7FoSsx_5rQDeK-lCmS4lOUypsUVnbGKjtRgGVPeoIy0dmPmzbkvqz1iibPiMVr1RU=d');
+            background-position: center;
+          }
+          .home-container12 {
+            flex: 0 0 auto;
+            width: 100%;
+            height: 50%;
+            display: flex;
+            padding: 20px;
+            position: relative;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: flex-start;
+            background-color: var(--dl-color-hbst-blue);
+          }
+          .home-title7 {
+            color: var(--dl-color-hbst-white);
+            font-size: 30px;
+          }
+          .home-info2 {
+            color: var(--dl-color-hbst-white);
+            margin-top: 10px;
+            line-height: 1.3;
+            margin-bottom: 10px;
+          }
+          .home-time1 {
+            flex: 0 0 auto;
+            left: 0px;
+            right: 0px;
+            width: 85%;
+            bottom: 60px;
+            margin: auto;
+            display: flex;
+            position: absolute;
+            align-items: flex-start;
+            flex-direction: column;
+          }
+          .home-container13 {
+            flex: 0 0 auto;
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+          }
+          .home-icon04 {
+            fill: var(--dl-color-hbst-white);
+            width: 24px;
+            height: 24px;
+            margin-right: 5px;
+          }
+          .home-text48 {
+            color: var(--dl-color-hbst-white);
+          }
+          .home-container14 {
+            flex: 0 0 auto;
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+          }
+          .home-icon06 {
+            fill: var(--dl-color-hbst-white);
+            width: 24px;
+            height: 24px;
+            margin-right: 5px;
+          }
+          .home-text51 {
+            color: var(--dl-color-hbst-white);
+          }
+          .home-tim-hieu-them2 {
+            left: 0px;
+            right: 0px;
+            width: auto;
+            bottom: 15px;
+            margin: auto;
+            position: absolute;
+          }
+          .home-text52 {
+            color: var(--dl-color-hbst-blue);
+            cursor: pointer;
+            transition: 0.2s;
+            padding-top: 5px;
+            padding-left: 25px;
+            border-radius: 20px;
+            padding-right: 25px;
+            padding-bottom: 5px;
+            background-color: var(--dl-color-hbst-white);
+          }
+          .home-text52:hover {
+            color: var(--dl-color-hbst-black);
+            background-color: var(--dl-color-hbst-yellow);
+          }
+          .home-khoa-hoc3 {
+            width: 306px;
+            height: 569px;
+            display: flex;
+            align-items: flex-end;
+            margin-left: 20px;
+            margin-right: 20px;
+            background-size: cover;
+            justify-content: center;
+            background-image: url('https://lh3.googleusercontent.com/pw/AIL4fc-NQLJeBdwuh2bEkC80U2PWxyvAZGQp_KG8277Pd-27Vf_3cYTDEg6fIRdzFhd5_nTA9zjsOmLNLYrAnWZLY97M043ixMrmAXt1vBnO6kLifsr7xJo=d');
+            background-position: center;
+          }
+          .home-container15 {
+            flex: 0 0 auto;
+            width: 100%;
+            height: 50%;
+            display: flex;
+            padding: 20px;
+            position: relative;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: flex-start;
+            background-color: var(--dl-color-hbst-blue);
+          }
+          .home-title8 {
+            color: var(--dl-color-hbst-white);
+            font-size: 30px;
+          }
+          .home-info3 {
+            color: var(--dl-color-hbst-white);
+            margin-top: 10px;
+            line-height: 1.3;
+            margin-bottom: 10px;
+          }
+          .home-time2 {
+            flex: 0 0 auto;
+            left: 0px;
+            right: 0px;
+            width: 85%;
+            bottom: 60px;
+            margin: auto;
+            display: flex;
+            position: absolute;
+            align-items: flex-start;
+            flex-direction: column;
+          }
+          .home-container16 {
+            flex: 0 0 auto;
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+          }
+          .home-icon08 {
+            fill: var(--dl-color-hbst-white);
+            width: 24px;
+            height: 24px;
+            margin-right: 5px;
+          }
+          .home-text55 {
+            color: var(--dl-color-hbst-white);
+          }
+          .home-container17 {
+            flex: 0 0 auto;
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+          }
+          .home-icon10 {
+            fill: var(--dl-color-hbst-white);
+            width: 24px;
+            height: 24px;
+            margin-right: 5px;
+          }
+          .home-text58 {
+            color: var(--dl-color-hbst-white);
+          }
+          .home-tim-hieu-them3 {
+            left: 0px;
+            right: 0px;
+            width: auto;
+            bottom: 15px;
+            margin: auto;
+            position: absolute;
+          }
+          .home-text59 {
+            color: var(--dl-color-hbst-blue);
+            cursor: pointer;
+            transition: 0.2s;
+            padding-top: 5px;
+            padding-left: 25px;
+            border-radius: 20px;
+            padding-right: 25px;
+            padding-bottom: 5px;
+            background-color: var(--dl-color-hbst-white);
+          }
+          .home-text59:hover {
+            color: var(--dl-color-hbst-black);
+            background-color: var(--dl-color-hbst-yellow);
+          }
+          @media (max-width: 991px) {
+            .home-new-posts {
+              flex-direction: column;
+            }
+            .home-item {
+              width: 90%;
+              height: 200px;
+              margin-top: 20px;
+              margin-bottom: 20px;
+            }
+            .home-item1 {
+              width: 90%;
+              height: 200px;
+              margin-top: 20px;
+              margin-bottom: 20px;
+            }
+            .home-item2 {
+              width: 90%;
+              height: 200px;
+              margin-top: 20px;
+              margin-bottom: 20px;
+            }
+            .home-khoa-hoc-moi {
+              flex-direction: column;
+            }
+            .home-khoa-hoc1 {
+              width: 90%;
+              height: 300px;
+            }
+            .home-container09 {
+              height: 80%;
+            }
+            .home-khoa-hoc2 {
+              width: 90%;
+              height: 300px;
+              margin-top: 20px;
+              margin-bottom: 20px;
+            }
+            .home-container12 {
+              height: 80%;
+            }
+            .home-khoa-hoc3 {
+              width: 90%;
+              height: 300px;
+            }
+            .home-container15 {
+              height: 80%;
+            }
+          }
+          @media (max-width: 767px) {
+            .home-container {
+              padding-top: 118px;
+            }
+            .home-title {
+              font-size: 40px;
+            }
+            .home-title1 {
+              font-size: 40px;
+            }
+            .home-title5 {
+              font-size: 40px;
+            }
+          }
+          @media (max-width: 479px) {
+            .home-title {
+              font-size: 30px;
+            }
+            .home-title1 {
+              font-size: 30px;
+            }
+            .home-title5 {
+              font-size: 30px;
+            }
+            .home-khoa-hoc1 {
+              height: 350px;
+            }
+            .home-khoa-hoc2 {
+              height: 350px;
+            }
+            .home-khoa-hoc3 {
+              height: 350px;
+            }
+          }
+        `}
+      </style>
+    </>
+  )
+}
+
+export default Home
