@@ -40,13 +40,13 @@ class CustomDocument extends Document {
             href="https://cdn.discordapp.com/attachments/1130002236660007086/1134121648266686595/hbst.css"
             data-tag="font"
           ></link>
-          <link
+          {/* <link
             rel="preload"
             href="./HBST.otf"
             as="font"
             type="font/otf"
             crossorigin
-          ></link>
+          ></link> */}
           <noscript
             dangerouslySetInnerHTML={{
               __html:

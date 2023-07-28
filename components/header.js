@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -16,12 +16,58 @@ const Header = (props) => {
       Navigate.remove("navigate-active");
       bar1.remove("bar1-active");
       bar2.remove("bar2-active");
+      enableScroll();
     } else {
       Navigate.add("navigate-active");
       bar1.add("bar1-active");
       bar2.add("bar2-active");
+      disableScroll();
     }
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 991) {
+        const Navigate = document.getElementById("NavigateMobile").classList;
+        const bar1 = document.getElementById("Bar").classList;
+        const bar2 = document.getElementById("Bar2").classList;
+
+        if (Navigate.contains("navigate-active")) {
+          Navigate.remove("navigate-active");
+          bar1.remove("bar1-active");
+          bar2.remove("bar2-active");
+          enableScroll();
+        }
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  function disableScroll() {
+    var scrollPosition = [
+      self.pageXOffset ||
+        document.documentElement.scrollLeft ||
+        document.body.scrollLeft,
+      self.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop,
+    ];
+    document.body.dataset.scroll = JSON.stringify(scrollPosition);
+    document.body.style.overflow = "hidden";
+    window.scrollTo(0, 0);
+  }
+
+  function enableScroll() {
+    var scrollPosition = JSON.parse(document.body.dataset.scroll);
+    document.body.removeAttribute("data-scroll");
+    document.body.style.overflow = "auto";
+    window.scrollTo(scrollPosition[0], scrollPosition[1]);
+  }
 
   return (
     <>
@@ -125,6 +171,21 @@ const Header = (props) => {
           >
             {props.text}
           </a>
+          <svg
+            style={{
+              marginLeft: 8,
+            }}
+            data-bbox="30.501 29.5 139.002 141.001"
+            viewBox="0 0 200 200"
+            height="26"
+            width="26"
+            xmlns="http://www.w3.org/2000/svg"
+            data-type="shape"
+          >
+            <g>
+              <path d="M166.124 83.089a17.198 17.198 0 0 0-11.34-6.844 17.39 17.39 0 0 0-2.749-.195h-33.669v-22.6c0-13.206-10.752-23.95-23.966-23.95-1.58 0-3.013.93-3.654 2.374L65.179 89.35H47.811c-9.545 0-17.31 7.761-17.31 17.3v46.55c0 9.539 7.766 17.3 17.31 17.3h94.995l.195.001c8.499 0 15.839-6.29 17.115-14.699l9.185-59.856a17.177 17.177 0 0 0-3.177-12.857zm-102.346 79.41H47.811c-5.134 0-9.31-4.172-9.31-9.3v-46.55c0-5.128 4.177-9.3 9.31-9.3h15.967v65.15zm97.615-67.761-9.185 59.856c-.687 4.524-4.634 7.906-9.25 7.906h-71.18V94.2L96.91 37.697c7.616 1.206 13.456 7.811 13.456 15.753v26.6a4 4 0 0 0 4 4h37.715a8.958 8.958 0 0 1 1.503.105 9.249 9.249 0 0 1 6.1 3.681 9.226 9.226 0 0 1 1.709 6.902z"></path>
+            </g>
+          </svg>
         </div>
         <div id="NavigateMobile" className="header-navigate-mb">
           <Link href="/">
@@ -272,7 +333,7 @@ const Header = (props) => {
             color: var(--dl-color-hbst-blue);
             cursor: pointer;
             padding: 5px;
-            font-size: 18px;
+            font-size: 15px;
             font-style: normal;
             transition: 0.3s;
             font-weight: 700;
@@ -288,7 +349,7 @@ const Header = (props) => {
           .header-link02 {
             color: var(--dl-color-hbst-blue);
             cursor: pointer;
-            font-size: 18px;
+            font-size: 15px;
             font-style: normal;
             transition: 0.2s;
             font-weight: 700;
@@ -304,7 +365,7 @@ const Header = (props) => {
           .header-link03 {
             color: var(--dl-color-hbst-blue);
             cursor: pointer;
-            font-size: 18px;
+            font-size: 15px;
             font-style: normal;
             transition: 0.2s;
             font-weight: 700;
@@ -320,7 +381,7 @@ const Header = (props) => {
           .header-link04 {
             color: var(--dl-color-hbst-blue);
             cursor: pointer;
-            font-size: 18px;
+            font-size: 15px;
             font-style: normal;
             transition: 0.2s;
             font-weight: 700;
@@ -336,7 +397,7 @@ const Header = (props) => {
           .header-link05 {
             color: var(--dl-color-hbst-blue);
             cursor: pointer;
-            font-size: 18px;
+            font-size: 15px;
             font-style: normal;
             transition: 0.2s;
             font-weight: 700;
@@ -352,7 +413,7 @@ const Header = (props) => {
           .header-link06 {
             color: var(--dl-color-hbst-blue);
             cursor: pointer;
-            font-size: 18px;
+            font-size: 15px;
             font-style: normal;
             transition: 0.2s;
             font-weight: 700;
@@ -368,17 +429,18 @@ const Header = (props) => {
           .header-reg {
             flex: 0 0 auto;
             color: var(--dl-color-hbst-white);
+            fill: var(--dl-color-hbst-white);
             width: auto;
             cursor: pointer;
             height: auto;
             display: flex;
             transition: 0.3s;
-            align-items: flex-start;
-            padding-top: 15px;
+            align-items: center;
+            padding-top: 10px;
             padding-left: 20px;
             border-radius: var(--dl-radius-radius-radius8);
             padding-right: 20px;
-            padding-bottom: 15px;
+            padding-bottom: 10px;
             background-color: var(--dl-color-hbst-blue);
           }
           .header-reg:hover {
