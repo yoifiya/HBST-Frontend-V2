@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from "next/document";
 class CustomDocument extends Document {
   render() {
     return (
@@ -20,7 +20,7 @@ class CustomDocument extends Document {
           <style
             dangerouslySetInnerHTML={{
               __html:
-                '\n  html {\n    font-family: Inter;\n    font-size: 16px;\n  }\n\n  body {\n    font-weight: 400;\n    font-style:normal;\n    text-decoration: none;\n    text-transform: none;\n    letter-spacing: normal;\n    line-height: 1.15;\n    color: var(--dl-color-gray-black);\n    background-color: var(--dl-color-gray-white);\n    \n  }\n\n  \n\n  ',
+                "\n  html {\n    font-family: Inter;\n    font-size: 16px;\n  }\n\n  body {\n    font-weight: 400;\n    font-style:normal;\n    text-decoration: none;\n    text-transform: none;\n    letter-spacing: normal;\n    line-height: 1.15;\n    color: var(--dl-color-gray-black);\n    background-color: var(--dl-color-gray-white);\n    \n  }\n\n  \n\n  ",
             }}
             data-tag="default-style-sheet"
           ></style>
@@ -40,6 +40,13 @@ class CustomDocument extends Document {
             href="https://cdn.discordapp.com/attachments/1130002236660007086/1134121648266686595/hbst.css"
             data-tag="font"
           ></link>
+          <link
+            rel="preload"
+            href="./HBST.otf"
+            as="font"
+            type="font/otf"
+            crossorigin
+          ></link>
           <noscript
             dangerouslySetInnerHTML={{
               __html:
@@ -52,7 +59,7 @@ class CustomDocument extends Document {
           <NextScript></NextScript>
         </body>
       </Html>
-    )
+    );
   }
 }
-export default CustomDocument
+export default CustomDocument;

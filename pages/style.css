@@ -85,7 +85,7 @@
 }
 
 .nav-active {
-  color: yellow (hbst) !important;
+  color: var(--dl-color-hbst-yellow) !important;
 }
 
 .Content {
@@ -107,6 +107,11 @@
 
 .carousel-root {
   width: 100%;
+  z-index: 1;
+}
+
+.fa-brands {
+  margin: 10px;
 }
 @media (max-width: 991px) {
   .navigate-active {
@@ -119,4 +124,9 @@
   .bar2-active {
     opacity: 1 !important;
   }
+}
+@font-face {
+  font-family: "HBST";
+  src: url("./HBST.otf") format("truetype");
+  font-weight: bold;
 }

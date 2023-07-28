@@ -1,16 +1,21 @@
-import React from 'react'
-import Link from 'next/link'
-import Head from 'next/head'
+import React from "react";
+import Link from "next/link";
+import Head from "next/head";
 
 const Page = (props) => {
   return (
     <>
       <div className="page-container">
         <Head>
-          <title>Page - Punctual Substantial Goldfish</title>
+          <title>404 | Hocboisinhton.com</title>
+          <meta property="og:title" content="404 | Hocboisinhton.com" />
           <meta
-            property="og:title"
-            content="Page - Punctual Substantial Goldfish"
+            property="og:description"
+            content="Chúng tôi tổ chức các loại hoạt động hồ bơi mới. Chúng tôi đào tạo bằng cách tham gia các khóa học bơi sinh tồn khác nhau và tìm hiểu về các xu hướng học bơi mới"
+          />
+          <meta
+            property="og:image"
+            content="https://lh3.googleusercontent.com/pw/AIL4fc95smzk_QUHx8IOXZLMJPDp0D6NaBq8DP3PsunWOlfuxauo-d1lzAQhz1NztEj5Uz4JuO3bbSac0Q3bTByYavYq_O-XZF8RiR5fnLtRv6O87-_VDDc=d"
           />
         </Head>
         <div className="page-container1">
@@ -64,7 +69,7 @@ const Page = (props) => {
         `}
       </style>
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

@@ -39,7 +39,32 @@ const Footer = (props) => {
                 rel="noreferrer noopener"
                 className="footer-link1"
               >
-                <div className="footer-info1"></div>
+                <div className="footer-info1">
+                  <a
+                    href="https://www.facebook.com/BoiSinhTon"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="contact-link5"
+                  >
+                    <i className="fa-brands fa-facebook-f"></i>
+                  </a>
+                  <a
+                    href="https://www.youtube.com/BoiSinhTon"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="contact-link5"
+                  >
+                    <i className="fa-brands fa-youtube"></i>
+                  </a>
+                  <a
+                    href="https://www.tiktok.com/@hocboisinhton"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="contact-link5"
+                  >
+                    <i className="fa-brands fa-tiktok"></i>
+                  </a>
+                </div>
               </a>
             </div>
             <div className="footer-thong-tin1">
@@ -68,7 +93,7 @@ const Footer = (props) => {
                       marginRight: 5,
                       color: "var(--dl-color-hbst-blue)",
                     }}
-                    class="fa-solid fa-envelope"
+                    className="fa-solid fa-envelope"
                   ></i>
                   <span className="footer-text2">{props.text12}</span>
                 </div>
@@ -189,6 +214,9 @@ const Footer = (props) => {
             align-items: center;
             justify-content: flex-start;
             text-decoration: none;
+            padding-left: 20px;
+            margin-top: 10px;
+            color: var(--dl-color-hbst-blue);
           }
           .footer-thong-tin1 {
             flex: 0 0 auto;

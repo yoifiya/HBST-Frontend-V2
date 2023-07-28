@@ -1,5 +1,7 @@
 import React from "react";
 import Head from "next/head";
+import { Carousel } from "react-responsive-carousel";
+import Flickity from "react-flickity-component";
 
 import Header from "../components/header";
 import Footer from "../components/footer";
@@ -11,6 +13,14 @@ const GioiThieu = (props) => {
         <Head>
           <title>Giới Thiệu | Hocboisinhton.com</title>
           <meta property="og:title" content="Giới Thiệu | Hocboisinhton.com" />
+          <meta
+            property="og:description"
+            content="Chúng tôi tổ chức các loại hoạt động hồ bơi mới. Chúng tôi đào tạo bằng cách tham gia các khóa học bơi sinh tồn khác nhau và tìm hiểu về các xu hướng học bơi mới"
+          />
+          <meta
+            property="og:image"
+            content="https://lh3.googleusercontent.com/pw/AIL4fc95smzk_QUHx8IOXZLMJPDp0D6NaBq8DP3PsunWOlfuxauo-d1lzAQhz1NztEj5Uz4JuO3bbSac0Q3bTByYavYq_O-XZF8RiR5fnLtRv6O87-_VDDc=d"
+          />
         </Head>
         <Header rootClassName="header-root-class-name1"></Header>
         <div className="gioi-thieu-info">
@@ -79,52 +89,129 @@ const GioiThieu = (props) => {
           </ul>
         </div>
         <div className="gioi-thieu-side">
-          <div className="gioi-thieu-img1">
-            <div className="gioi-thieu-container01">
-              <div className="gioi-thieu-container02"></div>
-              <h2 className="gioi-thieu-text13">
-                Giáo viên rất nhiệt tình, thân thiện. Hồ bơi rất sạch luôn. Cả
-                nhà mình đều thích đi bơi ở đây.
-              </h2>
-              <span className="gioi-thieu-text14">
-                <span>Chị Xuyên - Phụ huynh bé 5 tuổi tại</span>
-                <br></br>
-                <span>Hocboisinhton.com</span>
-                <br></br>
-              </span>
+          <Carousel
+            showStatus={false}
+            showThumbs={false}
+            infiniteLoop
+            swipeable={false}
+            animationHandler={"fade"}
+          >
+            <div className="gioi-thieu-img1">
+              <div className="gioi-thieu-container01">
+                <div className="gioi-thieu-container02">
+                  <svg
+                    preserveAspectRatio="xMidYMid meet"
+                    data-bbox="27.067 49.383 146.033 101.117"
+                    viewBox="27.067 49.383 146.033 101.117"
+                    height="80"
+                    width="80"
+                    xmlns="http://www.w3.org/2000/svg"
+                    data-type="tint"
+                    role="presentation"
+                    aria-hidden="true"
+                  >
+                    <g>
+                      <path
+                        d="M32.8 148.2v-1.3c11.8-2.3 22.6-8.3 30.8-17.1 7.6-8.6 12-19.5 12.6-30.8-6.9 8.1-14.6 12.2-23.2 12.2-5 .1-9.9-1.2-14.1-3.9-3.9-2.4-7-5.9-8.9-10-2-4.5-3-9.4-2.9-14.3-.4-9 2.9-17.8 9.2-24.3 6-6 14.2-9.4 22.8-9.2 8.5-.3 16.7 3.4 22.2 9.8 5.7 6.6 8.5 16 8.5 28.4 0 5.3-.5 10.5-1.5 15.7-1.2 5.4-3.2 10.6-5.9 15.4-3 5.4-6.8 10.4-11.4 14.7-4.7 4.5-10.1 8.3-16 11.3-5.5 2.9-11.4 4.8-17.6 5.7l-4.6-2.3z"
+                        fill="#FFFFFF"
+                      ></path>
+                      <path
+                        d="M116.1 148.2v-1.3c11.8-2.3 22.6-8.3 30.8-17.1 7.6-8.6 12-19.5 12.6-30.8-6.9 8.1-14.6 12.2-23.2 12.2-5 .1-9.9-1.2-14.1-3.9-3.9-2.4-7-5.9-8.9-10-2-4.5-3-9.4-2.9-14.4-.4-9 2.9-17.8 9.2-24.3 6-6 14.2-9.4 22.8-9.2 8.5-.3 16.7 3.4 22.2 9.8 5.7 6.6 8.5 16 8.5 28.4 0 5.3-.5 10.5-1.5 15.7-1.2 5.4-3.2 10.6-5.9 15.4-3 5.4-6.8 10.4-11.4 14.7-4.7 4.5-10.1 8.3-16 11.3-5.5 2.9-11.4 4.8-17.6 5.7l-4.6-2.2z"
+                        fill="#FFFFFF"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+                <h2 className="gioi-thieu-text13">
+                  Giáo viên rất nhiệt tình, thân thiện. Hồ bơi rất sạch luôn. Cả
+                  nhà mình đều thích đi bơi ở đây.
+                </h2>
+                <span className="gioi-thieu-text14">
+                  <span>Chị Xuyên - Phụ huynh bé 5 tuổi tại</span>
+                  <br></br>
+                  <span>Hocboisinhton.com</span>
+                  <br></br>
+                </span>
+              </div>
             </div>
-          </div>
-          <div className="gioi-thieu-img2">
-            <div className="gioi-thieu-container03">
-              <div className="gioi-thieu-container04"></div>
-              <h2 className="gioi-thieu-text19">
-                Bé nhà mình học tại trường luôn cảm thấy năng động và cải thiện
-                hẳn về thể chất. Chương trình thiết kế riêng cho trẻ rất phù
-                hợp.
-              </h2>
-              <span className="gioi-thieu-text20">
-                <span>Chị Lộc - phụ huynh bé 3 tuổi tại</span>
-                <br></br>
-                <span>Hocboisinhton.com</span>
-                <br></br>
-              </span>
+            <div className="gioi-thieu-img2">
+              <div className="gioi-thieu-container03">
+                <div className="gioi-thieu-container04">
+                  <svg
+                    preserveAspectRatio="xMidYMid meet"
+                    data-bbox="27.067 49.383 146.033 101.117"
+                    viewBox="27.067 49.383 146.033 101.117"
+                    height="80"
+                    width="80"
+                    xmlns="http://www.w3.org/2000/svg"
+                    data-type="tint"
+                    role="presentation"
+                    aria-hidden="true"
+                  >
+                    <g>
+                      <path
+                        d="M32.8 148.2v-1.3c11.8-2.3 22.6-8.3 30.8-17.1 7.6-8.6 12-19.5 12.6-30.8-6.9 8.1-14.6 12.2-23.2 12.2-5 .1-9.9-1.2-14.1-3.9-3.9-2.4-7-5.9-8.9-10-2-4.5-3-9.4-2.9-14.3-.4-9 2.9-17.8 9.2-24.3 6-6 14.2-9.4 22.8-9.2 8.5-.3 16.7 3.4 22.2 9.8 5.7 6.6 8.5 16 8.5 28.4 0 5.3-.5 10.5-1.5 15.7-1.2 5.4-3.2 10.6-5.9 15.4-3 5.4-6.8 10.4-11.4 14.7-4.7 4.5-10.1 8.3-16 11.3-5.5 2.9-11.4 4.8-17.6 5.7l-4.6-2.3z"
+                        fill="#FFFFFF"
+                      ></path>
+                      <path
+                        d="M116.1 148.2v-1.3c11.8-2.3 22.6-8.3 30.8-17.1 7.6-8.6 12-19.5 12.6-30.8-6.9 8.1-14.6 12.2-23.2 12.2-5 .1-9.9-1.2-14.1-3.9-3.9-2.4-7-5.9-8.9-10-2-4.5-3-9.4-2.9-14.4-.4-9 2.9-17.8 9.2-24.3 6-6 14.2-9.4 22.8-9.2 8.5-.3 16.7 3.4 22.2 9.8 5.7 6.6 8.5 16 8.5 28.4 0 5.3-.5 10.5-1.5 15.7-1.2 5.4-3.2 10.6-5.9 15.4-3 5.4-6.8 10.4-11.4 14.7-4.7 4.5-10.1 8.3-16 11.3-5.5 2.9-11.4 4.8-17.6 5.7l-4.6-2.2z"
+                        fill="#FFFFFF"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+                <h2 className="gioi-thieu-text19">
+                  Bé nhà mình học tại trường luôn cảm thấy năng động và cải
+                  thiện hẳn về thể chất. Chương trình thiết kế riêng cho trẻ rất
+                  phù hợp.
+                </h2>
+                <span className="gioi-thieu-text20">
+                  <span>Chị Lộc - phụ huynh bé 3 tuổi tại</span>
+                  <br></br>
+                  <span>Hocboisinhton.com</span>
+                  <br></br>
+                </span>
+              </div>
             </div>
-          </div>
-          <div className="gioi-thieu-img3">
-            <div className="gioi-thieu-container05">
-              <div className="gioi-thieu-container06"></div>
-              <h2 className="gioi-thieu-text25">
-                Thầy cô có sự chuyên nghiệp và luôn động viên bé trong quá trình
-                học, giá học phí ổn so với thị trường.
-              </h2>
-              <span className="gioi-thieu-text26">
-                <span>Anh Phong - phụ huynh bé 8 tuổi tại</span>
-                <br></br>
-                <span>Hocboisinhton.com</span>
-                <br></br>
-              </span>
+            <div className="gioi-thieu-img3">
+              <div className="gioi-thieu-container05">
+                <div className="gioi-thieu-container06">
+                  <svg
+                    preserveAspectRatio="xMidYMid meet"
+                    data-bbox="27.067 49.383 146.033 101.117"
+                    viewBox="27.067 49.383 146.033 101.117"
+                    height="80"
+                    width="80"
+                    xmlns="http://www.w3.org/2000/svg"
+                    data-type="tint"
+                    role="presentation"
+                    aria-hidden="true"
+                  >
+                    <g>
+                      <path
+                        d="M32.8 148.2v-1.3c11.8-2.3 22.6-8.3 30.8-17.1 7.6-8.6 12-19.5 12.6-30.8-6.9 8.1-14.6 12.2-23.2 12.2-5 .1-9.9-1.2-14.1-3.9-3.9-2.4-7-5.9-8.9-10-2-4.5-3-9.4-2.9-14.3-.4-9 2.9-17.8 9.2-24.3 6-6 14.2-9.4 22.8-9.2 8.5-.3 16.7 3.4 22.2 9.8 5.7 6.6 8.5 16 8.5 28.4 0 5.3-.5 10.5-1.5 15.7-1.2 5.4-3.2 10.6-5.9 15.4-3 5.4-6.8 10.4-11.4 14.7-4.7 4.5-10.1 8.3-16 11.3-5.5 2.9-11.4 4.8-17.6 5.7l-4.6-2.3z"
+                        fill="#FFFFFF"
+                      ></path>
+                      <path
+                        d="M116.1 148.2v-1.3c11.8-2.3 22.6-8.3 30.8-17.1 7.6-8.6 12-19.5 12.6-30.8-6.9 8.1-14.6 12.2-23.2 12.2-5 .1-9.9-1.2-14.1-3.9-3.9-2.4-7-5.9-8.9-10-2-4.5-3-9.4-2.9-14.4-.4-9 2.9-17.8 9.2-24.3 6-6 14.2-9.4 22.8-9.2 8.5-.3 16.7 3.4 22.2 9.8 5.7 6.6 8.5 16 8.5 28.4 0 5.3-.5 10.5-1.5 15.7-1.2 5.4-3.2 10.6-5.9 15.4-3 5.4-6.8 10.4-11.4 14.7-4.7 4.5-10.1 8.3-16 11.3-5.5 2.9-11.4 4.8-17.6 5.7l-4.6-2.2z"
+                        fill="#FFFFFF"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+                <h2 className="gioi-thieu-text25">
+                  Thầy cô có sự chuyên nghiệp và luôn động viên bé trong quá
+                  trình học, giá học phí ổn so với thị trường.
+                </h2>
+                <span className="gioi-thieu-text26">
+                  <span>Anh Phong - phụ huynh bé 8 tuổi tại</span>
+                  <br></br>
+                  <span>Hocboisinhton.com</span>
+                  <br></br>
+                </span>
+              </div>
             </div>
-          </div>
+          </Carousel>
         </div>
         <div className="gioi-thieu-team">
           <h1 className="gioi-thieu-title">ĐỘI CỦA CHÚNG TÔI</h1>
@@ -195,33 +282,43 @@ const GioiThieu = (props) => {
           </div>
         </div>
         <div className="gioi-thieu-container07">
-          <div className="gioi-thieu-container08">
-            <div className="gioi-thieu-container09"></div>
-          </div>
-          <div className="gioi-thieu-container10">
-            <div className="gioi-thieu-container11"></div>
-          </div>
-          <div className="gioi-thieu-container12">
-            <div className="gioi-thieu-container13"></div>
-          </div>
-          <div className="gioi-thieu-container14">
-            <div className="gioi-thieu-container15"></div>
-          </div>
-          <div className="gioi-thieu-container16">
-            <div className="gioi-thieu-container17"></div>
-          </div>
-          <div className="gioi-thieu-container18">
-            <div className="gioi-thieu-container19"></div>
-          </div>
-          <div className="gioi-thieu-container20">
-            <div className="gioi-thieu-container21"></div>
-          </div>
-          <div className="gioi-thieu-container22">
-            <div className="gioi-thieu-container23"></div>
-          </div>
-          <div className="gioi-thieu-container24">
-            <div className="gioi-thieu-container25"></div>
-          </div>
+          <Flickity
+            className={"carousel"} // default ''
+            elementType={"div"} // default 'div'
+            options={{
+              pageDots: false,
+              prevNextButtons: false,
+              initialIndex: 1,
+            }}
+          >
+            <div className="gioi-thieu-container08">
+              <div className="gioi-thieu-container09"></div>
+            </div>
+            <div className="gioi-thieu-container10">
+              <div className="gioi-thieu-container11"></div>
+            </div>
+            <div className="gioi-thieu-container12">
+              <div className="gioi-thieu-container13"></div>
+            </div>
+            <div className="gioi-thieu-container14">
+              <div className="gioi-thieu-container15"></div>
+            </div>
+            <div className="gioi-thieu-container16">
+              <div className="gioi-thieu-container17"></div>
+            </div>
+            <div className="gioi-thieu-container18">
+              <div className="gioi-thieu-container19"></div>
+            </div>
+            <div className="gioi-thieu-container20">
+              <div className="gioi-thieu-container21"></div>
+            </div>
+            <div className="gioi-thieu-container22">
+              <div className="gioi-thieu-container23"></div>
+            </div>
+            <div className="gioi-thieu-container24">
+              <div className="gioi-thieu-container25"></div>
+            </div>
+          </Flickity>
         </div>
         <Footer rootClassName="footer-root-class-name4"></Footer>
       </div>
@@ -235,6 +332,7 @@ const GioiThieu = (props) => {
             align-items: center;
             flex-direction: column;
             justify-content: flex-start;
+            background-color: var(--dl-color-hbst-blue);
           }
           .gioi-thieu-info {
             flex: 0 0 auto;
@@ -331,7 +429,6 @@ const GioiThieu = (props) => {
           .gioi-thieu-container02 {
             flex: 0 0 auto;
             width: 5vw;
-            border: 2px dashed rgba(120, 120, 120, 0.4);
             height: 5vw;
             display: flex;
             align-items: center;
@@ -376,7 +473,6 @@ const GioiThieu = (props) => {
           .gioi-thieu-container04 {
             flex: 0 0 auto;
             width: 5vw;
-            border: 2px dashed rgba(120, 120, 120, 0.4);
             height: 5vw;
             display: flex;
             align-items: center;
@@ -421,7 +517,6 @@ const GioiThieu = (props) => {
           .gioi-thieu-container06 {
             flex: 0 0 auto;
             width: 5vw;
-            border: 2px dashed rgba(120, 120, 120, 0.4);
             height: 5vw;
             display: flex;
             align-items: center;
@@ -451,7 +546,7 @@ const GioiThieu = (props) => {
             align-items: center;
             padding-top: 40px;
             flex-direction: column;
-            padding-bottom: 40px;
+            // padding-bottom: 40px;
             justify-content: center;
             background-color: var(--dl-color-hbst-blue);
           }
@@ -611,11 +706,13 @@ const GioiThieu = (props) => {
           }
           .gioi-thieu-container07 {
             flex: 0 0 auto;
-            width: 100%;
+            width: 90%;
+            max-width: 1029px;
             display: flex;
             align-items: center;
             flex-direction: column;
             justify-content: center;
+            margin: 20px 0;
           }
           .gioi-thieu-container08 {
             width: 245px;

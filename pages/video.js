@@ -11,6 +11,14 @@ const Video = (props) => {
         <Head>
           <title>Video | Hocboisinhton.com</title>
           <meta property="og:title" content="Video | Hocboisinhton.com" />
+          <meta
+            property="og:description"
+            content="Chúng tôi tổ chức các loại hoạt động hồ bơi mới. Chúng tôi đào tạo bằng cách tham gia các khóa học bơi sinh tồn khác nhau và tìm hiểu về các xu hướng học bơi mới"
+          />
+          <meta
+            property="og:image"
+            content="https://lh3.googleusercontent.com/pw/AIL4fc95smzk_QUHx8IOXZLMJPDp0D6NaBq8DP3PsunWOlfuxauo-d1lzAQhz1NztEj5Uz4JuO3bbSac0Q3bTByYavYq_O-XZF8RiR5fnLtRv6O87-_VDDc=d"
+          />
         </Head>
         <Header rootClassName="header-root-class-name5"></Header>
         <div className="video-container1">

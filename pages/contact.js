@@ -12,6 +12,14 @@ const Contact = (props) => {
         <Head>
           <title>Liên Hệ | Hocboisinhton.com</title>
           <meta property="og:title" content="Liên Hệ | Hocboisinhton.com" />
+          <meta
+            property="og:description"
+            content="Chúng tôi tổ chức các loại hoạt động hồ bơi mới. Chúng tôi đào tạo bằng cách tham gia các khóa học bơi sinh tồn khác nhau và tìm hiểu về các xu hướng học bơi mới"
+          />
+          <meta
+            property="og:image"
+            content="https://lh3.googleusercontent.com/pw/AIL4fc95smzk_QUHx8IOXZLMJPDp0D6NaBq8DP3PsunWOlfuxauo-d1lzAQhz1NztEj5Uz4JuO3bbSac0Q3bTByYavYq_O-XZF8RiR5fnLtRv6O87-_VDDc=d"
+          />
         </Head>
         <Header rootClassName="header-root-class-name3"></Header>
         <div className="contact-container1">
@@ -134,25 +142,60 @@ const Contact = (props) => {
                 className="contact-link4"
               >
                 <div className="contact-info3">
+                  <i
+                    style={{
+                      marginTop: 11,
+                      marginRight: 5,
+                      color: "var(--dl-color-hbst-yellow)",
+                    }}
+                    className="fa-solid fa-location-dot"
+                  ></i>
                   <span className="contact-text17">
                     CÔNG TY TNHH SURVIVAL GROUP 156A Nguyễn Hữu Thọ, Phước Kiển,
                     Nhà Bè, TP,HCM
                   </span>
                 </div>
               </a>
-              <a
-                href="https://goo.gl/maps/FMtZApB5fH1tb7D27"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="contact-link5"
-              >
-                <div className="contact-info4"></div>
-              </a>
+
+              <div className="contact-info4">
+                <a
+                  href="https://www.facebook.com/BoiSinhTon"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="contact-link5"
+                >
+                  <i className="fa-brands fa-facebook-f"></i>
+                </a>
+                <a
+                  href="https://www.youtube.com/BoiSinhTon"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="contact-link5"
+                >
+                  <i className="fa-brands fa-youtube"></i>
+                </a>
+                <a
+                  href="https://www.tiktok.com/@hocboisinhton"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="contact-link5"
+                >
+                  <i className="fa-brands fa-tiktok"></i>
+                </a>
+              </div>
             </div>
             <div className="contact-thong-tin1">
               <h1 className="contact-title2">THÔNG TIN</h1>
               <a href="tel:0976 48 35 36" className="contact-link6">
                 <div className="contact-info5">
+                  <i
+                    style={{
+                      marginTop: 11,
+                      marginRight: 5,
+                      color: "var(--dl-color-hbst-yellow)",
+                    }}
+                    className="fa-solid fa-phone"
+                  ></i>
                   <span className="contact-text18">0976 48 35 36</span>
                 </div>
               </a>
@@ -161,12 +204,28 @@ const Contact = (props) => {
                 className="contact-link7"
               >
                 <div className="contact-info6">
+                  <i
+                    style={{
+                      marginTop: 11,
+                      marginRight: 5,
+                      color: "var(--dl-color-hbst-yellow)",
+                    }}
+                    className="fa-solid fa-envelope"
+                  ></i>
                   <span className="contact-text19">boisinhton@gmail.com</span>
                 </div>
               </a>
               <Link href="/">
                 <a className="contact-link8">
                   <div className="contact-info7">
+                    <i
+                      style={{
+                        marginTop: 11,
+                        marginRight: 5,
+                        color: "var(--dl-color-hbst-yellow)",
+                      }}
+                      className="fa-solid fa-globe"
+                    ></i>
                     <span className="contact-text20">hocboisinhton.com</span>
                   </div>
                 </a>
@@ -512,6 +571,9 @@ const Contact = (props) => {
             align-items: center;
             justify-content: flex-start;
             text-decoration: none;
+            padding-left: 20px;
+            margin-top: 10px;
+            color: var(--dl-color-hbst-yellow);
           }
           .contact-thong-tin1 {
             flex: 0 0 auto;

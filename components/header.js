@@ -12,8 +12,6 @@ const Header = (props) => {
     const bar1 = document.getElementById("Bar").classList;
     const bar2 = document.getElementById("Bar2").classList;
 
-    console.log(Navigate);
-
     if (Navigate.contains("navigate-active")) {
       Navigate.remove("navigate-active");
       bar1.remove("bar1-active");
@@ -60,78 +58,59 @@ const Header = (props) => {
         <div className="header-navigate">
           <Link href="/">
             <a
-              style={{
-                color:
-                  router.pathname === "/"
-                    ? "var(--dl-color-hbst-yellow)"
-                    : "var(--dl-color-hbst-blue)",
-              }}
-              className="header-link01"
+              className={
+                "header-link01" + (router.pathname === "/" ? " nav-active" : "")
+              }
             >
               {props.button}
             </a>
           </Link>
           <Link href="/gioi-thieu">
             <a
-              style={{
-                color:
-                  router.pathname === "/gioi-thieu"
-                    ? "var(--dl-color-hbst-yellow)"
-                    : "var(--dl-color-hbst-blue)",
-              }}
-              className="header-link02"
+              className={
+                "header-link02" +
+                (router.pathname === "/gioi-thieu" ? " nav-active" : "")
+              }
             >
               {props.button1}
             </a>
           </Link>
           <Link href="/blog">
             <a
-              style={{
-                color:
-                  router.pathname === "/blog"
-                    ? "var(--dl-color-hbst-yellow)"
-                    : "var(--dl-color-hbst-blue)",
-              }}
-              className="header-link03"
+              className={
+                "header-link03" +
+                (router.pathname === "/blog" ? " nav-active" : "")
+              }
             >
               {props.button2}
             </a>
           </Link>
           <Link href="/video">
             <a
-              style={{
-                color:
-                  router.pathname === "/video"
-                    ? "var(--dl-color-hbst-yellow)"
-                    : "var(--dl-color-hbst-blue)",
-              }}
-              className="header-link04"
+              className={
+                "header-link04" +
+                (router.pathname === "/video" ? " nav-active" : "")
+              }
             >
               {props.button3}
             </a>
           </Link>
           <Link href="/faq">
             <a
-              style={{
-                color:
-                  router.pathname === "/faq"
-                    ? "var(--dl-color-hbst-yellow)"
-                    : "var(--dl-color-hbst-blue)",
-              }}
-              className="header-link05"
+              className={
+                "header-link05" +
+                (router.pathname === "/faq" ? " nav-active" : "")
+              }
             >
               {props.button4}
             </a>
           </Link>
           <Link href="/contact">
             <a
-              style={{
-                color:
-                  router.pathname === "/contact"
-                    ? "var(--dl-color-hbst-yellow)"
-                    : "var(--dl-color-hbst-blue)",
-              }}
-              className="header-link06"
+              className={
+                "header-link06" +
+                (router.pathname === "/contact" ? " nav-active" : "")
+              }
             >
               {props.button5}
             </a>
@@ -150,78 +129,59 @@ const Header = (props) => {
         <div id="NavigateMobile" className="header-navigate-mb">
           <Link href="/">
             <a
-              style={{
-                color:
-                  router.pathname === "/"
-                    ? "var(--dl-color-hbst-yellow)"
-                    : "var(--dl-color-hbst-white)",
-              }}
-              className="header-link07"
+              className={
+                "header-link07" + (router.pathname === "/" ? " nav-active" : "")
+              }
             >
               {props.button6}
             </a>
           </Link>
           <Link href="/gioi-thieu">
             <a
-              style={{
-                color:
-                  router.pathname === "/gioi-thieu"
-                    ? "var(--dl-color-hbst-yellow)"
-                    : "var(--dl-color-hbst-white)",
-              }}
-              className="header-link08"
+              className={
+                "header-link08" +
+                (router.pathname === "/gioi-thieu" ? " nav-active" : "")
+              }
             >
               {props.button11}
             </a>
           </Link>
           <Link href="/blog">
             <a
-              style={{
-                color:
-                  router.pathname === "/blog"
-                    ? "var(--dl-color-hbst-yellow)"
-                    : "var(--dl-color-hbst-white)",
-              }}
-              className="header-link09"
+              className={
+                "header-link09" +
+                (router.pathname === "/blog" ? " nav-active" : "")
+              }
             >
               {props.button21}
             </a>
           </Link>
           <Link href="/video">
             <a
-              style={{
-                color:
-                  router.pathname === "/video"
-                    ? "var(--dl-color-hbst-yellow)"
-                    : "var(--dl-color-hbst-white)",
-              }}
-              className="header-link10"
+              className={
+                "header-link10" +
+                (router.pathname === "/video" ? " nav-active" : "")
+              }
             >
               {props.button31}
             </a>
           </Link>
           <Link href="/faq">
             <a
-              style={{
-                color:
-                  router.pathname === "/faq"
-                    ? "var(--dl-color-hbst-yellow)"
-                    : "var(--dl-color-hbst-white)",
-              }}
-              className="header-link11"
+              className={
+                "header-link11" +
+                (router.pathname === "/faq" ? " nav-active" : "")
+              }
             >
               {props.button41}
             </a>
           </Link>
           <Link href="/contact">
             <a
-              style={{
-                color:
-                  router.pathname === "/contact"
-                    ? "var(--dl-color-hbst-yellow)"
-                    : "var(--dl-color-hbst-white)",
-              }}
-              className="header-link12"
+              className={
+                "header-link12" +
+                (router.pathname === "/contact" ? " nav-active" : "")
+              }
             >
               {props.button51}
             </a>
@@ -230,6 +190,9 @@ const Header = (props) => {
       </div>
       <style jsx>
         {`
+          .navigate-mb-active {
+            color: var(--dl-color-hbst-yellow);
+          }
           .header-container {
             width: 100%;
             height: auto;
@@ -291,7 +254,7 @@ const Header = (props) => {
           }
           .header-title {
             font-size: 32px;
-            font-family: Inter;
+            font-family: HBST;
           }
           .header-navigate {
             flex: 0 0 auto;
@@ -306,7 +269,7 @@ const Header = (props) => {
             justify-content: flex-start;
           }
           .header-link01 {
-            color: var(--dl-color-hbst-white);
+            color: var(--dl-color-hbst-blue);
             cursor: pointer;
             padding: 5px;
             font-size: 18px;

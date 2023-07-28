@@ -24,7 +24,7 @@ const Home = (props) => {
           />
           <meta
             property="og:image"
-            content="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/7b6c51ad-68d7-4856-98bd-00e4bbd8cbdc/47ea39bd-9a82-4eb5-9b76-d36f3ccb1887?org_if_sml=1&amp;q=80"
+            content="https://lh3.googleusercontent.com/pw/AIL4fc95smzk_QUHx8IOXZLMJPDp0D6NaBq8DP3PsunWOlfuxauo-d1lzAQhz1NztEj5Uz4JuO3bbSac0Q3bTByYavYq_O-XZF8RiR5fnLtRv6O87-_VDDc=d"
           />
         </Head>
         <Header rootClassName="header-root-class-name"></Header>
