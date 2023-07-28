@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from 'next/link'
+import React from "react";
+import Link from "next/link";
 
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
 const Footer = (props) => {
   return (
@@ -22,28 +22,68 @@ const Footer = (props) => {
                 className="footer-link"
               >
                 <div className="footer-info">
+                  <i
+                    style={{
+                      marginTop: 10,
+                      marginRight: 5,
+                      color: "var(--dl-color-hbst-blue)",
+                    }}
+                    className="fa-solid fa-location-dot"
+                  ></i>
                   <span className="footer-text">{props.text}</span>
                 </div>
+              </a>
+              <a
+                href="https://goo.gl/maps/FMtZApB5fH1tb7D27"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="footer-link1"
+              >
+                <div className="footer-info1"></div>
               </a>
             </div>
             <div className="footer-thong-tin1">
               <h1 className="footer-title3">{props.heading21}</h1>
-              <a href="tel:0976 48 35 36" className="footer-link1">
-                <div className="footer-info1">
+              <a href="tel:0976 48 35 36" className="footer-link2">
+                <div className="footer-info2">
+                  <i
+                    style={{
+                      marginTop: 10,
+                      marginRight: 5,
+                      color: "var(--dl-color-hbst-blue)",
+                    }}
+                    className="fa-solid fa-phone"
+                  ></i>
                   <span className="footer-text1">{props.text1}</span>
                 </div>
               </a>
               <a
                 href="mailto: boisinhton@gmail.com?subject=A"
-                className="footer-link2"
+                className="footer-link3"
               >
-                <div className="footer-info2">
+                <div className="footer-info3">
+                  <i
+                    style={{
+                      marginTop: 10,
+                      marginRight: 5,
+                      color: "var(--dl-color-hbst-blue)",
+                    }}
+                    class="fa-solid fa-envelope"
+                  ></i>
                   <span className="footer-text2">{props.text12}</span>
                 </div>
               </a>
               <Link href="/">
-                <a className="footer-link3">
-                  <div className="footer-info3">
+                <a className="footer-link4">
+                  <div className="footer-info4">
+                    <i
+                      style={{
+                        marginTop: 10,
+                        marginRight: 5,
+                        color: "var(--dl-color-hbst-blue)",
+                      }}
+                      className="fa-solid fa-globe"
+                    ></i>
                     <span className="footer-text3">{props.text11}</span>
                   </div>
                 </a>
@@ -138,6 +178,18 @@ const Footer = (props) => {
             margin-top: 10px;
             line-height: 1.3;
           }
+          .footer-link1 {
+            display: contents;
+          }
+          .footer-info1 {
+            flex: 0 0 auto;
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-decoration: none;
+          }
           .footer-thong-tin1 {
             flex: 0 0 auto;
             width: auto;
@@ -153,22 +205,6 @@ const Footer = (props) => {
             text-align: center;
             text-transform: uppercase;
           }
-          .footer-link1 {
-            display: contents;
-          }
-          .footer-info1 {
-            flex: 0 0 auto;
-            width: auto;
-            height: auto;
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
-            text-decoration: none;
-          }
-          .footer-text1 {
-            cursor: pointer;
-            margin-top: 10px;
-          }
           .footer-link2 {
             display: contents;
           }
@@ -181,7 +217,7 @@ const Footer = (props) => {
             justify-content: flex-start;
             text-decoration: none;
           }
-          .footer-text2 {
+          .footer-text1 {
             cursor: pointer;
             margin-top: 10px;
           }
@@ -189,6 +225,22 @@ const Footer = (props) => {
             display: contents;
           }
           .footer-info3 {
+            flex: 0 0 auto;
+            width: auto;
+            height: auto;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            text-decoration: none;
+          }
+          .footer-text2 {
+            cursor: pointer;
+            margin-top: 10px;
+          }
+          .footer-link4 {
+            display: contents;
+          }
+          .footer-info4 {
             flex: 0 0 auto;
             width: auto;
             height: auto;
@@ -254,23 +306,26 @@ const Footer = (props) => {
         `}
       </style>
     </>
-  )
-}
+  );
+};
 
 Footer.defaultProps = {
-  rootClassName: '',
-  text12: 'boisinhton@gmail.com',
-  heading: 'Đối Tác',
-  text: 'CÔNG TY TNHH SURVIVAL GROUP 156A Nguyễn Hữu Thọ, Phước Kiển, Nhà Bè, TP,HCM',
-  text2: '© 2035 by Hocboisinhton.com',
-  heading1: 'Liên Hệ Ngay',
-  heading21: 'THÔNG TIN',
-  heading2: 'ĐỊA CHỈ',
-  text11: 'hocboisinhton.com',
-  text1: '0976 48 35 36',
-}
+  text3:
+    "CÔNG TY TNHH SURVIVAL GROUP 156A Nguyễn Hữu Thọ, Phước Kiển, Nhà Bè, TP,HCM",
+  rootClassName: "",
+  text12: "boisinhton@gmail.com",
+  heading: "Đối Tác",
+  text: "CÔNG TY TNHH SURVIVAL GROUP 156A Nguyễn Hữu Thọ, Phước Kiển, Nhà Bè, TP,HCM",
+  text2: "© 2035 by Hocboisinhton.com",
+  heading1: "Liên Hệ Ngay",
+  heading21: "THÔNG TIN",
+  heading2: "ĐỊA CHỈ",
+  text11: "hocboisinhton.com",
+  text1: "0976 48 35 36",
+};
 
 Footer.propTypes = {
+  text3: PropTypes.string,
   rootClassName: PropTypes.string,
   text12: PropTypes.string,
   heading: PropTypes.string,
@@ -281,6 +336,6 @@ Footer.propTypes = {
   heading2: PropTypes.string,
   text11: PropTypes.string,
   text1: PropTypes.string,
-}
+};
 
-export default Footer
+export default Footer;

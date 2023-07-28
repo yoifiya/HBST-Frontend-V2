@@ -1,9 +1,11 @@
-import React from 'react'
-import Link from 'next/link'
-import Head from 'next/head'
+import React from "react";
+import Link from "next/link";
+import Head from "next/head";
+import { Carousel } from "react-responsive-carousel";
 
-import Header from '../components/header'
-import Footer from '../components/footer'
+import Header from "../components/header";
+import NewPosts from "../components/new-posts";
+import Footer from "../components/footer";
 
 const Home = (props) => {
   return (
@@ -26,32 +28,41 @@ const Home = (props) => {
           />
         </Head>
         <Header rootClassName="header-root-class-name"></Header>
-        <div className="home-container01">
-          <div className="home-container02">
-            <h1 className="home-text">uy tín</h1>
-            <h1 className="home-text01">
-              <span>để ba mẹ lựa chọn</span>
-              <br></br>
-            </h1>
-          </div>
-          <div className="home-container03">
-            <h1 className="home-text04">hiệu quả</h1>
-            <h1 className="home-text05">
-              <span>CHO TRẺ HỌC TẬP VÀ RÈN LUYỆN</span>
-              <br></br>
-            </h1>
-          </div>
-          <div className="home-container04">
-            <h1 className="home-text08">Năng</h1>
-            <h1 className="home-text09">Động</h1>
-            <h1 className="home-text10">hành trình</h1>
-          </div>
-          <div className="home-container05">
-            <h1 className="home-text11">Tuyển</h1>
-            <h1 className="home-text12">chọn</h1>
-            <h1 className="home-text13">CHƯƠNG TRÌNH</h1>
-            <h1 className="home-text14">chuẩn quốc tế</h1>
-          </div>
+        <div className="home-side">
+          <Carousel
+            showThumbs={false}
+            swipeable={false}
+            showStatus={false}
+            autoPlay
+            animationHandler={"fade"}
+            infiniteLoop
+          >
+            <div className="home-img1">
+              <h1 className="home-text">uy tín</h1>
+              <h1 className="home-text01">
+                <span>để ba mẹ lựa chọn</span>
+                <br></br>
+              </h1>
+            </div>
+            <div className="home-img2">
+              <h1 className="home-text04">hiệu quả</h1>
+              <h1 className="home-text05">
+                <span>CHO TRẺ HỌC TẬP VÀ RÈN LUYỆN</span>
+                <br></br>
+              </h1>
+            </div>
+            <div className="home-img3">
+              <h1 className="home-text08">Năng</h1>
+              <h1 className="home-text09">Động</h1>
+              <h1 className="home-text10">hành trình</h1>
+            </div>
+            <div className="home-img4">
+              <h1 className="home-text11">Tuyển</h1>
+              <h1 className="home-text12">chọn</h1>
+              <h1 className="home-text13">CHƯƠNG TRÌNH</h1>
+              <h1 className="home-text14">chuẩn quốc tế</h1>
+            </div>
+          </Carousel>
         </div>
         <div className="home-info">
           <h1 className="home-title">CHÚNG TÔI LÀ AI?</h1>
@@ -77,175 +88,120 @@ const Home = (props) => {
         </div>
         <div className="home-blogs">
           <h1 className="home-title1">Kiến thức</h1>
-          <div id="newPosts" className="home-new-posts">
-            <div id="post1" className="home-item">
-              <div className="home-container06">
-                <span className="home-date">
-                  <span>Date</span>
-                  <br></br>
-                </span>
-                <Link href="**">
-                  <a className="home-link1">
-                    <span>
-                      <span>Tag</span>
-                      <br></br>
-                    </span>
-                  </a>
-                </Link>
-                <h1 className="home-title2">
-                  <span>Title</span>
-                  <br></br>
-                </h1>
-              </div>
-            </div>
-            <div id="post2" className="home-item1">
-              <div className="home-container07">
-                <span className="home-date1">
-                  <span>Date</span>
-                  <br></br>
-                </span>
-                <Link href="**">
-                  <a className="home-link2">
-                    <span>
-                      <span>Tag</span>
-                      <br></br>
-                    </span>
-                  </a>
-                </Link>
-                <h1 className="home-title3">
-                  <span>Title</span>
-                  <br></br>
-                </h1>
-              </div>
-            </div>
-            <div id="post3" className="home-item2">
-              <div className="home-container08">
-                <span className="home-date2">
-                  <span>Date</span>
-                  <br></br>
-                </span>
-                <Link href="**">
-                  <a className="home-link3">
-                    <span>
-                      <span>Tag</span>
-                      <br></br>
-                    </span>
-                  </a>
-                </Link>
-                <h1 className="home-title4">
-                  <span>Title</span>
-                  <br></br>
-                </h1>
-              </div>
-            </div>
-          </div>
+          <NewPosts></NewPosts>
         </div>
         <div className="home-khoa-hoc">
-          <h1 className="home-title5">CÁC KHÓA HỌC</h1>
+          <h1 className="home-title2">CÁC KHÓA HỌC</h1>
           <div className="home-khoa-hoc-moi">
             <div className="home-khoa-hoc1">
-              <div className="home-container09">
-                <h1 className="home-title6">Khóa Bơi 0-3 Tuổi</h1>
+              <div className="home-container01">
+                <h1 className="home-title3">Khóa Bơi 0-3 Tuổi</h1>
                 <span className="home-info1">
                   Xây dựng cho trẻ các kỹ năng an toàn khi ở dưới nước và sự tự
                   tin cho trẻ trong môi trường nước.
                 </span>
                 <div className="home-time">
-                  <div className="home-container10">
+                  <div className="home-container02">
                     <svg viewBox="0 0 1024 1024" className="home-icon">
                       <path d="M981.333 512c0-129.579-52.565-246.997-137.472-331.861s-202.283-137.472-331.861-137.472-246.997 52.565-331.861 137.472-137.472 202.283-137.472 331.861 52.565 246.997 137.472 331.861 202.283 137.472 331.861 137.472 246.997-52.565 331.861-137.472 137.472-202.283 137.472-331.861zM896 512c0 106.069-42.923 201.984-112.469 271.531s-165.461 112.469-271.531 112.469-201.984-42.923-271.531-112.469-112.469-165.461-112.469-271.531 42.923-201.984 112.469-271.531 165.461-112.469 271.531-112.469 201.984 42.923 271.531 112.469 112.469 165.461 112.469 271.531zM469.333 256v256c0 16.597 9.472 31.019 23.595 38.144l170.667 85.333c21.077 10.539 46.72 2.005 57.259-19.072s2.005-46.72-19.072-57.259l-147.115-73.515v-229.632c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667z"></path>
                     </svg>
-                    <span className="home-text41">
+                    <span className="home-text20">
                       <span>30-60 phút</span>
                       <br></br>
                     </span>
                   </div>
-                  <div className="home-container11">
+                  <div className="home-container03">
                     <svg
                       viewBox="0 0 950.8571428571428 1024"
                       className="home-icon02"
                     >
                       <path d="M73.143 950.857h164.571v-164.571h-164.571v164.571zM274.286 950.857h182.857v-164.571h-182.857v164.571zM73.143 749.714h164.571v-182.857h-164.571v182.857zM274.286 749.714h182.857v-182.857h-182.857v182.857zM73.143 530.286h164.571v-164.571h-164.571v164.571zM493.714 950.857h182.857v-164.571h-182.857v164.571zM274.286 530.286h182.857v-164.571h-182.857v164.571zM713.143 950.857h164.571v-164.571h-164.571v164.571zM493.714 749.714h182.857v-182.857h-182.857v182.857zM292.571 256v-164.571c0-9.714-8.571-18.286-18.286-18.286h-36.571c-9.714 0-18.286 8.571-18.286 18.286v164.571c0 9.714 8.571 18.286 18.286 18.286h36.571c9.714 0 18.286-8.571 18.286-18.286zM713.143 749.714h164.571v-182.857h-164.571v182.857zM493.714 530.286h182.857v-164.571h-182.857v164.571zM713.143 530.286h164.571v-164.571h-164.571v164.571zM731.429 256v-164.571c0-9.714-8.571-18.286-18.286-18.286h-36.571c-9.714 0-18.286 8.571-18.286 18.286v164.571c0 9.714 8.571 18.286 18.286 18.286h36.571c9.714 0 18.286-8.571 18.286-18.286zM950.857 219.429v731.429c0 40-33.143 73.143-73.143 73.143h-804.571c-40 0-73.143-33.143-73.143-73.143v-731.429c0-40 33.143-73.143 73.143-73.143h73.143v-54.857c0-50.286 41.143-91.429 91.429-91.429h36.571c50.286 0 91.429 41.143 91.429 91.429v54.857h219.429v-54.857c0-50.286 41.143-91.429 91.429-91.429h36.571c50.286 0 91.429 41.143 91.429 91.429v54.857h73.143c40 0 73.143 33.143 73.143 73.143z"></path>
                     </svg>
-                    <span className="home-text44">2-3 buổi/ tuần</span>
+                    <span className="home-text23">2-3 buổi/ tuần</span>
                   </div>
                 </div>
-                <button type="button" className="home-tim-hieu-them1">
-                  <span className="home-text45">
-                    <span>Tìm hiểu thêm</span>
-                    <br></br>
-                  </span>
-                </button>
+                <div className="home-tim-hieu-them1">
+                  <Link href={"/khoa-hoc-0-3"}>
+                    <span className="home-text24">
+                      <span>Tìm hiểu thêm</span>
+                      <br></br>
+                    </span>
+                  </Link>
+                </div>
               </div>
             </div>
             <div className="home-khoa-hoc2">
-              <div className="home-container12">
-                <h1 className="home-title7">Khóa Bơi 3-5 Tuổi</h1>
+              <div className="home-container04">
+                <h1 className="home-title4">Khóa Bơi 3-5 Tuổi</h1>
                 <span className="home-info2">
                   Xây dựng sự tự tin cho trẻ khi ở dưới nước và kỹ năng bơi Dog
                   Paddle 10M sinh tồn.
                 </span>
                 <div className="home-time1">
-                  <div className="home-container13">
+                  <div className="home-container05">
                     <svg viewBox="0 0 1024 1024" className="home-icon04">
                       <path d="M981.333 512c0-129.579-52.565-246.997-137.472-331.861s-202.283-137.472-331.861-137.472-246.997 52.565-331.861 137.472-137.472 202.283-137.472 331.861 52.565 246.997 137.472 331.861 202.283 137.472 331.861 137.472 246.997-52.565 331.861-137.472 137.472-202.283 137.472-331.861zM896 512c0 106.069-42.923 201.984-112.469 271.531s-165.461 112.469-271.531 112.469-201.984-42.923-271.531-112.469-112.469-165.461-112.469-271.531 42.923-201.984 112.469-271.531 165.461-112.469 271.531-112.469 201.984 42.923 271.531 112.469 112.469 165.461 112.469 271.531zM469.333 256v256c0 16.597 9.472 31.019 23.595 38.144l170.667 85.333c21.077 10.539 46.72 2.005 57.259-19.072s2.005-46.72-19.072-57.259l-147.115-73.515v-229.632c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667z"></path>
                     </svg>
-                    <span className="home-text48">
+                    <span className="home-text27">
                       <span>30-60 phút</span>
                       <br></br>
                     </span>
                   </div>
-                  <div className="home-container14">
+                  <div className="home-container06">
                     <svg
                       viewBox="0 0 950.8571428571428 1024"
                       className="home-icon06"
                     >
                       <path d="M73.143 950.857h164.571v-164.571h-164.571v164.571zM274.286 950.857h182.857v-164.571h-182.857v164.571zM73.143 749.714h164.571v-182.857h-164.571v182.857zM274.286 749.714h182.857v-182.857h-182.857v182.857zM73.143 530.286h164.571v-164.571h-164.571v164.571zM493.714 950.857h182.857v-164.571h-182.857v164.571zM274.286 530.286h182.857v-164.571h-182.857v164.571zM713.143 950.857h164.571v-164.571h-164.571v164.571zM493.714 749.714h182.857v-182.857h-182.857v182.857zM292.571 256v-164.571c0-9.714-8.571-18.286-18.286-18.286h-36.571c-9.714 0-18.286 8.571-18.286 18.286v164.571c0 9.714 8.571 18.286 18.286 18.286h36.571c9.714 0 18.286-8.571 18.286-18.286zM713.143 749.714h164.571v-182.857h-164.571v182.857zM493.714 530.286h182.857v-164.571h-182.857v164.571zM713.143 530.286h164.571v-164.571h-164.571v164.571zM731.429 256v-164.571c0-9.714-8.571-18.286-18.286-18.286h-36.571c-9.714 0-18.286 8.571-18.286 18.286v164.571c0 9.714 8.571 18.286 18.286 18.286h36.571c9.714 0 18.286-8.571 18.286-18.286zM950.857 219.429v731.429c0 40-33.143 73.143-73.143 73.143h-804.571c-40 0-73.143-33.143-73.143-73.143v-731.429c0-40 33.143-73.143 73.143-73.143h73.143v-54.857c0-50.286 41.143-91.429 91.429-91.429h36.571c50.286 0 91.429 41.143 91.429 91.429v54.857h219.429v-54.857c0-50.286 41.143-91.429 91.429-91.429h36.571c50.286 0 91.429 41.143 91.429 91.429v54.857h73.143c40 0 73.143 33.143 73.143 73.143z"></path>
                     </svg>
-                    <span className="home-text51">2-3 buổi/ tuần</span>
+                    <span className="home-text30">2-3 buổi/ tuần</span>
                   </div>
                 </div>
-                <button type="button" className="home-tim-hieu-them2">
-                  <span className="home-text52">
-                    <span>Tìm hiểu thêm</span>
-                    <br></br>
-                  </span>
-                </button>
+                <div className="home-tim-hieu-them2">
+                  <Link href={"/khoa-hoc-3-5"}>
+                    <span className="home-text31">
+                      <span>Tìm hiểu thêm</span>
+                      <br></br>
+                    </span>
+                  </Link>
+                </div>
               </div>
             </div>
             <div className="home-khoa-hoc3">
-              <div className="home-container15">
-                <h1 className="home-title8">Khóa Bơi Trên 5 Tuổi</h1>
+              <div className="home-container07">
+                <h1 className="home-title5">Khóa Bơi Trên 5 Tuổi</h1>
                 <span className="home-info3">
                   Cung cấp kỹ năng an toàn cho trẻ và rèn luyện kỹ năng bơi 10M
                   (kỹ năng bơi mà trẻ yêu thích).
                 </span>
                 <div className="home-time2">
-                  <div className="home-container16">
+                  <div className="home-container08">
                     <svg viewBox="0 0 1024 1024" className="home-icon08">
                       <path d="M981.333 512c0-129.579-52.565-246.997-137.472-331.861s-202.283-137.472-331.861-137.472-246.997 52.565-331.861 137.472-137.472 202.283-137.472 331.861 52.565 246.997 137.472 331.861 202.283 137.472 331.861 137.472 246.997-52.565 331.861-137.472 137.472-202.283 137.472-331.861zM896 512c0 106.069-42.923 201.984-112.469 271.531s-165.461 112.469-271.531 112.469-201.984-42.923-271.531-112.469-112.469-165.461-112.469-271.531 42.923-201.984 112.469-271.531 165.461-112.469 271.531-112.469 201.984 42.923 271.531 112.469 112.469 165.461 112.469 271.531zM469.333 256v256c0 16.597 9.472 31.019 23.595 38.144l170.667 85.333c21.077 10.539 46.72 2.005 57.259-19.072s2.005-46.72-19.072-57.259l-147.115-73.515v-229.632c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667z"></path>
                     </svg>
-                    <span className="home-text55">
+                    <span className="home-text34">
                       <span>30-60 phút</span>
                       <br></br>
                     </span>
                   </div>
-                  <div className="home-container17">
+                  <div className="home-container09">
                     <svg
                       viewBox="0 0 950.8571428571428 1024"
                       className="home-icon10"
                     >
                       <path d="M73.143 950.857h164.571v-164.571h-164.571v164.571zM274.286 950.857h182.857v-164.571h-182.857v164.571zM73.143 749.714h164.571v-182.857h-164.571v182.857zM274.286 749.714h182.857v-182.857h-182.857v182.857zM73.143 530.286h164.571v-164.571h-164.571v164.571zM493.714 950.857h182.857v-164.571h-182.857v164.571zM274.286 530.286h182.857v-164.571h-182.857v164.571zM713.143 950.857h164.571v-164.571h-164.571v164.571zM493.714 749.714h182.857v-182.857h-182.857v182.857zM292.571 256v-164.571c0-9.714-8.571-18.286-18.286-18.286h-36.571c-9.714 0-18.286 8.571-18.286 18.286v164.571c0 9.714 8.571 18.286 18.286 18.286h36.571c9.714 0 18.286-8.571 18.286-18.286zM713.143 749.714h164.571v-182.857h-164.571v182.857zM493.714 530.286h182.857v-164.571h-182.857v164.571zM713.143 530.286h164.571v-164.571h-164.571v164.571zM731.429 256v-164.571c0-9.714-8.571-18.286-18.286-18.286h-36.571c-9.714 0-18.286 8.571-18.286 18.286v164.571c0 9.714 8.571 18.286 18.286 18.286h36.571c9.714 0 18.286-8.571 18.286-18.286zM950.857 219.429v731.429c0 40-33.143 73.143-73.143 73.143h-804.571c-40 0-73.143-33.143-73.143-73.143v-731.429c0-40 33.143-73.143 73.143-73.143h73.143v-54.857c0-50.286 41.143-91.429 91.429-91.429h36.571c50.286 0 91.429 41.143 91.429 91.429v54.857h219.429v-54.857c0-50.286 41.143-91.429 91.429-91.429h36.571c50.286 0 91.429 41.143 91.429 91.429v54.857h73.143c40 0 73.143 33.143 73.143 73.143z"></path>
                     </svg>
-                    <span className="home-text58">2-3 buổi/ tuần</span>
+                    <span className="home-text37">2-3 buổi/ tuần</span>
                   </div>
                 </div>
-                <button type="button" className="home-tim-hieu-them3">
-                  <span className="home-text59">
-                    <span>Tìm hiểu thêm</span>
-                    <br></br>
-                  </span>
-                </button>
+                <div className="home-tim-hieu-them3">
+                  <Link href={"/khoa-hoc-tren-5"}>
+                    <span className="home-text38">
+                      <span>Tìm hiểu thêm</span>
+                      <br></br>
+                    </span>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -263,7 +219,7 @@ const Home = (props) => {
             flex-direction: column;
             justify-content: flex-start;
           }
-          .home-container01 {
+          .home-side {
             flex: 0 0 auto;
             width: 100%;
             display: flex;
@@ -271,7 +227,7 @@ const Home = (props) => {
             flex-direction: column;
             justify-content: center;
           }
-          .home-container02 {
+          .home-img1 {
             width: 100%;
             height: 45vw;
             display: flex;
@@ -279,7 +235,7 @@ const Home = (props) => {
             align-items: flex-start;
             background-size: cover;
             justify-content: center;
-            background-image: url('https://lh3.googleusercontent.com/pw/AIL4fc_nnYBJp8FfSLQ37tZtgzYT_QR6wcoi7pLbm-HrhP3Sg7sVDZuDWGqepUCXagN4dQZfoiPdMNW0AwCtAl3HbtC3Q19camwwre5FKjSXR4IsAb-WPRk=d');
+            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc_nnYBJp8FfSLQ37tZtgzYT_QR6wcoi7pLbm-HrhP3Sg7sVDZuDWGqepUCXagN4dQZfoiPdMNW0AwCtAl3HbtC3Q19camwwre5FKjSXR4IsAb-WPRk=d");
             background-position: center;
           }
           .home-text {
@@ -300,7 +256,7 @@ const Home = (props) => {
             text-align: center;
             text-transform: uppercase;
           }
-          .home-container03 {
+          .home-img2 {
             width: 100%;
             height: 45vw;
             display: flex;
@@ -308,7 +264,7 @@ const Home = (props) => {
             align-items: flex-start;
             background-size: cover;
             justify-content: center;
-            background-image: url('https://lh3.googleusercontent.com/pw/AIL4fc_EpTG0tIamcNf8curUvBdN-IWPqCojmdaFn8Wm3Sp4BJls0_kJSq6j31P36lQ1gWnN0veBv-WTznXDPhFj8R7JHXq4XfA0M4MTiyW5Phldw4cHwaw=d');
+            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc_EpTG0tIamcNf8curUvBdN-IWPqCojmdaFn8Wm3Sp4BJls0_kJSq6j31P36lQ1gWnN0veBv-WTznXDPhFj8R7JHXq4XfA0M4MTiyW5Phldw4cHwaw=d");
             background-position: center;
           }
           .home-text04 {
@@ -329,7 +285,7 @@ const Home = (props) => {
             text-align: center;
             text-transform: uppercase;
           }
-          .home-container04 {
+          .home-img3 {
             width: 100%;
             height: 45vw;
             display: flex;
@@ -337,7 +293,7 @@ const Home = (props) => {
             align-items: flex-start;
             background-size: cover;
             justify-content: center;
-            background-image: url('https://lh3.googleusercontent.com/pw/AIL4fc_bwWzlD232T5uT5KJ4gMm-YRH_ETFCUAHVpgQVaTeZ2sLfUz43Z25iewZeoCz5AMjxVmJCGTRq_2EFu-r89-ja-u_GUMeB7STiR07RVSGfSjcNBs0=d');
+            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc_bwWzlD232T5uT5KJ4gMm-YRH_ETFCUAHVpgQVaTeZ2sLfUz43Z25iewZeoCz5AMjxVmJCGTRq_2EFu-r89-ja-u_GUMeB7STiR07RVSGfSjcNBs0=d");
             background-position: center;
           }
           .home-text08 {
@@ -367,7 +323,7 @@ const Home = (props) => {
             text-align: center;
             text-transform: uppercase;
           }
-          .home-container05 {
+          .home-img4 {
             width: 100%;
             height: 45vw;
             display: flex;
@@ -375,7 +331,7 @@ const Home = (props) => {
             align-items: flex-start;
             background-size: cover;
             justify-content: center;
-            background-image: url('https://lh3.googleusercontent.com/pw/AIL4fc-3XeYjqQbo_ktlfxZpxgh6l-oURIGFb_HTqn0RPGga6LlrTT58NdyWrpN6LRung7xyu5FrJD0iuTzbM7FVeqGJYDmlDV5F_fIaWmrPdz2GivamFDs=d');
+            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc-3XeYjqQbo_ktlfxZpxgh6l-oURIGFb_HTqn0RPGga6LlrTT58NdyWrpN6LRung7xyu5FrJD0iuTzbM7FVeqGJYDmlDV5F_fIaWmrPdz2GivamFDs=d");
             background-position: center;
           }
           .home-text11 {
@@ -473,173 +429,6 @@ const Home = (props) => {
             text-align: center;
             text-transform: uppercase;
           }
-          .home-new-posts {
-            flex: 0 0 auto;
-            width: 100%;
-            display: flex;
-            margin-top: 30px;
-            align-items: center;
-            justify-content: center;
-          }
-          .home-item {
-            width: 292px;
-            height: 390px;
-            display: flex;
-            align-items: center;
-            margin-left: 20px;
-            margin-right: 20px;
-            justify-content: flex-end;
-          }
-          .home-container06 {
-            flex: 0 0 auto;
-            width: 100%;
-            cursor: pointer;
-            height: 100%;
-            display: flex;
-            padding: 20px;
-            position: relative;
-            align-items: flex-start;
-            flex-direction: column;
-            justify-content: flex-end;
-            background-color: rgba(0, 0, 0, 0.55);
-          }
-          .home-date {
-            top: 20px;
-            left: 20px;
-            color: var(--dl-color-hbst-white);
-            position: absolute;
-          }
-          .home-link1 {
-            color: var(--dl-color-hbst-black);
-            cursor: pointer;
-            font-style: normal;
-            text-align: center;
-            transition: 0.2s;
-            font-weight: 300;
-            padding-top: 5px;
-            padding-left: 20px;
-            margin-bottom: 10px;
-            padding-right: 20px;
-            padding-bottom: 5px;
-            text-decoration: none;
-            background-color: var(--dl-color-hbst-white);
-          }
-          .home-link1:hover {
-            opacity: 0.5;
-          }
-          .home-title2 {
-            color: var(--dl-color-hbst-white);
-            display: -webkit-box;
-            overflow: hidden;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 2;
-          }
-          .home-item1 {
-            width: 292px;
-            height: 390px;
-            display: flex;
-            align-items: center;
-            margin-left: 20px;
-            margin-right: 20px;
-            justify-content: flex-end;
-          }
-          .home-container07 {
-            flex: 0 0 auto;
-            width: 100%;
-            cursor: pointer;
-            height: 100%;
-            display: flex;
-            padding: 20px;
-            position: relative;
-            align-items: flex-start;
-            flex-direction: column;
-            justify-content: flex-end;
-            background-color: rgba(0, 0, 0, 0.55);
-          }
-          .home-date1 {
-            top: 20px;
-            left: 20px;
-            color: var(--dl-color-hbst-white);
-            position: absolute;
-          }
-          .home-link2 {
-            color: var(--dl-color-hbst-black);
-            cursor: pointer;
-            font-style: normal;
-            text-align: center;
-            transition: 0.2s;
-            font-weight: 300;
-            padding-top: 5px;
-            padding-left: 20px;
-            margin-bottom: 10px;
-            padding-right: 20px;
-            padding-bottom: 5px;
-            text-decoration: none;
-            background-color: var(--dl-color-hbst-white);
-          }
-          .home-link2:hover {
-            opacity: 0.5;
-          }
-          .home-title3 {
-            color: var(--dl-color-hbst-white);
-            display: -webkit-box;
-            overflow: hidden;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 2;
-          }
-          .home-item2 {
-            width: 292px;
-            height: 390px;
-            display: flex;
-            align-items: center;
-            margin-left: 20px;
-            margin-right: 20px;
-            justify-content: flex-end;
-          }
-          .home-container08 {
-            flex: 0 0 auto;
-            width: 100%;
-            cursor: pointer;
-            height: 100%;
-            display: flex;
-            padding: 20px;
-            position: relative;
-            align-items: flex-start;
-            flex-direction: column;
-            justify-content: flex-end;
-            background-color: rgba(0, 0, 0, 0.55);
-          }
-          .home-date2 {
-            top: 20px;
-            left: 20px;
-            color: var(--dl-color-hbst-white);
-            position: absolute;
-          }
-          .home-link3 {
-            color: var(--dl-color-hbst-black);
-            cursor: pointer;
-            font-style: normal;
-            text-align: center;
-            transition: 0.2s;
-            font-weight: 300;
-            padding-top: 5px;
-            padding-left: 20px;
-            margin-bottom: 10px;
-            padding-right: 20px;
-            padding-bottom: 5px;
-            text-decoration: none;
-            background-color: var(--dl-color-hbst-white);
-          }
-          .home-link3:hover {
-            opacity: 0.5;
-          }
-          .home-title4 {
-            color: var(--dl-color-hbst-white);
-            display: -webkit-box;
-            overflow: hidden;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 2;
-          }
           .home-khoa-hoc {
             flex: 0 0 auto;
             width: 100%;
@@ -650,7 +439,7 @@ const Home = (props) => {
             padding-bottom: 40px;
             justify-content: center;
           }
-          .home-title5 {
+          .home-title2 {
             color: var(--dl-color-hbst-blue);
             font-size: 50px;
             text-align: center;
@@ -673,10 +462,10 @@ const Home = (props) => {
             margin-right: 20px;
             background-size: cover;
             justify-content: center;
-            background-image: url('https://lh3.googleusercontent.com/pw/AIL4fc9lhjfX0Py0Wq4pOqCBWKRYl3NqEgVR5cGub0gvvCqjMwxPYTwmBXO0RuM0Y2AMHdUeK6GHbAiNQmHzix2w4lUiVACEW_AHERkIxFq29fscunS11bI=d');
+            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc9lhjfX0Py0Wq4pOqCBWKRYl3NqEgVR5cGub0gvvCqjMwxPYTwmBXO0RuM0Y2AMHdUeK6GHbAiNQmHzix2w4lUiVACEW_AHERkIxFq29fscunS11bI=d");
             background-position: center;
           }
-          .home-container09 {
+          .home-container01 {
             flex: 0 0 auto;
             width: 100%;
             height: 50%;
@@ -688,7 +477,7 @@ const Home = (props) => {
             justify-content: flex-start;
             background-color: var(--dl-color-hbst-blue);
           }
-          .home-title6 {
+          .home-title3 {
             color: var(--dl-color-hbst-white);
             font-size: 30px;
           }
@@ -710,7 +499,7 @@ const Home = (props) => {
             align-items: flex-start;
             flex-direction: column;
           }
-          .home-container10 {
+          .home-container02 {
             flex: 0 0 auto;
             width: 100%;
             height: auto;
@@ -724,10 +513,10 @@ const Home = (props) => {
             height: 24px;
             margin-right: 5px;
           }
-          .home-text41 {
+          .home-text20 {
             color: var(--dl-color-hbst-white);
           }
-          .home-container11 {
+          .home-container03 {
             flex: 0 0 auto;
             width: 100%;
             height: auto;
@@ -740,7 +529,7 @@ const Home = (props) => {
             height: 24px;
             margin-right: 5px;
           }
-          .home-text44 {
+          .home-text23 {
             color: var(--dl-color-hbst-white);
           }
           .home-tim-hieu-them1 {
@@ -750,8 +539,11 @@ const Home = (props) => {
             bottom: 15px;
             margin: auto;
             position: absolute;
+            display: flex;
+            justify-content: center;
+            align-item: center;
           }
-          .home-text45 {
+          .home-text24 {
             color: var(--dl-color-hbst-blue);
             cursor: pointer;
             transition: 0.2s;
@@ -762,7 +554,7 @@ const Home = (props) => {
             padding-bottom: 5px;
             background-color: var(--dl-color-hbst-white);
           }
-          .home-text45:hover {
+          .home-text24:hover {
             color: var(--dl-color-hbst-black);
             background-color: var(--dl-color-hbst-yellow);
           }
@@ -775,10 +567,10 @@ const Home = (props) => {
             margin-right: 20px;
             background-size: cover;
             justify-content: center;
-            background-image: url('https://lh3.googleusercontent.com/pw/AIL4fc9GIYSN3WEg4qXw6PpsOHjgy-Y32KwOswr24c4yPJr_vqwmCv7FoSsx_5rQDeK-lCmS4lOUypsUVnbGKjtRgGVPeoIy0dmPmzbkvqz1iibPiMVr1RU=d');
+            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc9GIYSN3WEg4qXw6PpsOHjgy-Y32KwOswr24c4yPJr_vqwmCv7FoSsx_5rQDeK-lCmS4lOUypsUVnbGKjtRgGVPeoIy0dmPmzbkvqz1iibPiMVr1RU=d");
             background-position: center;
           }
-          .home-container12 {
+          .home-container04 {
             flex: 0 0 auto;
             width: 100%;
             height: 50%;
@@ -790,7 +582,7 @@ const Home = (props) => {
             justify-content: flex-start;
             background-color: var(--dl-color-hbst-blue);
           }
-          .home-title7 {
+          .home-title4 {
             color: var(--dl-color-hbst-white);
             font-size: 30px;
           }
@@ -812,7 +604,7 @@ const Home = (props) => {
             align-items: flex-start;
             flex-direction: column;
           }
-          .home-container13 {
+          .home-container05 {
             flex: 0 0 auto;
             width: 100%;
             height: auto;
@@ -826,10 +618,10 @@ const Home = (props) => {
             height: 24px;
             margin-right: 5px;
           }
-          .home-text48 {
+          .home-text27 {
             color: var(--dl-color-hbst-white);
           }
-          .home-container14 {
+          .home-container06 {
             flex: 0 0 auto;
             width: 100%;
             height: auto;
@@ -842,7 +634,7 @@ const Home = (props) => {
             height: 24px;
             margin-right: 5px;
           }
-          .home-text51 {
+          .home-text30 {
             color: var(--dl-color-hbst-white);
           }
           .home-tim-hieu-them2 {
@@ -852,8 +644,11 @@ const Home = (props) => {
             bottom: 15px;
             margin: auto;
             position: absolute;
+            display: flex;
+            justify-content: center;
+            align-item: center;
           }
-          .home-text52 {
+          .home-text31 {
             color: var(--dl-color-hbst-blue);
             cursor: pointer;
             transition: 0.2s;
@@ -864,7 +659,7 @@ const Home = (props) => {
             padding-bottom: 5px;
             background-color: var(--dl-color-hbst-white);
           }
-          .home-text52:hover {
+          .home-text31:hover {
             color: var(--dl-color-hbst-black);
             background-color: var(--dl-color-hbst-yellow);
           }
@@ -877,10 +672,10 @@ const Home = (props) => {
             margin-right: 20px;
             background-size: cover;
             justify-content: center;
-            background-image: url('https://lh3.googleusercontent.com/pw/AIL4fc-NQLJeBdwuh2bEkC80U2PWxyvAZGQp_KG8277Pd-27Vf_3cYTDEg6fIRdzFhd5_nTA9zjsOmLNLYrAnWZLY97M043ixMrmAXt1vBnO6kLifsr7xJo=d');
+            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc-NQLJeBdwuh2bEkC80U2PWxyvAZGQp_KG8277Pd-27Vf_3cYTDEg6fIRdzFhd5_nTA9zjsOmLNLYrAnWZLY97M043ixMrmAXt1vBnO6kLifsr7xJo=d");
             background-position: center;
           }
-          .home-container15 {
+          .home-container07 {
             flex: 0 0 auto;
             width: 100%;
             height: 50%;
@@ -892,7 +687,7 @@ const Home = (props) => {
             justify-content: flex-start;
             background-color: var(--dl-color-hbst-blue);
           }
-          .home-title8 {
+          .home-title5 {
             color: var(--dl-color-hbst-white);
             font-size: 30px;
           }
@@ -914,7 +709,7 @@ const Home = (props) => {
             align-items: flex-start;
             flex-direction: column;
           }
-          .home-container16 {
+          .home-container08 {
             flex: 0 0 auto;
             width: 100%;
             height: auto;
@@ -928,10 +723,10 @@ const Home = (props) => {
             height: 24px;
             margin-right: 5px;
           }
-          .home-text55 {
+          .home-text34 {
             color: var(--dl-color-hbst-white);
           }
-          .home-container17 {
+          .home-container09 {
             flex: 0 0 auto;
             width: 100%;
             height: auto;
@@ -944,7 +739,7 @@ const Home = (props) => {
             height: 24px;
             margin-right: 5px;
           }
-          .home-text58 {
+          .home-text37 {
             color: var(--dl-color-hbst-white);
           }
           .home-tim-hieu-them3 {
@@ -954,8 +749,11 @@ const Home = (props) => {
             bottom: 15px;
             margin: auto;
             position: absolute;
+            display: flex;
+            justify-content: center;
+            align-item: center;
           }
-          .home-text59 {
+          .home-text38 {
             color: var(--dl-color-hbst-blue);
             cursor: pointer;
             transition: 0.2s;
@@ -966,32 +764,11 @@ const Home = (props) => {
             padding-bottom: 5px;
             background-color: var(--dl-color-hbst-white);
           }
-          .home-text59:hover {
+          .home-text38:hover {
             color: var(--dl-color-hbst-black);
             background-color: var(--dl-color-hbst-yellow);
           }
           @media (max-width: 991px) {
-            .home-new-posts {
-              flex-direction: column;
-            }
-            .home-item {
-              width: 90%;
-              height: 200px;
-              margin-top: 20px;
-              margin-bottom: 20px;
-            }
-            .home-item1 {
-              width: 90%;
-              height: 200px;
-              margin-top: 20px;
-              margin-bottom: 20px;
-            }
-            .home-item2 {
-              width: 90%;
-              height: 200px;
-              margin-top: 20px;
-              margin-bottom: 20px;
-            }
             .home-khoa-hoc-moi {
               flex-direction: column;
             }
@@ -999,7 +776,7 @@ const Home = (props) => {
               width: 90%;
               height: 300px;
             }
-            .home-container09 {
+            .home-container01 {
               height: 80%;
             }
             .home-khoa-hoc2 {
@@ -1008,20 +785,20 @@ const Home = (props) => {
               margin-top: 20px;
               margin-bottom: 20px;
             }
-            .home-container12 {
+            .home-container04 {
               height: 80%;
             }
             .home-khoa-hoc3 {
               width: 90%;
               height: 300px;
             }
-            .home-container15 {
+            .home-container07 {
               height: 80%;
             }
           }
           @media (max-width: 767px) {
             .home-container {
-              padding-top: 118px;
+              padding-top: 138px;
             }
             .home-title {
               font-size: 40px;
@@ -1029,7 +806,7 @@ const Home = (props) => {
             .home-title1 {
               font-size: 40px;
             }
-            .home-title5 {
+            .home-title2 {
               font-size: 40px;
             }
           }
@@ -1040,7 +817,7 @@ const Home = (props) => {
             .home-title1 {
               font-size: 30px;
             }
-            .home-title5 {
+            .home-title2 {
               font-size: 30px;
             }
             .home-khoa-hoc1 {
@@ -1056,7 +833,7 @@ const Home = (props) => {
         `}
       </style>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

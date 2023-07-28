@@ -1,21 +1,35 @@
-import React from 'react'
-import Head from 'next/head'
+import React from "react";
+import Head from "next/head";
 
-import Header from '../components/header'
-import Footer from '../components/footer'
+import Header from "../components/header";
+import Footer from "../components/footer";
 
 const Video = (props) => {
   return (
     <>
       <div className="video-container">
         <Head>
-          <title>Video - Punctual Substantial Goldfish</title>
-          <meta
-            property="og:title"
-            content="Video - Punctual Substantial Goldfish"
-          />
+          <title>Video | Hocboisinhton.com</title>
+          <meta property="og:title" content="Video | Hocboisinhton.com" />
         </Head>
         <Header rootClassName="header-root-class-name5"></Header>
+        <div className="video-container1">
+          <div className="video-container2">
+            <h1 className="video-text">HÌNH ẢNH CỦA HỌC VIÊN</h1>
+          </div>
+          <div className="video-container3">
+            <span className="video-text1">
+              Ba mẹ có thể tham khảo các video và hình ảnh của các học viên nhỏ
+              và tài năng tại Hocboisinhton.com để hiểu thêm lộ trình tại trường
+              nhé!
+            </span>
+          </div>
+        </div>
+        <iframe
+          src="https://www.youtube.com/embed/CDyk9wdTZb8"
+          allowFullScreen
+          className="video-iframe"
+        ></iframe>
         <Footer rootClassName="footer-root-class-name5"></Footer>
       </div>
       <style jsx>
@@ -29,15 +43,88 @@ const Video = (props) => {
             flex-direction: column;
             justify-content: flex-start;
           }
+          .video-container1 {
+            flex: 0 0 auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+            background-color: var(--dl-color-hbst-blue);
+          }
+          .video-container2 {
+            flex: 0 0 auto;
+            width: 50%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            justify-content: flex-end;
+            background-color: var(--dl-color-hbst-yellow);
+          }
+          .video-text {
+            color: var(--dl-color-hbst-blue);
+            height: auto;
+            font-size: 56px;
+            max-width: 500px;
+          }
+          .video-container3 {
+            flex: 0 0 auto;
+            width: 50%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .video-text1 {
+            color: var(--dl-color-hbst-white);
+            width: 50%;
+            font-size: 14px;
+            line-height: 1.3;
+          }
+          .video-iframe {
+            width: 90vw;
+            height: 90vw;
+            max-width: 900px;
+            margin-top: 20px;
+            max-height: 500px;
+            margin-bottom: 20px;
+            background-color: var(--dl-color-hbst-black);
+          }
+          @media (max-width: 991px) {
+            .video-container1 {
+              flex-direction: column;
+            }
+            .video-container2 {
+              width: 100%;
+              justify-content: center;
+            }
+            .video-text {
+              width: 100%;
+              max-width: 90vw;
+            }
+            .video-container3 {
+              width: 100%;
+              height: auto;
+              padding-top: 20px;
+              padding-bottom: 20px;
+            }
+            .video-text1 {
+              color: var(--dl-color-hbst-white);
+              width: 90vw;
+              line-height: 1.3;
+            }
+          }
           @media (max-width: 767px) {
             .video-container {
-              padding-top: 118px;
+              padding-top: 138px;
             }
           }
         `}
       </style>
     </>
-  )
-}
+  );
+};
 
-export default Video
+export default Video;

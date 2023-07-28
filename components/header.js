@@ -1,20 +1,47 @@
-import React from 'react'
-import Link from 'next/link'
+import React from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
 const Header = (props) => {
+  const router = useRouter();
+
+  const handleBar = () => {
+    const Navigate = document.getElementById("NavigateMobile").classList;
+    const bar1 = document.getElementById("Bar").classList;
+    const bar2 = document.getElementById("Bar2").classList;
+
+    console.log(Navigate);
+
+    if (Navigate.contains("navigate-active")) {
+      Navigate.remove("navigate-active");
+      bar1.remove("bar1-active");
+      bar2.remove("bar2-active");
+    } else {
+      Navigate.add("navigate-active");
+      bar1.add("bar1-active");
+      bar2.add("bar2-active");
+    }
+  };
+
   return (
     <>
       <div className={`header-container ${props.rootClassName} `}>
         <svg
+          onClick={handleBar}
           id="Bar"
           viewBox="0 0 877.7142857142857 1024"
           className="header-bar"
         >
           <path d="M877.714 768v73.143c0 20-16.571 36.571-36.571 36.571h-804.571c-20 0-36.571-16.571-36.571-36.571v-73.143c0-20 16.571-36.571 36.571-36.571h804.571c20 0 36.571 16.571 36.571 36.571zM877.714 475.429v73.143c0 20-16.571 36.571-36.571 36.571h-804.571c-20 0-36.571-16.571-36.571-36.571v-73.143c0-20 16.571-36.571 36.571-36.571h804.571c20 0 36.571 16.571 36.571 36.571zM877.714 182.857v73.143c0 20-16.571 36.571-36.571 36.571h-804.571c-20 0-36.571-16.571-36.571-36.571v-73.143c0-20 16.571-36.571 36.571-36.571h804.571c20 0 36.571 16.571 36.571 36.571z"></path>
         </svg>
-        <svg id="Bar2" viewBox="0 0 1024 1024" className="header-bar2">
+        <svg
+          onClick={handleBar}
+          id="Bar2"
+          viewBox="0 0 1024 1024"
+          className="header-bar2"
+        >
           <path d="M225.835 286.165l225.835 225.835-225.835 225.835c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.835-225.835 225.835 225.835c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331l-225.835-225.835 225.835-225.835c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.835 225.835-225.835-225.835c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path>
         </svg>
         <Link href="/">
@@ -32,22 +59,82 @@ const Header = (props) => {
         </Link>
         <div className="header-navigate">
           <Link href="/">
-            <a className="header-link01">{props.button}</a>
+            <a
+              style={{
+                color:
+                  router.pathname === "/"
+                    ? "var(--dl-color-hbst-yellow)"
+                    : "var(--dl-color-hbst-blue)",
+              }}
+              className="header-link01"
+            >
+              {props.button}
+            </a>
           </Link>
           <Link href="/gioi-thieu">
-            <a className="header-link02">{props.button1}</a>
+            <a
+              style={{
+                color:
+                  router.pathname === "/gioi-thieu"
+                    ? "var(--dl-color-hbst-yellow)"
+                    : "var(--dl-color-hbst-blue)",
+              }}
+              className="header-link02"
+            >
+              {props.button1}
+            </a>
           </Link>
           <Link href="/blog">
-            <a className="header-link03">{props.button2}</a>
+            <a
+              style={{
+                color:
+                  router.pathname === "/blog"
+                    ? "var(--dl-color-hbst-yellow)"
+                    : "var(--dl-color-hbst-blue)",
+              }}
+              className="header-link03"
+            >
+              {props.button2}
+            </a>
           </Link>
           <Link href="/video">
-            <a className="header-link04">{props.button3}</a>
+            <a
+              style={{
+                color:
+                  router.pathname === "/video"
+                    ? "var(--dl-color-hbst-yellow)"
+                    : "var(--dl-color-hbst-blue)",
+              }}
+              className="header-link04"
+            >
+              {props.button3}
+            </a>
           </Link>
           <Link href="/faq">
-            <a className="header-link05">{props.button4}</a>
+            <a
+              style={{
+                color:
+                  router.pathname === "/faq"
+                    ? "var(--dl-color-hbst-yellow)"
+                    : "var(--dl-color-hbst-blue)",
+              }}
+              className="header-link05"
+            >
+              {props.button4}
+            </a>
           </Link>
           <Link href="/contact">
-            <a className="header-link06">{props.button5}</a>
+            <a
+              style={{
+                color:
+                  router.pathname === "/contact"
+                    ? "var(--dl-color-hbst-yellow)"
+                    : "var(--dl-color-hbst-blue)",
+              }}
+              className="header-link06"
+            >
+              {props.button5}
+            </a>
           </Link>
         </div>
         <div className="header-reg">
@@ -62,22 +149,82 @@ const Header = (props) => {
         </div>
         <div id="NavigateMobile" className="header-navigate-mb">
           <Link href="/">
-            <a className="header-link07">{props.button6}</a>
+            <a
+              style={{
+                color:
+                  router.pathname === "/"
+                    ? "var(--dl-color-hbst-yellow)"
+                    : "var(--dl-color-hbst-white)",
+              }}
+              className="header-link07"
+            >
+              {props.button6}
+            </a>
           </Link>
           <Link href="/gioi-thieu">
-            <a className="header-link08">{props.button11}</a>
+            <a
+              style={{
+                color:
+                  router.pathname === "/gioi-thieu"
+                    ? "var(--dl-color-hbst-yellow)"
+                    : "var(--dl-color-hbst-white)",
+              }}
+              className="header-link08"
+            >
+              {props.button11}
+            </a>
           </Link>
           <Link href="/blog">
-            <a className="header-link09">{props.button21}</a>
+            <a
+              style={{
+                color:
+                  router.pathname === "/blog"
+                    ? "var(--dl-color-hbst-yellow)"
+                    : "var(--dl-color-hbst-white)",
+              }}
+              className="header-link09"
+            >
+              {props.button21}
+            </a>
           </Link>
           <Link href="/video">
-            <a className="header-link10">{props.button31}</a>
+            <a
+              style={{
+                color:
+                  router.pathname === "/video"
+                    ? "var(--dl-color-hbst-yellow)"
+                    : "var(--dl-color-hbst-white)",
+              }}
+              className="header-link10"
+            >
+              {props.button31}
+            </a>
           </Link>
           <Link href="/faq">
-            <a className="header-link11">{props.button41}</a>
+            <a
+              style={{
+                color:
+                  router.pathname === "/faq"
+                    ? "var(--dl-color-hbst-yellow)"
+                    : "var(--dl-color-hbst-white)",
+              }}
+              className="header-link11"
+            >
+              {props.button41}
+            </a>
           </Link>
           <Link href="/contact">
-            <a className="header-link12">{props.button51}</a>
+            <a
+              style={{
+                color:
+                  router.pathname === "/contact"
+                    ? "var(--dl-color-hbst-yellow)"
+                    : "var(--dl-color-hbst-white)",
+              }}
+              className="header-link12"
+            >
+              {props.button51}
+            </a>
           </Link>
         </div>
       </div>
@@ -111,14 +258,16 @@ const Header = (props) => {
           .header-bar2 {
             top: 0px;
             left: 10px;
-            width: 30px;
+            width: 50px;
             bottom: 0px;
             cursor: default;
-            height: 30px;
+            height: 50px;
             margin: auto;
             opacity: 0;
             position: absolute;
             transition: 0.2s;
+            z-index: 101;
+            fill: var(--dl-color-hbst-yellow);
           }
           .header-link {
             display: contents;
@@ -157,9 +306,9 @@ const Header = (props) => {
             justify-content: flex-start;
           }
           .header-link01 {
-            color: var(--dl-color-hbst-blue);
+            color: var(--dl-color-hbst-white);
             cursor: pointer;
-            padding: 5pxc;
+            padding: 5px;
             font-size: 18px;
             font-style: normal;
             transition: 0.3s;
@@ -290,7 +439,7 @@ const Header = (props) => {
             z-index: 100;
             position: fixed;
             overflow-y: auto !important;
-            transition: opcacity 0.2s;
+            transition: opacity 0.2s;
             align-items: center;
             flex-direction: column;
             pointer-events: none;
@@ -298,9 +447,9 @@ const Header = (props) => {
             background-color: var(--dl-color-hbst-blue);
           }
           .header-link07 {
-            color: var(--dl-color-hbst-blue);
+            color: var(--dl-color-hbst-white);
             cursor: pointer;
-            padding: 5pxc;
+            padding: 5px;
             font-size: 16px;
             font-style: normal;
             transition: 0.3s;
@@ -420,46 +569,46 @@ const Header = (props) => {
               justify-content: flex-start;
             }
             .header-link07 {
-              color: var(--dl-color-hbst-yellow);
+              color: var(--dl-color-hbst-white);
               padding: 20px;
-              font-size: 25px;
-              margin-top: 20px;
-              margin-bottom: 20px;
+              font-size: 20px;
+              margin-top: 10px;
+              margin-bottom: 10px;
             }
             .header-link08 {
-              color: var(--dl-color-hbst-yellow);
+              color: var(--dl-color-hbst-white);
               padding: 20px;
-              font-size: 25px;
-              margin-top: 20px;
-              margin-bottom: 20px;
+              font-size: 20px;
+              margin-top: 10px;
+              margin-bottom: 10px;
             }
             .header-link09 {
-              color: var(--dl-color-hbst-yellow);
+              color: var(--dl-color-hbst-white);
               padding: 20px;
-              font-size: 25px;
-              margin-top: 20px;
-              margin-bottom: 20px;
+              font-size: 20px;
+              margin-top: 10px;
+              margin-bottom: 10px;
             }
             .header-link10 {
-              color: var(--dl-color-hbst-yellow);
+              color: var(--dl-color-hbst-white);
               padding: 20px;
-              font-size: 25px;
-              margin-top: 20px;
-              margin-bottom: 20px;
+              font-size: 20px;
+              margin-top: 10px;
+              margin-bottom: 10px;
             }
             .header-link11 {
-              color: var(--dl-color-hbst-yellow);
+              color: var(--dl-color-hbst-white);
               padding: 20px;
-              font-size: 25px;
-              margin-top: 20px;
-              margin-bottom: 20px;
+              font-size: 20px;
+              margin-top: 10px;
+              margin-bottom: 10px;
             }
             .header-link12 {
-              color: var(--dl-color-hbst-yellow);
+              color: var(--dl-color-hbst-white);
               padding: 20px;
-              font-size: 25px;
-              margin-top: 20px;
-              margin-bottom: 20px;
+              font-size: 20px;
+              margin-top: 10px;
+              margin-bottom: 10px;
             }
           }
           @media (max-width: 767px) {
@@ -496,27 +645,27 @@ const Header = (props) => {
         `}
       </style>
     </>
-  )
-}
+  );
+};
 
 Header.defaultProps = {
-  heading: 'Hocboisinhton.com',
-  button21: 'Kiến Thức',
-  button41: 'FAQ',
-  button4: 'FAQ',
-  button31: 'Video',
-  button2: 'Kiến Thức',
-  button1: 'Giới Thiệu',
-  button3: 'Video',
-  button: 'Home',
-  rootClassName: '',
-  text: 'Đăng ký ngay',
-  button6: 'Home',
-  button11: 'Giới Thiệu',
-  button51: 'Liên Hệ',
-  image_alt: 'image',
-  button5: 'Liên Hệ',
-}
+  heading: "Hocboisinhton.com",
+  button21: "Kiến Thức",
+  button41: "FAQ",
+  button4: "FAQ",
+  button31: "Video",
+  button2: "Kiến Thức",
+  button1: "Giới Thiệu",
+  button3: "Video",
+  button: "Home",
+  rootClassName: "",
+  text: "Đăng ký ngay",
+  button6: "Home",
+  button11: "Giới Thiệu",
+  button51: "Liên Hệ",
+  image_alt: "image",
+  button5: "Liên Hệ",
+};
 
 Header.propTypes = {
   heading: PropTypes.string,
@@ -535,6 +684,6 @@ Header.propTypes = {
   button51: PropTypes.string,
   image_alt: PropTypes.string,
   button5: PropTypes.string,
-}
+};
 
-export default Header
+export default Header;
