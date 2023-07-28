@@ -19,7 +19,7 @@ const GioiThieu = (props) => {
           />
           <meta
             property="og:image"
-            content="https://lh3.googleusercontent.com/pw/AIL4fc95smzk_QUHx8IOXZLMJPDp0D6NaBq8DP3PsunWOlfuxauo-d1lzAQhz1NztEj5Uz4JuO3bbSac0Q3bTByYavYq_O-XZF8RiR5fnLtRv6O87-_VDDc=d"
+            content="https://lh3.googleusercontent.com/pw/AIL4fc-Xc8_fxqA-ZSmlYCQtPJ4Ykv7KYIlDcHCfL1MbmHWr4r1LKdhE5Swi1-acBJLRj2-qDJjK1gLKy1wBoMSe4kNEf92OPE-9stqONeyeA3CQCEx_UeA=d"
           />
         </Head>
         <Header rootClassName="header-root-class-name1"></Header>
