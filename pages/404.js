@@ -7,8 +7,8 @@ const Page = (props) => {
     <>
       <div className="page-container">
         <Head>
-          <title>404 | Hocboisinhton.com</title>
-          <meta property="og:title" content="404 | Hocboisinhton.com" />
+          <title>404 | Boisinhton.com</title>
+          <meta property="og:title" content="404 | Boisinhton.com" />
           <meta
             property="og:description"
             content="Chúng tôi tổ chức các loại hoạt động hồ bơi mới. Chúng tôi đào tạo bằng cách tham gia các khóa học bơi sinh tồn khác nhau và tìm hiểu về các xu hướng học bơi mới"
@@ -28,7 +28,7 @@ const Page = (props) => {
           </span>
           <Link href="/">
             <a className="page-link">
-              <span>© Hocboisinhton.com</span>
+              <span>© Boisinhton.com</span>
               <br></br>
             </a>
           </Link>

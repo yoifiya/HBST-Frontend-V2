@@ -10,8 +10,8 @@ const Contact = (props) => {
     <>
       <div className="contact-container">
         <Head>
-          <title>Liên Hệ | Hocboisinhton.com</title>
-          <meta property="og:title" content="Liên Hệ | Hocboisinhton.com" />
+          <title>Liên Hệ | Boisinhton.com</title>
+          <meta property="og:title" content="Liên Hệ | Boisinhton.com" />
           <meta
             property="og:description"
             content="Chúng tôi tổ chức các loại hoạt động hồ bơi mới. Chúng tôi đào tạo bằng cách tham gia các khóa học bơi sinh tồn khác nhau và tìm hiểu về các xu hướng học bơi mới"
@@ -241,7 +241,7 @@ const Contact = (props) => {
                       }}
                       className="fa-solid fa-globe"
                     ></i>
-                    <span className="contact-text20">hocboisinhton.com</span>
+                    <span className="contact-text20">Boisinhton.com</span>
                   </div>
                 </a>
               </Link>

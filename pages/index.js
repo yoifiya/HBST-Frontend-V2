@@ -12,12 +12,12 @@ const Home = (props) => {
     <>
       <div className="home-container">
         <Head>
-          <title>Hocboisinhton.com</title>
+          <title>Boisinhton.com</title>
           <meta
             name="description"
             content="Chúng tôi tổ chức các loại hoạt động hồ bơi mới. Chúng tôi đào tạo bằng cách tham gia các khóa học bơi sinh tồn khác nhau và tìm hiểu về các xu hướng học bơi mới"
           />
-          <meta property="og:title" content="Hocboisinhton.com" />
+          <meta property="og:title" content="Boisinhton.com" />
           <meta
             property="og:description"
             content="Chúng tôi tổ chức các loại hoạt động hồ bơi mới. Chúng tôi đào tạo bằng cách tham gia các khóa học bơi sinh tồn khác nhau và tìm hiểu về các xu hướng học bơi mới"
@@ -68,10 +68,10 @@ const Home = (props) => {
           <h1 className="home-title">CHÚNG TÔI LÀ AI?</h1>
           <span className="home-text15">
             <span>
-              Hocboisinhton.com do công ty TNHH Survival Group thành lập - địa
-              điểm chuyên dạy bơi cho trẻ em Việt. Công ty được thành lập vào
-              năm 2022 do 2 huấn luyện viên Đoàn Quốc Hùng và Tạ Quan Minh đồng
-              sáng lập với tên thương hiệu là Hocboisinhton.com.
+              Boisinhton.com do công ty TNHH Survival Group thành lập - địa điểm
+              chuyên dạy bơi cho trẻ em Việt. Công ty được thành lập vào năm
+              2022 do 2 huấn luyện viên Đoàn Quốc Hùng và Tạ Quan Minh đồng sáng
+              lập với tên thương hiệu là Boisinhton.com.
             </span>
             <br></br>
             <br></br>

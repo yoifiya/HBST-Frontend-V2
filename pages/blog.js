@@ -11,8 +11,8 @@ const Blog = (props) => {
     <>
       <div className="blog-container">
         <Head>
-          <title>Kiến Thức | Hocboisinhton.com</title>
-          <meta property="og:title" content="Kiến Thức | Hocboisinhton.com" />
+          <title>Kiến Thức | Boisinhton.com</title>
+          <meta property="og:title" content="Kiến Thức | Boisinhton.com" />
           <meta
             property="og:description"
             content="Chúng tôi tổ chức các loại hoạt động hồ bơi mới. Chúng tôi đào tạo bằng cách tham gia các khóa học bơi sinh tồn khác nhau và tìm hiểu về các xu hướng học bơi mới"

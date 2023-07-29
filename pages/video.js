@@ -9,8 +9,8 @@ const Video = (props) => {
     <>
       <div className="video-container">
         <Head>
-          <title>Video | Hocboisinhton.com</title>
-          <meta property="og:title" content="Video | Hocboisinhton.com" />
+          <title>Video | Boisinhton.com</title>
+          <meta property="og:title" content="Video | Boisinhton.com" />
           <meta
             property="og:description"
             content="Chúng tôi tổ chức các loại hoạt động hồ bơi mới. Chúng tôi đào tạo bằng cách tham gia các khóa học bơi sinh tồn khác nhau và tìm hiểu về các xu hướng học bơi mới"
@@ -28,7 +28,7 @@ const Video = (props) => {
           <div className="video-container3">
             <span className="video-text1">
               Ba mẹ có thể tham khảo các video và hình ảnh của các học viên nhỏ
-              và tài năng tại Hocboisinhton.com để hiểu thêm lộ trình tại trường
+              và tài năng tại Boisinhton.com để hiểu thêm lộ trình tại trường
               nhé!
             </span>
           </div>

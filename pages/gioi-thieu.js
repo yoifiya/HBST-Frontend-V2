@@ -11,8 +11,8 @@ const GioiThieu = (props) => {
     <>
       <div className="gioi-thieu-container">
         <Head>
-          <title>Giới Thiệu | Hocboisinhton.com</title>
-          <meta property="og:title" content="Giới Thiệu | Hocboisinhton.com" />
+          <title>Giới Thiệu | Boisinhton.com</title>
+          <meta property="og:title" content="Giới Thiệu | Boisinhton.com" />
           <meta
             property="og:description"
             content="Chúng tôi tổ chức các loại hoạt động hồ bơi mới. Chúng tôi đào tạo bằng cách tham gia các khóa học bơi sinh tồn khác nhau và tìm hiểu về các xu hướng học bơi mới"
@@ -129,7 +129,7 @@ const GioiThieu = (props) => {
                 <span className="gioi-thieu-text14">
                   <span>Chị Xuyên - Phụ huynh bé 5 tuổi tại</span>
                   <br></br>
-                  <span>Hocboisinhton.com</span>
+                  <span>Boisinhton.com</span>
                   <br></br>
                 </span>
               </div>
@@ -168,7 +168,7 @@ const GioiThieu = (props) => {
                 <span className="gioi-thieu-text20">
                   <span>Chị Lộc - phụ huynh bé 3 tuổi tại</span>
                   <br></br>
-                  <span>Hocboisinhton.com</span>
+                  <span>Boisinhton.com</span>
                   <br></br>
                 </span>
               </div>
@@ -206,7 +206,7 @@ const GioiThieu = (props) => {
                 <span className="gioi-thieu-text26">
                   <span>Anh Phong - phụ huynh bé 8 tuổi tại</span>
                   <br></br>
-                  <span>Hocboisinhton.com</span>
+                  <span>Boisinhton.com</span>
                   <br></br>
                 </span>
               </div>
@@ -232,7 +232,7 @@ const GioiThieu = (props) => {
               <span className="gioi-thieu-text37">
                 Thầy Đoàn Quốc Hùng với trên 10 năm kinh nghiệm trong việc giảng
                 dạy và trang bị kĩ năng cho nhiều học viên trên khắp khu vực
-                TPHCM. Tại Hocboisinhton.com, học viên không chỉ được dạy bơi mà
+                TPHCM. Tại Boisinhton.com, học viên không chỉ được dạy bơi mà
                 còn được trang bị tất cả những kĩ năng cần thiết để bảo vệ bản
                 thân trong môi trường nước.
               </span>

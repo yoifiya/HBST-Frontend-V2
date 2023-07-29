@@ -43,6 +43,8 @@ const Header = (props) => {
 
     window.addEventListener("resize", handleResize);
 
+    enableScroll();
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -63,10 +65,14 @@ const Header = (props) => {
   }
 
   function enableScroll() {
-    var scrollPosition = JSON.parse(document.body.dataset.scroll);
-    document.body.removeAttribute("data-scroll");
-    document.body.style.overflow = "auto";
-    window.scrollTo(scrollPosition[0], scrollPosition[1]);
+    if (document.body.dataset.scroll) {
+      var scrollPosition = JSON.parse(document.body.dataset.scroll);
+      document.body.removeAttribute("data-scroll");
+      document.body.style.overflow = "auto";
+      window.scrollTo(scrollPosition[0], scrollPosition[1]);
+    } else {
+      document.body.style.overflow = "auto";
+    }
   }
 
   return (
@@ -674,7 +680,7 @@ const Header = (props) => {
 };
 
 Header.defaultProps = {
-  heading: "Hocboisinhton.com",
+  heading: "Boisinhton.com",
   button21: "Kiến Thức",
   button41: "FAQ",
   button4: "FAQ",

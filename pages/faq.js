@@ -10,8 +10,8 @@ const FAQ = (props) => {
     <>
       <div className="faq-container">
         <Head>
-          <title>FAQ | Hocboisinhton.com</title>
-          <meta property="og:title" content="FAQ | Hocboisinhton.com" />
+          <title>FAQ | Boisinhton.com</title>
+          <meta property="og:title" content="FAQ | Boisinhton.com" />
           <meta
             property="og:description"
             content="Chúng tôi tổ chức các loại hoạt động hồ bơi mới. Chúng tôi đào tạo bằng cách tham gia các khóa học bơi sinh tồn khác nhau và tìm hiểu về các xu hướng học bơi mới"

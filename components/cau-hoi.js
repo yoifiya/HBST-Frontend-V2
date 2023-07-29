@@ -26,9 +26,9 @@ const CauHoi = (props) => {
         {open === 1 && (
           <span className="cau-hoi-cau-text">
             <span>
-              Hocboisinhton.com cung cấp nhiều khóa học đa dạng cho các bé từ
-              dưới 1 tuổi đến trên 5 tuổi. Chúng tôi cung cấp lộ trình học được
-              thiết kế riêng cho độ tuổi:
+              Boisinhton.com cung cấp nhiều khóa học đa dạng cho các bé từ dưới
+              1 tuổi đến trên 5 tuổi. Chúng tôi cung cấp lộ trình học được thiết
+              kế riêng cho độ tuổi:
             </span>
             <br></br>
             <span>- Khóa học cho trẻ 0-3 tuổi</span>
@@ -72,8 +72,8 @@ const CauHoi = (props) => {
           <span className="cau-hoi-cau-text">
             <span>
               Ba mẹ cần tư vấn học phí và lộ trình học cho trẻ tại
-              Hocboisinhton.com, truy cập form bên dưới để biết thêm thông tin
-              chi tiết và đăng ký học thử miễn phí ba mẹ nhé!
+              Boisinhton.com, truy cập form bên dưới để biết thêm thông tin chi
+              tiết và đăng ký học thử miễn phí ba mẹ nhé!
             </span>
             <br></br>
             <span>
@@ -124,8 +124,8 @@ const CauHoi = (props) => {
             <br></br>
             <span>
               Ba mẹ cần tư vấn học phí và lộ trình học cho trẻ tại
-              Hocboisinhton.com, truy cập form bên dưới để biết thêm thông tin
-              chi tiết và đăng ký học thử miễn phí ba mẹ nhé!
+              Boisinhton.com, truy cập form bên dưới để biết thêm thông tin chi
+              tiết và đăng ký học thử miễn phí ba mẹ nhé!
             </span>
             <br></br>
             <span>

@@ -344,11 +344,11 @@ Footer.defaultProps = {
   text12: "boisinhton@gmail.com",
   heading: "Đối Tác",
   text: "CÔNG TY TNHH SURVIVAL GROUP 156A Nguyễn Hữu Thọ, Phước Kiển, Nhà Bè, TP,HCM",
-  text2: "© 2035 by Hocboisinhton.com",
+  text2: "© 2035 by Boisinhton.com",
   heading1: "Liên Hệ Ngay",
   heading21: "THÔNG TIN",
   heading2: "ĐỊA CHỈ",
-  text11: "hocboisinhton.com",
+  text11: "Boisinhton.com",
   text1: "0976 48 35 36",
 };
 
