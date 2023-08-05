@@ -8,7 +8,7 @@ import NewPosts from "../components/new-posts";
 import Footer from "../components/footer";
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:3001/api/posts");
+  const res = await fetch(process.env.NEXT_PUBLIC_apiUrl + "/api/posts");
   const posts = await res.json();
   return { props: { posts } };
 }
