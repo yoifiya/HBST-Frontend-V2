@@ -1,16 +1,41 @@
-import React from 'react'
-import Link from 'next/link'
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
-import PropTypes from 'prop-types'
+import { getUrl } from "./get-url";
+
+import PropTypes from "prop-types";
 
 const Tags = (props) => {
+  const { posts } = props;
+
+  const [Tags, setTags] = useState([]);
+
+  useEffect(() => {
+    let tags = ["All Posts"];
+    for (const index in posts) {
+      if (!tags.includes(posts[index].tag)) {
+        tags.push(posts[index].tag);
+      }
+    }
+    setTags(tags);
+  }, []);
+
   return (
     <>
       <div className={`tags-container ${props.rootClassName} `}>
         <div className="tags-container1">
-          <Link href="/blog">
-            <a className="tags-link">{props.button}</a>
-          </Link>
+          {Tags.map((tag) => {
+            return (
+              <Link
+                key={tag}
+                href={`/blog${tag !== "All Posts" ? "?tag=" : ""}${
+                  tag !== "All Posts" ? getUrl(tag) : ""
+                }`}
+              >
+                <a className="tags-link">{tag}</a>
+              </Link>
+            );
+          })}
         </div>
       </div>
       <style jsx>
@@ -50,17 +75,17 @@ const Tags = (props) => {
         `}
       </style>
     </>
-  )
-}
+  );
+};
 
 Tags.defaultProps = {
-  button: 'Tag',
-  rootClassName: '',
-}
+  button: "Tag",
+  rootClassName: "",
+};
 
 Tags.propTypes = {
   button: PropTypes.string,
   rootClassName: PropTypes.string,
-}
+};
 
-export default Tags
+export default Tags;

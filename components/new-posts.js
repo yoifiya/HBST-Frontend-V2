@@ -1,73 +1,134 @@
-import React, { useState } from 'react'
-import Link from 'next/link'
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
-const NewPosts = (props) => {
-  const [Imgs, setImgs] = useState('newState')
-  const [Dates, setDates] = useState('newState')
-  const [Titles, setTitles] = useState('newState')
-  const [Tags, setTags] = useState('newState')
+import { getUrl } from "../components/get-url";
+
+const NewPosts = ({ posts }) => {
+  const [Imgs, setImgs] = useState([]);
+  const [Dates, setDates] = useState([]);
+  const [Titles, setTitles] = useState([]);
+  const [Tags, setTags] = useState([]);
+
+  useEffect(async () => {
+    const response = posts;
+
+    if (response["success"]) {
+      const postsClone = {};
+      for (const post of response.data) {
+        postsClone[Number(post.index)] = post;
+      }
+      let title = [];
+      let imgArray = [];
+      let dateUpload = [];
+      let tagArray = [];
+      for (
+        let i = Object.keys(postsClone).length;
+        i >= Object.keys(postsClone).length - 3;
+        i--
+      ) {
+        let post = postsClone[i];
+        console.log(post);
+        title.push(post.title);
+        dateUpload.push(post.dateUpload);
+        tagArray.push(post.tag);
+
+        const imgs = post.text.split(/<\/?img>/);
+
+        for (let img of imgs) {
+          if (post.text.indexOf(`<img>${img}</img>`) !== -1) {
+            if (img === "") continue;
+            imgArray.push(img);
+            break;
+          }
+        }
+      }
+      setTitles(title);
+      setImgs(imgArray);
+      setDates(dateUpload);
+      setTags(tagArray);
+    }
+  }, []);
+
   return (
     <>
       <div id="newPosts" className="new-posts-new-posts">
-        <div id="post1" className="new-posts-item">
-          <div className="new-posts-container">
-            <span className="new-posts-date">
-              <span>Date</span>
-              <br></br>
-            </span>
-            <Link href="**">
-              <a className="new-posts-link">
-                <span>
-                  <span>Tag</span>
-                  <br></br>
-                </span>
-              </a>
-            </Link>
-            <h1 className="new-posts-title">
-              <span>Title</span>
-              <br></br>
-            </h1>
-          </div>
+        <div
+          id="post1"
+          style={{ backgroundImage: `url(${Imgs[0]})` }}
+          className="new-posts-item"
+        >
+          <Link href={"/posts/" + getUrl(Titles[0])}>
+            <a className="new-posts-container">
+              <span className="new-posts-date">
+                <span>{Dates[0]}</span>
+                <br></br>
+              </span>
+              <Link href={"blog?tag=" + getUrl(Tags[0])}>
+                <a className="new-posts-link">
+                  <span>
+                    <span>{Tags[0]}</span>
+                    <br></br>
+                  </span>
+                </a>
+              </Link>
+              <h1 className="new-posts-title">
+                <span>{Titles[0]}</span>
+                <br></br>
+              </h1>
+            </a>
+          </Link>
         </div>
-        <div id="post2" className="new-posts-item1">
-          <div className="new-posts-container1">
-            <span className="new-posts-date1">
-              <span>Date</span>
-              <br></br>
-            </span>
-            <Link href="**">
-              <a className="new-posts-link1">
-                <span>
-                  <span>Tag</span>
-                  <br></br>
-                </span>
-              </a>
-            </Link>
-            <h1 className="new-posts-title1">
-              <span>Title</span>
-              <br></br>
-            </h1>
-          </div>
+        <div
+          id="post2"
+          style={{ backgroundImage: `url(${Imgs[1]})` }}
+          className="new-posts-item1"
+        >
+          <Link href={"/posts/" + getUrl(Titles[1])}>
+            <a className="new-posts-container1">
+              <span className="new-posts-date1">
+                <span>{Dates[0]}</span>
+                <br></br>
+              </span>
+              <Link href={"blog?tag=" + getUrl(Tags[1])}>
+                <a className="new-posts-link1">
+                  <span>
+                    <span>{Tags[1]}</span>
+                    <br></br>
+                  </span>
+                </a>
+              </Link>
+              <h1 className="new-posts-title1">
+                <span>{Titles[1]}</span>
+                <br></br>
+              </h1>
+            </a>
+          </Link>
         </div>
-        <div id="post3" className="new-posts-item2">
-          <div className="new-posts-container2">
-            <span className="new-posts-date2">
-              <span>Date</span>
-              <br></br>
-            </span>
-            <Link href="**">
-              <a className="new-posts-link2">
-                <span>
-                  <span>Tag</span>
-                  <br></br>
-                </span>
-              </a>
-            </Link>
-            <h1 className="new-posts-title2">
-              <span>Title</span>
-              <br></br>
-            </h1>
-          </div>
+        <div
+          id="post3"
+          style={{ backgroundImage: `url(${Imgs[2]})` }}
+          className="new-posts-item2"
+        >
+          <Link href={"/posts/" + getUrl(Titles[2])}>
+            <a className="new-posts-container2">
+              <span className="new-posts-date2">
+                <span>{Dates[2]}</span>
+                <br></br>
+              </span>
+              <Link href={"blog?tag=" + getUrl(Tags[2])}>
+                <a className="new-posts-link2">
+                  <span>
+                    <span>{Tags[2]}</span>
+                    <br></br>
+                  </span>
+                </a>
+              </Link>
+              <h1 className="new-posts-title2">
+                <span>{Titles[2]}</span>
+                <br></br>
+              </h1>
+            </a>
+          </Link>
         </div>
       </div>
       <style jsx>
@@ -90,7 +151,7 @@ const NewPosts = (props) => {
             margin-right: 20px;
             background-size: cover;
             justify-content: flex-end;
-            background-image: url('https://play.teleporthq.io/static/svg/default-img.svg');
+            background-image: url("https://play.teleporthq.io/static/svg/default-img.svg");
             background-position: center;
           }
           .new-posts-container {
@@ -146,7 +207,7 @@ const NewPosts = (props) => {
             margin-right: 20px;
             background-size: cover;
             justify-content: flex-end;
-            background-image: url('https://play.teleporthq.io/static/svg/default-img.svg');
+            background-image: url("https://play.teleporthq.io/static/svg/default-img.svg");
             background-position: center;
           }
           .new-posts-container1 {
@@ -202,7 +263,7 @@ const NewPosts = (props) => {
             margin-right: 20px;
             background-size: cover;
             justify-content: flex-end;
-            background-image: url('https://play.teleporthq.io/static/svg/default-img.svg');
+            background-image: url("https://play.teleporthq.io/static/svg/default-img.svg");
             background-position: center;
           }
           .new-posts-container2 {
@@ -275,7 +336,7 @@ const NewPosts = (props) => {
         `}
       </style>
     </>
-  )
-}
+  );
+};
 
-export default NewPosts
+export default NewPosts;

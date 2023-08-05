@@ -1,12 +1,63 @@
 import React from "react";
 import Link from "next/link";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 import Header from "../components/header";
 import Tags from "../components/tags";
 import Footer from "../components/footer";
+import { getPosts } from "../components/get-posts";
+import { getUrl } from "../components/get-url";
+import Heart from "../components/heart";
 
-const Blog = (props) => {
+export async function getStaticProps() {
+  const posts = await getPosts();
+
+  return { props: { posts } };
+}
+
+const Blog = ({ posts }) => {
+  const router = useRouter();
+  let postsInfo = [];
+
+  let page = router.query["page"] || 1;
+  let tag = router.query["tag"];
+  let totalPosts = 0;
+
+  let pages = 0;
+
+  for (const index in posts) {
+    const post = posts[index];
+    const imgs = post.text.split(/<\/?img>/);
+    let imgArray = "";
+
+    if (tag && tag === getUrl(post.tag)) {
+      pages++;
+    } else if (!tag) {
+      pages++;
+    }
+
+    for (let img of imgs) {
+      if (post.text.indexOf(`<img>${img}</img>`) !== -1) {
+        if (img === "") continue;
+        imgArray = img;
+        break;
+      }
+    }
+    postsInfo.push({
+      img: imgArray,
+      description: post.text
+        .replace(`<img>${imgArray}</img>`, "")
+        .replaceAll("<b>", "")
+        .replaceAll("</b>", "")
+        .replaceAll("\n", ""),
+    });
+  }
+
+  console.log(pages);
+
+  pages = Array.from({ length: Math.ceil(pages / 4) }, (_, index) => index);
+
   return (
     <>
       <div className="blog-container">
@@ -23,51 +74,97 @@ const Blog = (props) => {
           />
         </Head>
         <Header rootClassName="header-root-class-name2"></Header>
-        <Tags rootClassName="tags-root-class-name"></Tags>
+        <Tags {...{ posts: posts }} rootClassName="tags-root-class-name"></Tags>
         <div className="blog-posts">
-          <Link href="/blog">
-            <a className="blog-link">
-              <div className="blog-post">
-                <img
-                  alt="image"
-                  src="https://lh3.googleusercontent.com/pw/AIL4fc8vRK4pub_25manXbWRFgkx6keM-cAYnsRcv5k1ryToToIUSJfbJSi64-frVAh7kjZGmjRXtNeLArNP3l9ZzuwnBvSosz2Rp-utmKoUgedsyke6enQ=d"
-                  className="blog-avatar"
-                />
-                <div className="blog-info">
-                  <span className="blog-date">
-                    <span>Jun 22 • 1 mins</span>
-                    <br></br>
-                  </span>
-                  <span className="blog-date1">
-                    <span>Tag</span>
-                    <br></br>
-                  </span>
-                  <h1 className="blog-title">
-                    Bài 10 – Hướng dẫn cách thở nước cho người mới bắt đầu
-                  </h1>
-                  <span className="blog-description">
-                    Thở nước là một kĩ năng bơi quan trọng của quá trình học
-                    bơi. Nếu bạn thở tốt, bạn sẽ bơi dễ dàng và ngược lại. Thở
-                    nước đối với người mới sẽ hơi khó một tí và sẽ càng khó hơn
-                    cho những bạn sợ nước. Tuy nhiên bạn đừng quá lo lắng.
-                  </span>
-                  <div className="blog-heart"></div>
-                </div>
-              </div>
-            </a>
-          </Link>
+          {Object.keys(posts).map((index) => {
+            const post = posts[index];
+
+            if (tag && getUrl(post.tag) !== tag) {
+              return <></>;
+            }
+
+            totalPosts++;
+
+            if (totalPosts > 4 * page || totalPosts <= 4 * (page - 1)) {
+              return <></>;
+            }
+
+            return (
+              <Link href={`/posts/${getUrl(post.title)}`}>
+                <a className="blog-link">
+                  <div className="blog-post">
+                    <img
+                      alt="image"
+                      src={postsInfo[index].img}
+                      className="blog-avatar"
+                    />
+                    <div className="blog-info">
+                      <span className="blog-date">
+                        <span>{`${post.dateUpload} • ${post.mins} mins`}</span>
+                        <br></br>
+                      </span>
+                      <span className="blog-date1">
+                        <span>{post.tag}</span>
+                        <br></br>
+                      </span>
+                      <h1 className="blog-title">{post.title}</h1>
+                      <span className="blog-description">
+                        {postsInfo[index].description}
+                      </span>
+                      <div
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                        }}
+                        className="blog-heart"
+                      >
+                        <Heart id={post._id} like={post.like} />
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </Link>
+            );
+          })}
         </div>
         <div className="blog-container1">
-          <svg viewBox="0 0 1024 1024" className="blog-icon">
-            <path d="M498 166l-346 346 346 346-76 76-422-422 422-422z"></path>
-          </svg>
-          <span className="blog-text4">
-            <span>1</span>
-            <br></br>
-          </span>
-          <svg viewBox="0 0 1024 1024" className="blog-icon2">
-            <path d="M250 176l92-90 426 426-426 426-92-90 338-336z"></path>
-          </svg>
+          <Link
+            href={`/blog${tag ? `?tag=${tag}&page=` : "?page="}${
+              Number(page) > 1 ? Number(page) - 1 : page
+            }`}
+          >
+            <a className="blog-icon2">
+              <svg viewBox="0 0 1024 1024">
+                <path d="M498 166l-346 346 346 346-76 76-422-422 422-422z"></path>
+              </svg>
+            </a>
+          </Link>
+          {pages.map((index) => {
+            return (
+              <Link
+                href={`/blog${tag ? `?tag=${tag}&page=` : "?page="}${
+                  index + 1
+                }`}
+              >
+                <a
+                  className={`blog-text4${page == index + 1 ? "-active" : ""}`}
+                >
+                  <span>{index + 1}</span>
+                </a>
+              </Link>
+            );
+          })}
+          <Link
+            href={`/blog${tag ? `?tag=${tag}&page=` : "?page="}${
+              Number(page) < Object.keys(pages).length ? Number(page) + 1 : page
+            }`}
+          >
+            <a className="blog-icon2">
+              <svg viewBox="0 0 1024 1024">
+                <path d="M250 176l92-90 426 426-426 426-92-90 338-336z"></path>
+              </svg>
+            </a>
+          </Link>
         </div>
         <Footer rootClassName="footer-root-class-name1"></Footer>
       </div>
@@ -147,6 +244,7 @@ const Blog = (props) => {
             line-height: 1.5;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 3;
+            width: 100%;
           }
           .blog-heart {
             flex: 0 0 auto;
@@ -166,6 +264,8 @@ const Blog = (props) => {
             border-left-width: 0px;
             border-right-width: 0px;
             border-bottom-width: 0px;
+            max-height: 50px;
+            overflow: hidden;
           }
           .blog-container1 {
             flex: 0 0 auto;
@@ -190,7 +290,8 @@ const Blog = (props) => {
           .blog-icon:hover {
             opacity: 1;
           }
-          .blog-text4 {
+          .blog-text4,
+          .blog-text4-active {
             color: var(--dl-color-hbst-white);
             cursor: pointer;
             opacity: 0.5;
@@ -203,6 +304,9 @@ const Blog = (props) => {
             padding-left: 10px;
             padding-right: 10px;
             padding-bottom: 10px;
+          }
+          .blog-text4-active {
+            opacity: 1;
           }
           .blog-text4:hover {
             opacity: 1;
@@ -232,7 +336,7 @@ const Blog = (props) => {
             }
             .blog-info {
               width: 100%;
-              padding-bottom: 120px;
+              padding-bottom: 70px;
             }
           }
           @media (max-width: 767px) {

@@ -7,6 +7,12 @@ import Header from "../components/header";
 import NewPosts from "../components/new-posts";
 import Footer from "../components/footer";
 
+export async function getStaticProps() {
+  const res = await fetch("http://localhost:3001/api/posts");
+  const posts = await res.json();
+  return { props: { posts } };
+}
+
 const Home = (props) => {
   return (
     <>
@@ -88,7 +94,7 @@ const Home = (props) => {
         </div>
         <div className="home-blogs">
           <h1 className="home-title1">Kiến thức</h1>
-          <NewPosts></NewPosts>
+          <NewPosts {...props}></NewPosts>
         </div>
         <div className="home-khoa-hoc">
           <h1 className="home-title2">CÁC KHÓA HỌC</h1>
