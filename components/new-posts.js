@@ -3,11 +3,18 @@ import Link from "next/link";
 
 import { getUrl } from "../components/get-url";
 
-const NewPosts = ({ posts }) => {
+const NewPosts = () => {
   const [Imgs, setImgs] = useState([]);
   const [Dates, setDates] = useState([]);
   const [Titles, setTitles] = useState([]);
   const [Tags, setTags] = useState([]);
+  const [posts, setPosts] = useState({});
+
+  useEffect(async () => {
+    const res = await fetch(process.env.NEXT_PUBLIC_apiUrl + "/api/posts");
+    const posts = await res.json();
+    setPosts(posts);
+  }, []);
 
   useEffect(async () => {
     const response = posts;
@@ -27,7 +34,6 @@ const NewPosts = ({ posts }) => {
         i--
       ) {
         let post = postsClone[i];
-        console.log(post);
         title.push(post.title);
         dateUpload.push(post.dateUpload);
         tagArray.push(post.tag);
@@ -47,7 +53,7 @@ const NewPosts = ({ posts }) => {
       setDates(dateUpload);
       setTags(tagArray);
     }
-  }, []);
+  }, [posts]);
 
   return (
     <>

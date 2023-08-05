@@ -1,24 +1,37 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import { getUrl } from "./get-url";
 
 import PropTypes from "prop-types";
 
 const Tags = (props) => {
-  const { posts } = props;
+  const router = useRouter();
+  const [posts, setPosts] = useState({ success: false, data: {} });
+
+  let tagA = router.query["tag"];
+
+  useEffect(async () => {
+    const res = await fetch(process.env.NEXT_PUBLIC_apiUrl + "/api/posts");
+    let posts = await res.json();
+    posts.data = posts.data.reverse();
+    setPosts(posts);
+  }, []);
 
   const [Tags, setTags] = useState([]);
 
   useEffect(() => {
-    let tags = ["All Posts"];
-    for (const index in posts) {
-      if (!tags.includes(posts[index].tag)) {
-        tags.push(posts[index].tag);
+    if (posts["success"]) {
+      let tags = ["All Posts"];
+      for (const index in posts.data) {
+        if (!tags.includes(posts.data[index].tag)) {
+          tags.push(posts.data[index].tag);
+        }
       }
+      setTags(tags);
     }
-    setTags(tags);
-  }, []);
+  }, [posts]);
 
   return (
     <>
@@ -32,7 +45,16 @@ const Tags = (props) => {
                   tag !== "All Posts" ? getUrl(tag) : ""
                 }`}
               >
-                <a className="tags-link">{tag}</a>
+                <a
+                  className={`tags-link${
+                    (tag === "All Posts" && !tagA && "-active") ||
+                    getUrl(tag) === tagA
+                      ? "-active"
+                      : ""
+                  }`}
+                >
+                  {tag}
+                </a>
               </Link>
             );
           })}
@@ -62,7 +84,8 @@ const Tags = (props) => {
             max-width: 900px;
             align-items: flex-start;
           }
-          .tags-link {
+          .tags-link,
+          .tags-link-active {
             color: var(--dl-color-hbst-white);
             cursor: pointer;
             font-style: normal;
@@ -71,6 +94,9 @@ const Tags = (props) => {
             margin-left: 20px;
             margin-right: 20px;
             text-decoration: none;
+          }
+          .tags-link-active {
+            color: var(--dl-color-hbst-yellow);
           }
         `}
       </style>

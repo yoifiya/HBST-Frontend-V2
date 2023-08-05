@@ -9,55 +9,9 @@ import Footer from "../components/footer";
 import { getPosts } from "../components/get-posts";
 import { getUrl } from "../components/get-url";
 import Heart from "../components/heart";
+import Posts from "../components/posts";
 
-export async function getStaticProps() {
-  const posts = await getPosts();
-
-  return { props: { posts } };
-}
-
-const Blog = ({ posts }) => {
-  const router = useRouter();
-  let postsInfo = [];
-
-  let page = router.query["page"] || 1;
-  let tag = router.query["tag"];
-  let totalPosts = 0;
-
-  let pages = 0;
-
-  for (const index in posts) {
-    const post = posts[index];
-    const imgs = post.text.split(/<\/?img>/);
-    let imgArray = "";
-
-    if (tag && tag === getUrl(post.tag)) {
-      pages++;
-    } else if (!tag) {
-      pages++;
-    }
-
-    for (let img of imgs) {
-      if (post.text.indexOf(`<img>${img}</img>`) !== -1) {
-        if (img === "") continue;
-        imgArray = img;
-        break;
-      }
-    }
-    postsInfo.push({
-      img: imgArray,
-      description: post.text
-        .replace(`<img>${imgArray}</img>`, "")
-        .replaceAll("<b>", "")
-        .replaceAll("</b>", "")
-        .replaceAll("\n", ""),
-    });
-  }
-
-  console.log(pages);
-
-  pages = Array.from({ length: Math.ceil(pages / 4) }, (_, index) => index);
-
+const Blog = () => {
   return (
     <>
       <div className="blog-container">
@@ -74,98 +28,9 @@ const Blog = ({ posts }) => {
           />
         </Head>
         <Header rootClassName="header-root-class-name2"></Header>
-        <Tags {...{ posts: posts }} rootClassName="tags-root-class-name"></Tags>
-        <div className="blog-posts">
-          {Object.keys(posts).map((index) => {
-            const post = posts[index];
+        <Tags rootClassName="tags-root-class-name"></Tags>
 
-            if (tag && getUrl(post.tag) !== tag) {
-              return <></>;
-            }
-
-            totalPosts++;
-
-            if (totalPosts > 4 * page || totalPosts <= 4 * (page - 1)) {
-              return <></>;
-            }
-
-            return (
-              <Link href={`/posts/${getUrl(post.title)}`}>
-                <a className="blog-link">
-                  <div className="blog-post">
-                    <img
-                      alt="image"
-                      src={postsInfo[index].img}
-                      className="blog-avatar"
-                    />
-                    <div className="blog-info">
-                      <span className="blog-date">
-                        <span>{`${post.dateUpload} • ${post.mins} mins`}</span>
-                        <br></br>
-                      </span>
-                      <span className="blog-date1">
-                        <span>{post.tag}</span>
-                        <br></br>
-                      </span>
-                      <h1 className="blog-title">{post.title}</h1>
-                      <span className="blog-description">
-                        {postsInfo[index].description}
-                      </span>
-                      <div
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                        }}
-                        className="blog-heart"
-                      >
-                        <Heart id={post._id} like={post.like} />
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </Link>
-            );
-          })}
-        </div>
-        <div className="blog-container1">
-          <Link
-            href={`/blog${tag ? `?tag=${tag}&page=` : "?page="}${
-              Number(page) > 1 ? Number(page) - 1 : page
-            }`}
-          >
-            <a className="blog-icon2">
-              <svg viewBox="0 0 1024 1024">
-                <path d="M498 166l-346 346 346 346-76 76-422-422 422-422z"></path>
-              </svg>
-            </a>
-          </Link>
-          {pages.map((index) => {
-            return (
-              <Link
-                href={`/blog${tag ? `?tag=${tag}&page=` : "?page="}${
-                  index + 1
-                }`}
-              >
-                <a
-                  className={`blog-text4${page == index + 1 ? "-active" : ""}`}
-                >
-                  <span>{index + 1}</span>
-                </a>
-              </Link>
-            );
-          })}
-          <Link
-            href={`/blog${tag ? `?tag=${tag}&page=` : "?page="}${
-              Number(page) < Object.keys(pages).length ? Number(page) + 1 : page
-            }`}
-          >
-            <a className="blog-icon2">
-              <svg viewBox="0 0 1024 1024">
-                <path d="M250 176l92-90 426 426-426 426-92-90 338-336z"></path>
-              </svg>
-            </a>
-          </Link>
-        </div>
+        <Posts />
         <Footer rootClassName="footer-root-class-name1"></Footer>
       </div>
       <style jsx>

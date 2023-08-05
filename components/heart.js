@@ -4,8 +4,6 @@ import { default as HeartIcon } from "react-animated-heart";
 function Heart({ id, like }) {
   const [isClick, setClick] = useState(false);
 
-  console.log(id, like);
-
   return (
     <>
       <div className="heart-container" onClick={() => setClick(!isClick)}>
