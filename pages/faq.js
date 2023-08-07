@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Head from "next/head";
 
 import Header from "../components/header";
@@ -6,6 +6,8 @@ import CauHoi from "../components/cau-hoi";
 import Footer from "../components/footer";
 
 const FAQ = (props) => {
+  const debounce = useRef(false);
+
   return (
     <>
       <div className="faq-container">
@@ -18,7 +20,7 @@ const FAQ = (props) => {
           />
           <meta
             property="og:image"
-            content="https://lh3.googleusercontent.com/pw/AIL4fc95smzk_QUHx8IOXZLMJPDp0D6NaBq8DP3PsunWOlfuxauo-d1lzAQhz1NztEj5Uz4JuO3bbSac0Q3bTByYavYq_O-XZF8RiR5fnLtRv6O87-_VDDc=d"
+            content="https://lh3.googleusercontent.com/pw/AIL4fc-blDE6wZT4MbxV9oj__ERtuvqdOPVJsox9Nx_Gg5IXGcqnr6iezUq2nP9e1BaSxh36Ejo0cyoELIwhmUvIj-0CALdhvaAjofyQW8-Z6T3TKobbVig66i1dxo-2eOdZWmBUvynZxXpxAdnAV3emdMmQ2bu_wM91t8N2HRkwA4KhScuFuhmv3Wef9DflJln-KBx2vFN1yg1dCc16ApvwsJ-YAktMzFZlsLNgU4VKFiA1dakmCNCtgu_5e5GxpPnryLo-e1GI3gjCRu5s_kZ3z2PaJHn7ER4lnHfpyGHH8g7bet0UdvlZwB06jjtR5bxfhij00wF9pdYjsXKBroauCNfZAeQFta368CWqLz15x8FVDT_St99G8CgZOqpLJvWsfcaPmhv2CED64qedqRoEAbo1-fTRRpMdIRnNpFgV2Y-iO8D-AJfxIHD3GnRtXWCUcWBKEWfXtVQoPqgdSNwjtaRKVoGoOpqfPga7ZU6a07p1dwAvojEV2IvrN6t4_FTTgdtpFgGTS99HCOpO6CZSsOFrMt7XlbOUvk6v2UaF5coQMxtZIQg-kyN7AFiprzdfrAD3Oqp7UhOtnt0tAIUltsWEI3FWWoL84Nz_-J3u2TwbOXo568meumfiyJNnQWHK4h-3yfpCOc366seqaqKbff1ky5hur_1pVAF3Hsv43q36OTee0KM6Y3kOOyWa8Pgo65-D2IoBlEP3CXh_cYLR8I9Fhc6f4P0pYwYC_HrcspevgzoN9Rmn43ObWz3dte196_98TpoZ005Ywn8t4jLavZov5r7Y_IO4TMXAA3lpUrQINV1DQMXJMFTBpDNe6E0sCA3qLOOkpxYNQug_rpYYd5dB033n2EZGDgQexa1mo82ZtDMJNOTZUwKz16212YgHHV5IENKP0ZGoWjFtgjr3F7HklFAFJYa7zlg9ukyfOHBAcpaViRF4pEodgR_ldPM=w1000-no-tmp.jpg"
           />
         </Head>
         <Header rootClassName="header-root-class-name4"></Header>
@@ -30,7 +32,47 @@ const FAQ = (props) => {
           <CauHoi></CauHoi>
         </div>
         <div className="faq-container1">
-          <form className="faq-form">
+          <form
+            className="faq-form"
+            onSubmit={async (e) => {
+              e.preventDefault();
+              if (debounce.current) {
+                return;
+              }
+              debounce.current = true;
+              const Email = e.target.Email.value;
+              const FullName = e.target.FullName.value;
+              const Phone = e.target.Phone.value;
+
+              const res = await fetch(
+                process.env.NEXT_PUBLIC_apiUrl + "/form/share",
+                {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({
+                    Email: Email,
+                    FullName: FullName,
+                    Phone: Phone,
+                  }),
+                }
+              )
+                .then((res) => res.json())
+                .catch((err) => {
+                  return { success: false, data: err.message };
+                });
+
+              debounce.current = false;
+
+              if (res["success"]) {
+                document.getElementById("Thanks").style.display = "block";
+                setTimeout(() => {
+                  document.getElementById("Thanks").style.display = "none";
+                }, 2000);
+              } else {
+                alert(res["data"]);
+              }
+            }}
+          >
             <h2 className="faq-text02">
               <span>ĐĂNG KÝ ĐỂ ĐƯỢC CHIA SẺ</span>
               <br></br>
@@ -65,7 +107,9 @@ const FAQ = (props) => {
                       <br></br>
                     </span>
                   </button>
-                  <span className="faq-text15">Cảm ơn bạn đã đăng ký!</span>
+                  <span id="Thanks" className="faq-text15">
+                    Cảm ơn bạn đã đăng ký!
+                  </span>
                 </div>
               </div>
             </div>
@@ -250,6 +294,7 @@ const FAQ = (props) => {
           .faq-text15 {
             color: var(--dl-color-hbst-white);
             margin-top: 15px;
+            display: none;
           }
           @media (max-width: 1200px) {
             .faq-text06 {

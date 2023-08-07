@@ -108,15 +108,27 @@ const Blog = ({ allPosts }) => {
 
   pages = Array.from({ length: Math.ceil(pages / 4) }, (_, index) => index);
 
+  let imgBanner = allPosts[0].text.split(/<\/?img>/);
+
+  for (let img of imgBanner) {
+    if (allPosts[0].text.indexOf(`<img>${img}</img>`) !== -1) {
+      if (img === "") continue;
+      imgBanner = img;
+      break;
+    }
+  }
+
   return (
     <>
       <div className="blog-container">
         <Head>
-          <title>Blog - Punctual Substantial Goldfish</title>
+          <title>Kiến Thức | Boisinhton.com</title>
+          <meta property="og:title" content="Kiến Thức | Boisinhton.com" />
           <meta
-            property="og:title"
-            content="Blog - Punctual Substantial Goldfish"
+            property="og:description"
+            content="Chúng tôi tổ chức các loại hoạt động hồ bơi mới. Chúng tôi đào tạo bằng cách tham gia các khóa học bơi sinh tồn khác nhau và tìm hiểu về các xu hướng học bơi mới"
           />
+          <meta property="og:image" content={imgBanner} />
         </Head>
         <Header rootClassName="header-root-class-name2"></Header>
         <Tags allPosts={allPosts} rootClassName="tags-root-class-name"></Tags>

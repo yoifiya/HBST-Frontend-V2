@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 
 import PropTypes from "prop-types";
 
@@ -41,14 +42,11 @@ const CauHoi = (props) => {
               Ba mẹ muốn tìm hiểu thêm thông tin chi tiết về khóa học và đăng ký
               học bơi miễn phí tại trường bẳng cách điền form tại đây: 
             </span>
-            <span
-              className="cau-hoi-text09"
-              onClick={() => {
-                window.open("https://forms.gle/EbbWgcZcmmirieFw9");
-              }}
-            >
-              https://forms.gle/EbbWgcZcmmirieFw9
-            </span>
+            <Link href={"https://forms.gle/EbbWgcZcmmirieFw9"} target="_blank">
+              <a className="cau-hoi-text09" target="_blank">
+                https://forms.gle/EbbWgcZcmmirieFw9
+              </a>
+            </Link>
           </span>
         )}
         <div className="cau-hoi-line"></div>
@@ -84,14 +82,11 @@ const CauHoi = (props) => {
                 }}
               />
             </span>
-            <span
-              className="cau-hoi-text13"
-              onClick={() => {
-                window.open("https://forms.gle/1AcPCPUuZncXxoBD8");
-              }}
-            >
-              https://forms.gle/1AcPCPUuZncXxoBD8
-            </span>
+            <Link href={"https://forms.gle/1AcPCPUuZncXxoBD8"} target="_blank">
+              <a className="cau-hoi-text09" target="_blank">
+                https://forms.gle/1AcPCPUuZncXxoBD8
+              </a>
+            </Link>
           </span>
         )}
         <div className="cau-hoi-line1"></div>
@@ -136,14 +131,11 @@ const CauHoi = (props) => {
                 }}
               />
             </span>
-            <span
-              className="cau-hoi-text19"
-              onClick={() => {
-                window.open("https://forms.gle/1AcPCPUuZncXxoBD8");
-              }}
-            >
-              https://forms.gle/1AcPCPUuZncXxoBD8
-            </span>
+            <Link href={"https://forms.gle/1AcPCPUuZncXxoBD8"} target="_blank">
+              <a className="cau-hoi-text09" target="_blank">
+                https://forms.gle/1AcPCPUuZncXxoBD8
+              </a>
+            </Link>
           </span>
         )}
         <div className="cau-hoi-line2"></div>

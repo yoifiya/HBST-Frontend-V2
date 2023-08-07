@@ -8,7 +8,7 @@ const Tags = (props) => {
   const router = useRouter();
   const currentPath = router.asPath;
   const pathParts = currentPath.split("/");
-  const basePath = pathParts[1];
+  const [currentTag, setCurrentTag] = useState();
 
   const { allPosts } = props;
 
@@ -58,7 +58,12 @@ const Tags = (props) => {
         }
       }
     } else {
-      tags.push(allPosts.tag);
+      setCurrentTag(allPosts.tag);
+      for (const index in allPosts.allPosts) {
+        if (!tags.includes(allPosts.allPosts[index].tag)) {
+          tags.push(allPosts.allPosts[index].tag);
+        }
+      }
     }
     setTags(tags);
   }, [allPosts]);
@@ -77,7 +82,11 @@ const Tags = (props) => {
               >
                 <a
                   className={`tags-link${
-                    (!tagSearch && tag === "All Posts" && "-active") ||
+                    (currentTag && currentTag == tag && "-active") ||
+                    (!currentTag &&
+                      !tagSearch &&
+                      tag === "All Posts" &&
+                      "-active") ||
                     (getUrl(tag) === tagSearch && "-active") ||
                     ""
                   }`}

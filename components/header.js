@@ -131,7 +131,11 @@ const Header = (props) => {
             <a
               className={
                 "header-link03" +
-                (router.pathname === "/blog" ? " nav-active" : "")
+                (router.pathname === "/blog"
+                  ? " nav-active"
+                  : router.pathname.split("/")[1] === "post"
+                  ? " nav-active"
+                  : "")
               }
             >
               {props.button2}
@@ -217,7 +221,11 @@ const Header = (props) => {
             <a
               className={
                 "header-link09" +
-                (router.pathname === "/blog" ? " nav-active" : "")
+                (router.pathname === "/blog"
+                  ? " nav-active"
+                  : router.pathname.split("/")[1] === "post"
+                  ? " nav-active"
+                  : "")
               }
             >
               {props.button21}
