@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { FacebookShareButton } from "react-share";
 import Head from "next/head";
@@ -213,7 +213,7 @@ const Posts = ({ post }) => {
         if (img === "") continue;
         text = text.replace(
           `<img>${img}</img>`,
-          `<img style="background-color: white; width: 100%" src="${img}" alt="img"/>`
+          `<img style="margin-top: 10px; margin-bottom: 10px; background-color: white; width: 100%" src="${img}" alt="img"/>`
         );
       }
     }
@@ -260,6 +260,8 @@ const Posts = ({ post }) => {
       post.text
     );
   });
+
+  samePosts.current = 0;
 
   return (
     <>
@@ -414,6 +416,7 @@ const Posts = ({ post }) => {
             color: white;
             width: 100%;
             line-height: 1.5;
+            font-size: 18px;
           }
           .posts-container {
             width: 100%;

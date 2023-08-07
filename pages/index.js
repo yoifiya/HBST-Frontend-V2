@@ -70,6 +70,7 @@ const Home = ({ newPosts }) => {
     <>
       <div className="home-container">
         <Head>
+          <title>Boisinhton.com</title>
           <meta property="og:title" content="Boisinhton.com" />
           <meta property="og:site_name" content="Boisinhton.com" />
           <meta property="og:url" content="https://hocboisinhton.com" />
