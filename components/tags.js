@@ -1,22 +1,67 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import PropTypes from "prop-types";
 
 const Tags = (props) => {
-  const { posts } = props;
+  const router = useRouter();
+  const currentPath = router.asPath;
+  const pathParts = currentPath.split("/");
+  const basePath = pathParts[1];
+
+  const { allPosts } = props;
+
+  const tagSearch = router.query.tag;
 
   const [Tags, setTags] = useState([]);
 
+  function getUrl(input) {
+    const diacriticsMap = {
+      "à|á|ả|ã|ạ": "a",
+      "ă|ằ|ắ|ẳ|ẵ|ặ": "a",
+      "â|ầ|ấ|ẩ|ẫ|ậ": "a",
+      "è|é|ẻ|ẽ|ẹ": "e",
+      "ê|ề|ế|ể|ễ|ệ": "e",
+      "ì|í|ỉ|ĩ|ị": "i",
+      "ò|ó|ỏ|õ|ọ": "o",
+      "ô|ồ|ố|ổ|ỗ|ộ": "o",
+      "ơ|ờ|ớ|ở|ỡ|ợ": "o",
+      "ù|ú|ủ|ũ|ụ": "u",
+      "ư|ừ|ứ|ử|ữ|ự": "u",
+      "ỳ|ý|ỷ|ỹ|ỵ": "y",
+      đ: "d",
+      "[^a-z0-9]+": " ",
+      " ": "-",
+    };
+
+    return input
+      .toLowerCase()
+      .replace(/./g, (char) => {
+        for (const key in diacriticsMap) {
+          if (new RegExp(key).test(char)) {
+            return diacriticsMap[key];
+          }
+        }
+        return char;
+      })
+      .trim()
+      .replace(/\s+/g, "-");
+  }
+
   useEffect(() => {
     let tags = ["All Posts"];
-    for (const index in posts) {
-      if (!tags.includes(posts[index].tag)) {
-        tags.push(posts[index].tag);
+    if (allPosts[0]) {
+      for (const index in allPosts) {
+        if (!tags.includes(allPosts[index].tag)) {
+          tags.push(allPosts[index].tag);
+        }
       }
+    } else {
+      tags.push(allPosts.tag);
     }
     setTags(tags);
-  }, []);
+  }, [allPosts]);
 
   return (
     <>
@@ -30,7 +75,15 @@ const Tags = (props) => {
                   tag !== "All Posts" ? getUrl(tag) : ""
                 }`}
               >
-                <a className="tags-link">{tag}</a>
+                <a
+                  className={`tags-link${
+                    (!tagSearch && tag === "All Posts" && "-active") ||
+                    (getUrl(tag) === tagSearch && "-active") ||
+                    ""
+                  }`}
+                >
+                  {tag}
+                </a>
               </Link>
             );
           })}

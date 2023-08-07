@@ -1,12 +1,112 @@
-import React from 'react'
-import Link from 'next/link'
-import Head from 'next/head'
+import React from "react";
+import Link from "next/link";
+import Head from "next/head";
+import { useRouter } from "next/router";
 
-import Header from '../components/header'
-import Tags from '../components/tags'
-import Footer from '../components/footer'
+import Header from "../components/header";
+import Tags from "../components/tags";
+import Footer from "../components/footer";
 
-const Blog = (props) => {
+export const getStaticProps = async () => {
+  const fetchAllPosts = async () => {
+    try {
+      const res = await fetch(process.env.NEXT_PUBLIC_apiUrl + "/post/all");
+      const allPosts = await res.json();
+
+      if (allPosts["success"]) {
+        return allPosts.data;
+      } else {
+        throw new Error("Success is false");
+      }
+    } catch (error) {
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      return fetchAllPosts();
+    }
+  };
+
+  try {
+    const allPosts = await fetchAllPosts();
+    return { props: { allPosts } };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return { props: { allPosts: [] } };
+  }
+};
+
+const Blog = ({ allPosts }) => {
+  const router = useRouter();
+
+  let totalPosts = 0;
+
+  let page = router.query["page"] || 1;
+  let tag = router.query["tag"];
+
+  function getUrl(input) {
+    const diacriticsMap = {
+      "à|á|ả|ã|ạ": "a",
+      "ă|ằ|ắ|ẳ|ẵ|ặ": "a",
+      "â|ầ|ấ|ẩ|ẫ|ậ": "a",
+      "è|é|ẻ|ẽ|ẹ": "e",
+      "ê|ề|ế|ể|ễ|ệ": "e",
+      "ì|í|ỉ|ĩ|ị": "i",
+      "ò|ó|ỏ|õ|ọ": "o",
+      "ô|ồ|ố|ổ|ỗ|ộ": "o",
+      "ơ|ờ|ớ|ở|ỡ|ợ": "o",
+      "ù|ú|ủ|ũ|ụ": "u",
+      "ư|ừ|ứ|ử|ữ|ự": "u",
+      "ỳ|ý|ỷ|ỹ|ỵ": "y",
+      đ: "d",
+      "[^a-z0-9]+": " ",
+      " ": "-",
+    };
+
+    return input
+      .toLowerCase()
+      .replace(/./g, (char) => {
+        for (const key in diacriticsMap) {
+          if (new RegExp(key).test(char)) {
+            return diacriticsMap[key];
+          }
+        }
+        return char;
+      })
+      .trim()
+      .replace(/\s+/g, "-");
+  }
+
+  let pages = 0;
+
+  let postsInfo = [];
+  for (const index in allPosts) {
+    const post = allPosts[index];
+    const imgs = post.text.split(/<\/?img>/);
+    let imgArray = "";
+
+    if (tag && tag === getUrl(post.tag)) {
+      pages++;
+    } else if (!tag) {
+      pages++;
+    }
+
+    for (let img of imgs) {
+      if (post.text.indexOf(`<img>${img}</img>`) !== -1) {
+        if (img === "") continue;
+        imgArray = img;
+        break;
+      }
+    }
+    postsInfo.push({
+      img: imgArray,
+      description: post.text
+        .replace(`<img>${imgArray}</img>`, "")
+        .replaceAll("<b>", "")
+        .replaceAll("</b>", "")
+        .replaceAll("\n", ""),
+    });
+  }
+
+  pages = Array.from({ length: Math.ceil(pages / 4) }, (_, index) => index);
+
   return (
     <>
       <div className="blog-container">
@@ -18,51 +118,113 @@ const Blog = (props) => {
           />
         </Head>
         <Header rootClassName="header-root-class-name2"></Header>
-        <Tags rootClassName="tags-root-class-name"></Tags>
+        <Tags allPosts={allPosts} rootClassName="tags-root-class-name"></Tags>
         <div className="blog-posts">
-          <Link href="/blog">
-            <a className="blog-link">
-              <div className="blog-post">
-                <img
-                  alt="image"
-                  src="https://lh3.googleusercontent.com/pw/AIL4fc8vRK4pub_25manXbWRFgkx6keM-cAYnsRcv5k1ryToToIUSJfbJSi64-frVAh7kjZGmjRXtNeLArNP3l9ZzuwnBvSosz2Rp-utmKoUgedsyke6enQ=d"
-                  className="blog-avatar"
-                />
-                <div className="blog-info">
-                  <span className="blog-date">
-                    <span>Jun 22 • 1 mins</span>
-                    <br></br>
-                  </span>
-                  <span className="blog-date1">
-                    <span>Tag</span>
-                    <br></br>
-                  </span>
-                  <h1 className="blog-title">
-                    Bài 10 – Hướng dẫn cách thở nước cho người mới bắt đầu
-                  </h1>
-                  <span className="blog-description">
-                    Thở nước là một kĩ năng bơi quan trọng của quá trình học
-                    bơi. Nếu bạn thở tốt, bạn sẽ bơi dễ dàng và ngược lại. Thở
-                    nước đối với người mới sẽ hơi khó một tí và sẽ càng khó hơn
-                    cho những bạn sợ nước. Tuy nhiên bạn đừng quá lo lắng.
-                  </span>
-                  <div className="blog-heart"></div>
-                </div>
-              </div>
-            </a>
-          </Link>
+          {allPosts.map((post) => {
+            let tagPost = post.tag;
+
+            if (tag && tag !== getUrl(tagPost)) {
+              return <div key={post.index}></div>;
+            }
+
+            totalPosts++;
+
+            if (totalPosts > 4 * page || totalPosts <= 4 * (page - 1)) {
+              return <div key={post.index}></div>;
+            }
+
+            let description = post.text;
+            let Banner = "";
+
+            const imgs = description.split(/<\/?img>/);
+
+            const urls = description.split(/<\/?url>/);
+
+            for (let url of urls) {
+              if (description.indexOf(`<url>${url}</url>`) !== -1) {
+                if (url === "") continue;
+                description = description.replace(`<url>${url}</url>`, ``);
+              }
+            }
+
+            for (let img of imgs) {
+              if (description.indexOf(`<img>${img}</img>`) !== -1) {
+                if (img === "") continue;
+                if (Banner === "") {
+                  Banner = img;
+                }
+                description = description.replace(`<img>${img}</img>`, ``);
+              }
+            }
+
+            description = description
+              .replaceAll("<b>", "")
+              .replaceAll("</b>", "")
+              .replaceAll("\n", "");
+            return (
+              <Link href={"/post/" + getUrl(post.title)}>
+                <a className="blog-link">
+                  <div className="blog-post">
+                    <img alt="image" src={Banner} className="blog-avatar" />
+                    <div className="blog-info">
+                      <span className="blog-date">
+                        <span>
+                          {post.dateUpload} • {post.mins} mins
+                        </span>
+                        <br></br>
+                      </span>
+                      <span className="blog-date1">
+                        <span>{post.tag}</span>
+                        <br></br>
+                      </span>
+                      <h1 className="blog-title">{post.title}</h1>
+                      <span className="blog-description">{description}</span>
+                      <div className="blog-heart"></div>
+                    </div>
+                  </div>
+                </a>
+              </Link>
+            );
+          })}
         </div>
         <div className="blog-container1">
-          <svg viewBox="0 0 1024 1024" className="blog-icon">
-            <path d="M498 166l-346 346 346 346-76 76-422-422 422-422z"></path>
-          </svg>
-          <span className="blog-text4">
-            <span>1</span>
-            <br></br>
-          </span>
-          <svg viewBox="0 0 1024 1024" className="blog-icon2">
-            <path d="M250 176l92-90 426 426-426 426-92-90 338-336z"></path>
-          </svg>
+          <Link
+            href={`/blog${tag ? `?tag=${tag}&page=` : "?page="}${
+              Number(page) > 1 ? Number(page) - 1 : page
+            }`}
+          >
+            <a className="blog-icon2">
+              <svg viewBox="0 0 1024 1024">
+                <path d="M498 166l-346 346 346 346-76 76-422-422 422-422z"></path>
+              </svg>
+            </a>
+          </Link>
+          {pages.map((index) => {
+            return (
+              <Link
+                href={`/blog${tag ? `?tag=${tag}&page=` : "?page="}${
+                  index + 1
+                }`}
+              >
+                <a
+                  className={`blog-text4${page == index + 1 ? "-active" : ""}`}
+                >
+                  <span>{index + 1}</span>
+                </a>
+              </Link>
+            );
+          })}
+          <Link
+            href={`/blog${tag ? `?tag=${tag}&page=` : "?page="}${
+              Number(page) < Object.keys(pages).length ? Number(page) + 1 : page
+            }`}
+          >
+            <a className="blog-icon2">
+              <svg viewBox="0 0 1024 1024">
+                <path d="M250 176l92-90 426 426-426 426-92-90 338-336z"></path>
+              </svg>
+            </a>
+          </Link>
         </div>
         <Footer rootClassName="footer-root-class-name1"></Footer>
       </div>
@@ -149,7 +311,7 @@ const Blog = (props) => {
             right: 0px;
             width: 90%;
             bottom: 0px;
-            height: 100px;
+            height: 50px;
             margin: auto;
             display: flex;
             position: absolute;
@@ -185,7 +347,8 @@ const Blog = (props) => {
           .blog-icon:hover {
             opacity: 1;
           }
-          .blog-text4 {
+          .blog-text4,
+          .blog-text4-active {
             color: var(--dl-color-hbst-white);
             cursor: pointer;
             opacity: 0.5;
@@ -199,7 +362,8 @@ const Blog = (props) => {
             padding-right: 10px;
             padding-bottom: 10px;
           }
-          .blog-text4:hover {
+          .blog-text4:hover,
+          .blog-text4-active {
             opacity: 1;
           }
           .blog-icon2 {
@@ -227,7 +391,7 @@ const Blog = (props) => {
             }
             .blog-info {
               width: 100%;
-              padding-bottom: 120px;
+              padding-bottom: 80px;
             }
           }
           @media (max-width: 767px) {
@@ -238,7 +402,7 @@ const Blog = (props) => {
         `}
       </style>
     </>
-  )
-}
+  );
+};
 
-export default Blog
+export default Blog;

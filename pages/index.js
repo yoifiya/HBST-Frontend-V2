@@ -4,10 +4,68 @@ import Head from "next/head";
 import { Carousel } from "react-responsive-carousel";
 
 import Header from "../components/header";
-import NewPosts from "../components/new-posts";
 import Footer from "../components/footer";
 
-const Home = (props) => {
+export const getStaticProps = async () => {
+  const fetchNewPosts = async () => {
+    try {
+      const res = await fetch(process.env.NEXT_PUBLIC_apiUrl + "/post/new");
+      const newPosts = await res.json();
+
+      if (newPosts["success"]) {
+        return newPosts.data;
+      } else {
+        throw new Error("Success is false");
+      }
+    } catch (error) {
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      return fetchNewPosts();
+    }
+  };
+
+  try {
+    const newPosts = await fetchNewPosts();
+    return { props: { newPosts } };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return { props: { newPosts: [] } };
+  }
+};
+
+const Home = ({ newPosts }) => {
+  function getUrl(input) {
+    const diacriticsMap = {
+      "à|á|ả|ã|ạ": "a",
+      "ă|ằ|ắ|ẳ|ẵ|ặ": "a",
+      "â|ầ|ấ|ẩ|ẫ|ậ": "a",
+      "è|é|ẻ|ẽ|ẹ": "e",
+      "ê|ề|ế|ể|ễ|ệ": "e",
+      "ì|í|ỉ|ĩ|ị": "i",
+      "ò|ó|ỏ|õ|ọ": "o",
+      "ô|ồ|ố|ổ|ỗ|ộ": "o",
+      "ơ|ờ|ớ|ở|ỡ|ợ": "o",
+      "ù|ú|ủ|ũ|ụ": "u",
+      "ư|ừ|ứ|ử|ữ|ự": "u",
+      "ỳ|ý|ỷ|ỹ|ỵ": "y",
+      đ: "d",
+      "[^a-z0-9]+": " ",
+      " ": "-",
+    };
+
+    return input
+      .toLowerCase()
+      .replace(/./g, (char) => {
+        for (const key in diacriticsMap) {
+          if (new RegExp(key).test(char)) {
+            return diacriticsMap[key];
+          }
+        }
+        return char;
+      })
+      .trim()
+      .replace(/\s+/g, "-");
+  }
+
   return (
     <>
       <div className="home-container">
@@ -88,7 +146,49 @@ const Home = (props) => {
         </div>
         <div className="home-blogs">
           <h1 className="home-title1">Kiến thức</h1>
-          <NewPosts></NewPosts>
+          <div id="newPosts" className="new-posts-new-posts">
+            {newPosts.map((post) => {
+              const imgs = post.text.split(/<\/?img>/);
+              let imgUrl = "";
+
+              for (let img of imgs) {
+                if (post.text.indexOf(`<img>${img}</img>`) !== -1) {
+                  if (img === "") continue;
+
+                  imgUrl = img;
+                }
+              }
+              return (
+                <Link href={`/post/${getUrl(post.title)}`}>
+                  <a
+                    key={post.index}
+                    style={{ backgroundImage: `url(${imgUrl})` }}
+                    id="post1"
+                    className="new-posts-item"
+                  >
+                    <div className="new-posts-container">
+                      <span className="new-posts-date">
+                        <span>{post.dateUpload}</span>
+                        <br></br>
+                      </span>
+                      <Link href={`/blog?tag=${getUrl(post.tag)}`}>
+                        <a className="new-posts-link">
+                          <span>
+                            <span>{post.tag}</span>
+                            <br></br>
+                          </span>
+                        </a>
+                      </Link>
+                      <h1 className="new-posts-title">
+                        <span>{post.title}</span>
+                        <br></br>
+                      </h1>
+                    </div>
+                  </a>
+                </Link>
+              );
+            })}
+          </div>
         </div>
         <div className="home-khoa-hoc">
           <h1 className="home-title2">CÁC KHÓA HỌC</h1>
@@ -210,6 +310,127 @@ const Home = (props) => {
       </div>
       <style jsx>
         {`
+          .new-posts-new-posts {
+            flex: 0 0 auto;
+            width: 100%;
+            display: flex;
+            position: relative;
+            margin-top: 30px;
+            align-items: center;
+            justify-content: center;
+          }
+          .new-posts-item {
+            width: 292px;
+            height: 390px;
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            margin-right: 20px;
+            background-size: cover;
+            justify-content: flex-end;
+            background-image: url("https://play.teleporthq.io/static/svg/default-img.svg");
+            background-position: center;
+          }
+          .new-posts-container {
+            flex: 0 0 auto;
+            width: 100%;
+            cursor: pointer;
+            height: 100%;
+            display: flex;
+            padding: 20px;
+            position: relative;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: flex-end;
+            background-color: rgba(0, 0, 0, 0.55);
+          }
+          .new-posts-date {
+            top: 20px;
+            left: 20px;
+            color: var(--dl-color-hbst-white);
+            position: absolute;
+          }
+          .new-posts-link {
+            color: var(--dl-color-hbst-black);
+            cursor: pointer;
+            font-style: normal;
+            text-align: center;
+            transition: 0.2s;
+            font-weight: 300;
+            padding-top: 5px;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            padding-right: 20px;
+            padding-bottom: 5px;
+            text-decoration: none;
+            background-color: var(--dl-color-hbst-white);
+          }
+          .new-posts-link:hover {
+            opacity: 0.5;
+          }
+          .new-posts-title {
+            color: var(--dl-color-hbst-white);
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+          }
+          .new-posts-item1 {
+            width: 292px;
+            height: 390px;
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            margin-right: 20px;
+            background-size: cover;
+            justify-content: flex-end;
+            background-image: url("https://play.teleporthq.io/static/svg/default-img.svg");
+            background-position: center;
+          }
+          .new-posts-container1 {
+            flex: 0 0 auto;
+            width: 100%;
+            cursor: pointer;
+            height: 100%;
+            display: flex;
+            padding: 20px;
+            position: relative;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: flex-end;
+            background-color: rgba(0, 0, 0, 0.55);
+          }
+          .new-posts-date1 {
+            top: 20px;
+            left: 20px;
+            color: var(--dl-color-hbst-white);
+            position: absolute;
+          }
+          .new-posts-link1 {
+            color: var(--dl-color-hbst-black);
+            cursor: pointer;
+            font-style: normal;
+            text-align: center;
+            transition: 0.2s;
+            font-weight: 300;
+            padding-top: 5px;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            padding-right: 20px;
+            padding-bottom: 5px;
+            text-decoration: none;
+            background-color: var(--dl-color-hbst-white);
+          }
+          .new-posts-link1:hover {
+            opacity: 0.5;
+          }
+          .new-posts-title1 {
+            color: var(--dl-color-hbst-white);
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+          }
           .home-container {
             width: 100%;
             display: flex;
@@ -769,6 +990,21 @@ const Home = (props) => {
             background-color: var(--dl-color-hbst-yellow);
           }
           @media (max-width: 991px) {
+            .new-posts-new-posts {
+              flex-direction: column;
+            }
+            .new-posts-item {
+              width: 90%;
+              height: 200px;
+              margin-top: 20px;
+              margin-bottom: 20px;
+            }
+            .new-posts-item1 {
+              width: 90%;
+              height: 200px;
+              margin-top: 20px;
+              margin-bottom: 20px;
+            }
             .home-khoa-hoc-moi {
               flex-direction: column;
             }
