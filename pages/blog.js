@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import Header from "../components/header";
 import Tags from "../components/tags";
 import Footer from "../components/footer";
+import Heart from "../components/heart";
 
 export const getStaticProps = async () => {
   const fetchAllPosts = async () => {
@@ -179,7 +180,15 @@ const Blog = ({ allPosts }) => {
                       </span>
                       <h1 className="blog-title">{post.title}</h1>
                       <span className="blog-description">{description}</span>
-                      <div className="blog-heart"></div>
+                      <div
+                        className="blog-heart"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                        }}
+                      >
+                        <Heart id={post._id}></Heart>
+                      </div>
                     </div>
                   </div>
                 </a>
