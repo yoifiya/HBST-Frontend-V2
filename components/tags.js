@@ -1,37 +1,22 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
-
-import { getUrl } from "./get-url";
 
 import PropTypes from "prop-types";
 
 const Tags = (props) => {
-  const router = useRouter();
-  const [posts, setPosts] = useState({ success: false, data: {} });
-
-  let tagA = router.query["tag"];
-
-  useEffect(async () => {
-    const res = await fetch(process.env.NEXT_PUBLIC_apiUrl + "/api/posts");
-    let posts = await res.json();
-    posts.data = posts.data.reverse();
-    setPosts(posts);
-  }, []);
+  const { posts } = props;
 
   const [Tags, setTags] = useState([]);
 
   useEffect(() => {
-    if (posts["success"]) {
-      let tags = ["All Posts"];
-      for (const index in posts.data) {
-        if (!tags.includes(posts.data[index].tag)) {
-          tags.push(posts.data[index].tag);
-        }
+    let tags = ["All Posts"];
+    for (const index in posts) {
+      if (!tags.includes(posts[index].tag)) {
+        tags.push(posts[index].tag);
       }
-      setTags(tags);
     }
-  }, [posts]);
+    setTags(tags);
+  }, []);
 
   return (
     <>
@@ -45,16 +30,7 @@ const Tags = (props) => {
                   tag !== "All Posts" ? getUrl(tag) : ""
                 }`}
               >
-                <a
-                  className={`tags-link${
-                    (tag === "All Posts" && !tagA && "-active") ||
-                    getUrl(tag) === tagA
-                      ? "-active"
-                      : ""
-                  }`}
-                >
-                  {tag}
-                </a>
+                <a className="tags-link">{tag}</a>
               </Link>
             );
           })}

@@ -1,20 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 import { getUrl } from "../components/get-url";
 
-const NewPosts = () => {
+const NewPosts = ({ posts }) => {
   const [Imgs, setImgs] = useState([]);
   const [Dates, setDates] = useState([]);
   const [Titles, setTitles] = useState([]);
   const [Tags, setTags] = useState([]);
-  const [posts, setPosts] = useState({});
-
-  useEffect(async () => {
-    const res = await fetch(process.env.NEXT_PUBLIC_apiUrl + "/api/posts");
-    const posts = await res.json();
-    setPosts(posts);
-  }, []);
 
   useEffect(async () => {
     const response = posts;
@@ -34,6 +27,7 @@ const NewPosts = () => {
         i--
       ) {
         let post = postsClone[i];
+        console.log(post);
         title.push(post.title);
         dateUpload.push(post.dateUpload);
         tagArray.push(post.tag);
@@ -53,88 +47,70 @@ const NewPosts = () => {
       setDates(dateUpload);
       setTags(tagArray);
     }
-  }, [posts]);
+  }, []);
 
   return (
     <>
       <div id="newPosts" className="new-posts-new-posts">
-        <div
-          id="post1"
-          style={{ backgroundImage: `url(${Imgs[0]})` }}
-          className="new-posts-item"
-        >
-          <Link href={"/posts/" + getUrl(Titles[0])}>
-            <a className="new-posts-container">
-              <span className="new-posts-date">
-                <span>{Dates[0]}</span>
-                <br></br>
-              </span>
-              <Link href={"blog?tag=" + getUrl(Tags[0])}>
-                <a className="new-posts-link">
-                  <span>
-                    <span>{Tags[0]}</span>
-                    <br></br>
-                  </span>
-                </a>
-              </Link>
-              <h1 className="new-posts-title">
-                <span>{Titles[0]}</span>
-                <br></br>
-              </h1>
-            </a>
-          </Link>
+        <div id="post1" className="new-posts-item">
+          <div className="new-posts-container">
+            <span className="new-posts-date">
+              <span>Date</span>
+              <br></br>
+            </span>
+            <Link href="**">
+              <a className="new-posts-link">
+                <span>
+                  <span>Tag</span>
+                  <br></br>
+                </span>
+              </a>
+            </Link>
+            <h1 className="new-posts-title">
+              <span>Title</span>
+              <br></br>
+            </h1>
+          </div>
         </div>
-        <div
-          id="post2"
-          style={{ backgroundImage: `url(${Imgs[1]})` }}
-          className="new-posts-item1"
-        >
-          <Link href={"/posts/" + getUrl(Titles[1])}>
-            <a className="new-posts-container1">
-              <span className="new-posts-date1">
-                <span>{Dates[0]}</span>
-                <br></br>
-              </span>
-              <Link href={"blog?tag=" + getUrl(Tags[1])}>
-                <a className="new-posts-link1">
-                  <span>
-                    <span>{Tags[1]}</span>
-                    <br></br>
-                  </span>
-                </a>
-              </Link>
-              <h1 className="new-posts-title1">
-                <span>{Titles[1]}</span>
-                <br></br>
-              </h1>
-            </a>
-          </Link>
+        <div id="post2" className="new-posts-item1">
+          <div className="new-posts-container1">
+            <span className="new-posts-date1">
+              <span>Date</span>
+              <br></br>
+            </span>
+            <Link href="**">
+              <a className="new-posts-link1">
+                <span>
+                  <span>Tag</span>
+                  <br></br>
+                </span>
+              </a>
+            </Link>
+            <h1 className="new-posts-title1">
+              <span>Title</span>
+              <br></br>
+            </h1>
+          </div>
         </div>
-        <div
-          id="post3"
-          style={{ backgroundImage: `url(${Imgs[2]})` }}
-          className="new-posts-item2"
-        >
-          <Link href={"/posts/" + getUrl(Titles[2])}>
-            <a className="new-posts-container2">
-              <span className="new-posts-date2">
-                <span>{Dates[2]}</span>
-                <br></br>
-              </span>
-              <Link href={"blog?tag=" + getUrl(Tags[2])}>
-                <a className="new-posts-link2">
-                  <span>
-                    <span>{Tags[2]}</span>
-                    <br></br>
-                  </span>
-                </a>
-              </Link>
-              <h1 className="new-posts-title2">
-                <span>{Titles[2]}</span>
-                <br></br>
-              </h1>
-            </a>
-          </Link>
+        <div id="post3" className="new-posts-item2">
+          <div className="new-posts-container2">
+            <span className="new-posts-date2">
+              <span>Date</span>
+              <br></br>
+            </span>
+            <Link href="**">
+              <a className="new-posts-link2">
+                <span>
+                  <span>Tag</span>
+                  <br></br>
+                </span>
+              </a>
+            </Link>
+            <h1 className="new-posts-title2">
+              <span>Title</span>
+              <br></br>
+            </h1>
+          </div>
         </div>
       </div>
       <style jsx>
