@@ -330,6 +330,7 @@ const Header = (props) => {
           .header-title {
             font-size: 32px;
             font-family: HBST;
+            color: var(--dl-color-hbst-blue);
           }
           .header-navigate {
             flex: 0 0 auto;
