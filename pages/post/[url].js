@@ -225,7 +225,7 @@ const Posts = ({ post }) => {
         if (list === "") continue;
 
         const lists = list.split("<br/>");
-        let strList = "<ul>";
+        let strList = "<ul style='padding-left: 30px'>";
 
         for (let li of lists) {
           strList = strList + `<li>${li}</li>`;
