@@ -295,7 +295,9 @@ const Posts = ({ post }) => {
                 </FacebookShareButton>
               </div>
               <div className="posts-tags">
-                <Link href={`/blog?tag=${getUrl(post.tag)}`}>
+                <Link
+                  href={`/blog${post.tag ? `?tag=${getUrl(post.tag)}` : ""}`}
+                >
                   <a className="posts-link">
                     <span>{post.tag}</span>
                     <br></br>
@@ -324,7 +326,7 @@ const Posts = ({ post }) => {
             <div className="posts-posts">
               {post.allPosts.map((samePost) => {
                 if (
-                  (post.tag === "" || samePost.tag === post.tag) &&
+                  (!post.tag || post.tag === "" || samePost.tag === post.tag) &&
                   samePost._id !== post._id
                 ) {
                   samePosts.current++;

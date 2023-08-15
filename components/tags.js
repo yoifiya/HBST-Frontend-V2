@@ -53,7 +53,7 @@ const Tags = (props) => {
     let tags = ["All Posts"];
     if (allPosts[0]) {
       for (const index in allPosts) {
-        if (!tags.includes(allPosts[index].tag)) {
+        if (!tags.includes(allPosts[index].tag) && allPosts[index].tag) {
           tags.push(allPosts[index].tag);
         }
       }
@@ -61,7 +61,9 @@ const Tags = (props) => {
       setCurrentTag(allPosts.tag);
       for (const index in allPosts.allPosts) {
         if (!tags.includes(allPosts.allPosts[index].tag)) {
-          tags.push(allPosts.allPosts[index].tag);
+          if (allPosts.allPosts[index].tag) {
+            tags.push(allPosts.allPosts[index].tag);
+          }
         }
       }
     }
@@ -77,7 +79,7 @@ const Tags = (props) => {
               <Link
                 key={tag}
                 href={`/blog${tag !== "All Posts" ? "?tag=" : ""}${
-                  tag !== "All Posts" ? getUrl(tag) : ""
+                  tag !== "All Posts" ? tag && getUrl(tag) : ""
                 }`}
               >
                 <a
@@ -87,7 +89,7 @@ const Tags = (props) => {
                       !tagSearch &&
                       tag === "All Posts" &&
                       "-active") ||
-                    (getUrl(tag) === tagSearch && "-active") ||
+                    (tag && getUrl(tag) === tagSearch && "-active") ||
                     ""
                   }`}
                 >

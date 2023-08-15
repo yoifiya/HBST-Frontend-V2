@@ -171,14 +171,21 @@ const Home = ({ newPosts }) => {
                         <span>{post.dateUpload}</span>
                         <br></br>
                       </span>
-                      <Link href={`/blog?tag=${getUrl(post.tag)}`}>
-                        <a className="new-posts-link">
-                          <span>
-                            <span>{post.tag}</span>
-                            <br></br>
-                          </span>
-                        </a>
-                      </Link>
+                      {post.tag && (
+                        <Link
+                          href={`/blog${
+                            post.tag ? `?tag=${getUrl(post.tag)}` : ""
+                          }`}
+                        >
+                          <a className="new-posts-link">
+                            <span>
+                              <span>{post.tag}</span>
+                              <br></br>
+                            </span>
+                          </a>
+                        </Link>
+                      )}
+
                       <h1 className="new-posts-title">
                         <span>{post.title}</span>
                         <br></br>

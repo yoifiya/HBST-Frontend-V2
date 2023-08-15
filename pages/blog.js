@@ -83,7 +83,7 @@ const Blog = ({ allPosts }) => {
     const imgs = post.text.split(/<\/?img>/);
     let imgArray = "";
 
-    if (tag && tag === getUrl(post.tag)) {
+    if (tag && tag === getUrl(post.tag || "")) {
       pages++;
     } else if (!tag) {
       pages++;
@@ -136,7 +136,7 @@ const Blog = ({ allPosts }) => {
           {allPosts.map((post) => {
             let tagPost = post.tag;
 
-            if (tag && tag !== getUrl(tagPost)) {
+            if (tag && tag !== getUrl(tagPost || "")) {
               return <div key={post.index}></div>;
             }
 
