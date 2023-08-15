@@ -416,7 +416,7 @@ const Posts = ({ post }) => {
             color: white;
             width: 100%;
             line-height: 1.5;
-            font-size: 18px;
+            font-size: 16px;
           }
           .posts-container {
             width: 100%;
