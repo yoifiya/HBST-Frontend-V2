@@ -463,7 +463,7 @@ const Home = ({ newPosts }) => {
             align-items: flex-start;
             background-size: cover;
             justify-content: center;
-            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc_nnYBJp8FfSLQ37tZtgzYT_QR6wcoi7pLbm-HrhP3Sg7sVDZuDWGqepUCXagN4dQZfoiPdMNW0AwCtAl3HbtC3Q19camwwre5FKjSXR4IsAb-WPRk=d");
+            background-image: url("https://cdn.hocboisinhton.com/image/43b71598-3cb6-4a74-a519-a765a69ea73b");
             background-position: center;
           }
           .home-text {
@@ -492,7 +492,7 @@ const Home = ({ newPosts }) => {
             align-items: flex-start;
             background-size: cover;
             justify-content: center;
-            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc_EpTG0tIamcNf8curUvBdN-IWPqCojmdaFn8Wm3Sp4BJls0_kJSq6j31P36lQ1gWnN0veBv-WTznXDPhFj8R7JHXq4XfA0M4MTiyW5Phldw4cHwaw=d");
+            background-image: url("https://cdn.hocboisinhton.com/image/6f0861e0-7870-4bfe-98d7-ad255c95b457");
             background-position: center;
           }
           .home-text04 {
@@ -521,7 +521,7 @@ const Home = ({ newPosts }) => {
             align-items: flex-start;
             background-size: cover;
             justify-content: center;
-            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc_bwWzlD232T5uT5KJ4gMm-YRH_ETFCUAHVpgQVaTeZ2sLfUz43Z25iewZeoCz5AMjxVmJCGTRq_2EFu-r89-ja-u_GUMeB7STiR07RVSGfSjcNBs0=d");
+            background-image: url("https://cdn.hocboisinhton.com/image/7ac71016-b7c2-4b29-ba7d-0ae184cdb36b");
             background-position: center;
           }
           .home-text08 {
@@ -559,7 +559,7 @@ const Home = ({ newPosts }) => {
             align-items: flex-start;
             background-size: cover;
             justify-content: center;
-            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc-3XeYjqQbo_ktlfxZpxgh6l-oURIGFb_HTqn0RPGga6LlrTT58NdyWrpN6LRung7xyu5FrJD0iuTzbM7FVeqGJYDmlDV5F_fIaWmrPdz2GivamFDs=d");
+            background-image: url("https://cdn.hocboisinhton.com/image/a1bd17f0-4dce-449f-ae45-9d75a093c82c");
             background-position: center;
           }
           .home-text11 {
@@ -690,7 +690,7 @@ const Home = ({ newPosts }) => {
             margin-right: 20px;
             background-size: cover;
             justify-content: center;
-            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc9lhjfX0Py0Wq4pOqCBWKRYl3NqEgVR5cGub0gvvCqjMwxPYTwmBXO0RuM0Y2AMHdUeK6GHbAiNQmHzix2w4lUiVACEW_AHERkIxFq29fscunS11bI=d");
+            background-image: url("https://cdn.hocboisinhton.com/image/34152c66-2103-476e-b98b-91c2a3fec1cf");
             background-position: center;
           }
           .home-container01 {
@@ -795,7 +795,7 @@ const Home = ({ newPosts }) => {
             margin-right: 20px;
             background-size: cover;
             justify-content: center;
-            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc9GIYSN3WEg4qXw6PpsOHjgy-Y32KwOswr24c4yPJr_vqwmCv7FoSsx_5rQDeK-lCmS4lOUypsUVnbGKjtRgGVPeoIy0dmPmzbkvqz1iibPiMVr1RU=d");
+            background-image: url("https://cdn.hocboisinhton.com/image/8bba0f73-6242-4561-bb9c-92dc576c068a");
             background-position: center;
           }
           .home-container04 {
@@ -900,7 +900,7 @@ const Home = ({ newPosts }) => {
             margin-right: 20px;
             background-size: cover;
             justify-content: center;
-            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc-NQLJeBdwuh2bEkC80U2PWxyvAZGQp_KG8277Pd-27Vf_3cYTDEg6fIRdzFhd5_nTA9zjsOmLNLYrAnWZLY97M043ixMrmAXt1vBnO6kLifsr7xJo=d");
+            background-image: url("https://cdn.hocboisinhton.com/image/647175a3-58f2-4f8a-a882-696b4dfd7c39");
             background-position: center;
           }
           .home-container07 {

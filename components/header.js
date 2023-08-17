@@ -99,7 +99,7 @@ const Header = (props) => {
             <div className="header-logo">
               <img
                 alt={props.image_alt}
-                src="https://lh3.googleusercontent.com/pw/AIL4fc95smzk_QUHx8IOXZLMJPDp0D6NaBq8DP3PsunWOlfuxauo-d1lzAQhz1NztEj5Uz4JuO3bbSac0Q3bTByYavYq_O-XZF8RiR5fnLtRv6O87-_VDDc=d"
+                src="https://cdn.hocboisinhton.com/image/341ebd9f-3117-45b3-9f7a-4169a06b82d4"
                 loading="eager"
                 className="header-icon2"
               />

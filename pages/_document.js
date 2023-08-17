@@ -57,6 +57,15 @@ class CustomDocument extends Document {
         <body>
           <Main></Main>
           <NextScript></NextScript>
+          <div
+            class="zalo-chat-widget"
+            data-oaid="3107886607616267912"
+            data-welcome-message="Rất vui khi được hỗ trợ bạn!"
+            data-autopopup="0"
+            data-width=""
+            data-height=""
+          ></div>
+          <script src="https://sp.zalo.me/plugins/sdk.js"></script>
         </body>
       </Html>
     );

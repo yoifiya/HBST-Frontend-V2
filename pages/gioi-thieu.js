@@ -19,7 +19,7 @@ const GioiThieu = (props) => {
           />
           <meta
             property="og:image"
-            content="https://lh3.googleusercontent.com/pw/AIL4fc-Xc8_fxqA-ZSmlYCQtPJ4Ykv7KYIlDcHCfL1MbmHWr4r1LKdhE5Swi1-acBJLRj2-qDJjK1gLKy1wBoMSe4kNEf92OPE-9stqONeyeA3CQCEx_UeA=d"
+            content="https://cdn.hocboisinhton.com/image/cdd43fb8-f5fe-4d8f-89ff-01ae1d09d781"
           />
         </Head>
         <Header rootClassName="header-root-class-name1"></Header>
@@ -219,7 +219,7 @@ const GioiThieu = (props) => {
             <div className="gioi-thieu-user1">
               <img
                 alt="image"
-                src="https://lh3.googleusercontent.com/pw/AIL4fc9sln_Z13FHWgtEXIpgcPvGtJUKlPqaGsYgM09bz5nVABBn6yp6bd7ls5T_DHa04Zw3yfP-F2IN3uweSWoCpkIsjDkyirnaW4BpcnOuMdbR83ZATJY=d"
+                src="https://cdn.hocboisinhton.com/image/3fc944e0-378c-4ad6-83c9-1bdad7513ce2"
                 className="gioi-thieu-image"
               />
               <h2 className="gioi-thieu-text31">HLV ĐOÀN QUỐC HÙNG</h2>
@@ -240,7 +240,7 @@ const GioiThieu = (props) => {
             <div className="gioi-thieu-user2">
               <img
                 alt="image"
-                src="https://lh3.googleusercontent.com/pw/AIL4fc9rVKKWUWfLUVi7R4i2GUK77d5jktEGasOsvXhMtb901Mp_ZpbpbnwANGbEDzHuEcd-jASC7dt5eVJohwLTDKyZFxY4DoPh0x-sfawetzaHKYS8XQQ=d"
+                src="https://cdn.hocboisinhton.com/image/736099ff-f5bf-4798-92df-a05c843a82a0"
                 className="gioi-thieu-image1"
               />
               <h2 className="gioi-thieu-text38">HLV Tạ Quan Minh</h2>
@@ -261,7 +261,7 @@ const GioiThieu = (props) => {
             <div className="gioi-thieu-user3">
               <img
                 alt="image"
-                src="https://lh3.googleusercontent.com/pw/AIL4fc9LL6vxMVgs_5sfLJAFHYG8z4FKmnbt60zhhhTO_fXFADmLnJhFWuO1qrWdfFdBjFTGvV8PLVwIkPeG84vi4zNvaVNCnDyH74mbaEaIewdjhPw8nQU=d"
+                src="https://cdn.hocboisinhton.com/image/8ce59026-e219-4047-b57d-d9dedb0189c8"
                 className="gioi-thieu-image2"
               />
               <h2 className="gioi-thieu-text45">HLV NGUYỄN HOÀI GIANG</h2>
@@ -413,7 +413,7 @@ const GioiThieu = (props) => {
             align-items: center;
             background-size: cover;
             justify-content: center;
-            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc8TO868T0x_g3O-mRFZDUyL4kL5B6_7x4CCg7CSHF_I9OPHSz6eJKW8XlAHtLEGBMvKj1rr8qsjXbpZ-ZYBOjuKOuq8wo3kvwT_dCxov43soGaznm8=d");
+            background-image: url("https://cdn.hocboisinhton.com/image/c4fc7591-893d-4c1a-bec0-e423b19a5cd8");
             background-position: center;
           }
           .gioi-thieu-container01 {
@@ -457,7 +457,7 @@ const GioiThieu = (props) => {
             align-items: center;
             background-size: cover;
             justify-content: center;
-            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc8mJ3eHH1f2i8sEDsn7F9L7zQM5x_WlNACqmEi7N4bfGsJlPRUo3m8sDyMsSuxfXJvlJEre5lDhUPpBOaO1E4RaTAMyrFMJAAIvdksUYzdj4g1RN9I=d");
+            background-image: url("https://cdn.hocboisinhton.com/image/4a489cf7-3908-4d11-807b-a2e5327ce664");
             background-position: center;
           }
           .gioi-thieu-container03 {
@@ -501,7 +501,7 @@ const GioiThieu = (props) => {
             align-items: center;
             background-size: cover;
             justify-content: center;
-            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc-hwuCLNltyIVJaf3ZnQHf21lCNX0TMb4sqpibG0fz3KvLZa087P9WrxzzleXeW7Zo6o_7CRZOW-FhZQJtjZkg3rsMLb7fseL_RY8etRMlwd9x1Whw=d");
+            background-image: url("https://cdn.hocboisinhton.com/image/6e40048e-de79-4cfa-a3f4-88fe63d45def");
             background-position: center;
           }
           .gioi-thieu-container05 {
@@ -724,7 +724,7 @@ const GioiThieu = (props) => {
             margin-right: 10px;
             background-size: cover;
             justify-content: center;
-            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc-1KndJdaRV9XYYm-qEQPWQlbgPRTlBfl9i5bo3_lFrqt2U0HcyH7on9hcbGCNEpJ2vsJg0nYCSOHSuPC6KS2BCUmPYSFejtHdv-U8JetcGumQTEuI=d");
+            background-image: url("https://cdn.hocboisinhton.com/image/5b3913b7-db87-4923-a243-cd206de1632a");
             background-position: center;
           }
           .gioi-thieu-container09 {
@@ -758,7 +758,7 @@ const GioiThieu = (props) => {
             margin-right: 10px;
             background-size: cover;
             justify-content: center;
-            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc9gq7FQXPXn3TNXob-xTGNlm_R18bLc-MXjanu4pAtGwOGHXqNC3HT-h-cK1hltP0dloO5QbdORSytQjuXWanK-Y3lm3Mrmk-P8pcofVRJ0SZDwpkQ=d");
+            background-image: url("https://cdn.hocboisinhton.com/image/1f9ac2c1-5fbb-47f6-8102-e149d8503c2c");
             background-position: center;
           }
           .gioi-thieu-container11 {
@@ -792,7 +792,7 @@ const GioiThieu = (props) => {
             margin-right: 10px;
             background-size: cover;
             justify-content: center;
-            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc-A2QiiFhu3sDHG3XuGb5QyN5YlWITx4rr5w--E3N8GxVLqaUxdKHCTJQOxG-LQGvjIGoYIHtZk3NLoDEaWuqFXLl5zQ7MxejmWLVwhMi5zXAoAmEA=d");
+            background-image: url("https://cdn.hocboisinhton.com/image/4557309a-f112-4996-9821-d8cfe9aaa340");
             background-position: center;
           }
           .gioi-thieu-container13 {
@@ -826,7 +826,7 @@ const GioiThieu = (props) => {
             margin-right: 10px;
             background-size: cover;
             justify-content: center;
-            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc99zMAUAbvKLhsgVJ-Vg2C0D_jfm6iympVYYDayNiTnnsVjLap0pTVLskmGaLvphc7yXXk8X2jnqFevamS5OkAgA9g9Vz__X55_n_PySYJDO4NNh4E=d");
+            background-image: url("https://cdn.hocboisinhton.com/image/4231145a-257b-49be-ae82-f4f684af2473");
             background-position: center;
           }
           .gioi-thieu-container15 {
@@ -860,7 +860,7 @@ const GioiThieu = (props) => {
             margin-right: 10px;
             background-size: cover;
             justify-content: center;
-            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc_ERDKSG6ysOnG4YBRdNWr_sxt-JHz2D99CBBiuIlxo-60G5mU5MGfazU604P5Ht3C83qRBdthsEx7qbRYfEb1Yl9PdDin9Rb2AwJ7X85rkNL84EDg=d");
+            background-image: url("https://cdn.hocboisinhton.com/image/4f8d1caf-57cd-4b9e-b2d0-7909778d78d6");
             background-position: center;
           }
           .gioi-thieu-container17 {
@@ -894,7 +894,7 @@ const GioiThieu = (props) => {
             margin-right: 10px;
             background-size: cover;
             justify-content: center;
-            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc-3POfgFhXlwJpnTm__t6w57dap2Cu8lfctvQNPWrPQBGImbFCVez0RiDbRFahTIbCr8v9xIn-V4QgosDTz9yMGOP9O-KFQgKBovZgYxAY6Kxph9qc=d");
+            background-image: url("https://cdn.hocboisinhton.com/image/1e3c670b-ffe5-41f6-8f28-d1538f9bb53a");
             background-position: center;
           }
           .gioi-thieu-container19 {
@@ -928,7 +928,7 @@ const GioiThieu = (props) => {
             margin-right: 10px;
             background-size: cover;
             justify-content: center;
-            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc9l-nUZX7wP3D2s1gd6V93sGjSgL8TguUPk5X_10LiV5NUpcYImwUt5rK24yyXGvmwea7mCx1B-KJbSN0pgDAovJniZh7iGU2_rXHY77VxdSFNvtU0=d");
+            background-image: url("https://cdn.hocboisinhton.com/image/d53c4a6b-1c21-40cb-9671-0de1583c0a22");
             background-position: center;
           }
           .gioi-thieu-container21 {
@@ -962,7 +962,7 @@ const GioiThieu = (props) => {
             margin-right: 10px;
             background-size: cover;
             justify-content: center;
-            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc-FW5JKp0eqooHksCugnvYvPbQ7hbgjpJaqULJ0RUKjwx5AepTJD7HPIpRLK4D_obitpxiUCHSZ6jTAYsEdx7EqxR-ygcWGDnRHo5v40vMPvQqeu-Y=d");
+            background-image: url("https://cdn.hocboisinhton.com/image/795c0721-be5a-4ec3-80bc-279e56326bfb");
             background-position: center;
           }
           .gioi-thieu-container23 {
@@ -996,7 +996,7 @@ const GioiThieu = (props) => {
             margin-right: 10px;
             background-size: cover;
             justify-content: center;
-            background-image: url("https://lh3.googleusercontent.com/pw/AIL4fc-8kcEWiGiJS0WcED2UmxzxahKfQIWRSlp6lBPYVq0XlVc82Xbo3188WlKxNk-oFmZH539EL220HF7C1ssm6_K8x4u8SbTO8Ga3Bi-c8SQN20ZPi4A=d");
+            background-image: url("https://cdn.hocboisinhton.com/image/064063fe-5e1e-4b49-9fc2-009d62919801");
             background-position: center;
           }
           .gioi-thieu-container25 {
