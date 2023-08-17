@@ -228,7 +228,11 @@ const Home = ({ newPosts }) => {
                   </div>
                 </div>
                 <div className="home-tim-hieu-them1">
-                  <Link href={"/khoa-hoc-0-3"}>
+                  <Link
+                    href={
+                      "https://boisinhton.com/khoa-hoc/khoa-hoc-boi-tu-0-3-tuoi/"
+                    }
+                  >
                     <span className="home-text24">
                       <span>Tìm hiểu thêm</span>
                       <br></br>
@@ -265,7 +269,11 @@ const Home = ({ newPosts }) => {
                   </div>
                 </div>
                 <div className="home-tim-hieu-them2">
-                  <Link href={"/khoa-hoc-3-5"}>
+                  <Link
+                    href={
+                      "https://boisinhton.com/khoa-hoc/khoa-hoc-boi-tu-3-5-tuoi/"
+                    }
+                  >
                     <span className="home-text31">
                       <span>Tìm hiểu thêm</span>
                       <br></br>
@@ -302,7 +310,11 @@ const Home = ({ newPosts }) => {
                   </div>
                 </div>
                 <div className="home-tim-hieu-them3">
-                  <Link href={"/khoa-hoc-tren-5"}>
+                  <Link
+                    href={
+                      "https://boisinhton.com/khoa-hoc/khoa-hoc-boi-tu-5-tuoi-tro-len/"
+                    }
+                  >
                     <span className="home-text38">
                       <span>Tìm hiểu thêm</span>
                       <br></br>
